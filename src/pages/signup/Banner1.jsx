@@ -1,13 +1,10 @@
-import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useSignupNavigation } from "../../utils/SignupNavigationContext.jsx";
+
 
 function Banner1() {
   const navigate = useNavigate();
-  const location = useLocation();
-
-  // Determine the current step based on the location
-  const isMainSignup1 = location.pathname.includes('mainsignup1');
-  const isReview = location.pathname.includes('review');
+  const { isMainSignup1,isReview } = useSignupNavigation();
 
   // Function to navigate back or to the landing page
   const handleBack = () => {
