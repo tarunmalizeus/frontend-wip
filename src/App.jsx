@@ -37,6 +37,7 @@ const appRouter=createBrowserRouter([
             children:[
              {
               index:true,
+              // path: "mainsignup1",
               element: <MainSignup1/>
              },
              {
