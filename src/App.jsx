@@ -4,8 +4,10 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Error from './pages/Error'
 import Landingpage from './pages/Landingpage'
-import Signup from './pages/Signup'
+import Signup from './pages/signup/Signup'
 import Login from './pages/Login'
+import MainSignup1 from './pages/signup/MainSignup1';
+import MainSignup2 from './pages/signup/MainSignup2';
 
 function App() {
   return (
@@ -29,13 +31,26 @@ const appRouter=createBrowserRouter([
           },
           {
             path: "/signup",
-            element: <Signup/>
+            element: <Signup/>,
+            children:[
+             {
+              index:true,
+              element: <MainSignup1/>
+             },
+             {
+              path: "mainsignup2", // This path is for navigating to MainSignup2
+              element: <MainSignup2 />
+             } 
+            ]
          },
 
          {
             path: "/login",
             element: <Login/>
          },
+
+
+
       ]
   },
 
