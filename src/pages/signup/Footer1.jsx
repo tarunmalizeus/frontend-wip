@@ -1,16 +1,10 @@
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useSignupNavigation } from "../../utils/SignupNavigationContext.jsx";
+
 
 function Footer1() {
+    const { isMainSignup1, isMainSignup2, isMainSignup3,isReview } = useSignupNavigation();
     const navigate = useNavigate();
-    const location = useLocation();
-  
-    // Determine the current step based on the location
-    let isMainSignup1=false, isMainSignup2=false, isMainSignup3=false, isReview=false;
-    if(location.pathname.includes('mainsignup2')) isMainSignup2=true;
-    else if(location.pathname.includes('mainsignup3')) isMainSignup3=true;
-    else if(location.pathname.includes('review')) isReview=true;
-    else isMainSignup1=true;
-
   
     // Function to navigate to the next page
     const nextPage = () => {
