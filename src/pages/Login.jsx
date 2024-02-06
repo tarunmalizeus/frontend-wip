@@ -7,7 +7,7 @@ function Login() {
     password: "",
   });
 
-  // let name, v
+ 
   const handleInputs = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -16,31 +16,31 @@ function Login() {
 
 
   const PostData = async (e) => {
-    e.preventDefault();
+  //   e.preventDefault();
 
-    const response = await fetch(`${process.env.REACT_APP_BACKEND}/Api/signin`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({user}),
-    });
+  //   const response = await fetch(`${process.env.REACT_APP_BACKEND}/Api/signin`, {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({user}),
+  //   });
 
-    //This is how the fetch api works
-    const data1 = await response.json();
-    const data2 = response.status;
+  //   //This is how the fetch api works
+  //   const data1 = await response.json();
+  //   const data2 = response.status;
 
-    const errata = data1.error;
+  //   const errata = data1.error;
 
-    if (data2 === 200) {
-    //   console.log(data1.accessToken);
-      window.alert('Successfully login');
-      sessionStorage.setItem("accessToken",data1.accessToken);
-      // navigate('/');
-      window.location.reload();
-    } else {
-      window.alert(errata);
-    }
+  //   if (data2 === 200) {
+  //   //   console.log(data1.accessToken);
+  //     window.alert('Successfully login');
+  //     sessionStorage.setItem("accessToken",data1.accessToken);
+  //     // navigate('/');
+  //     window.location.reload();
+  //   } else {
+  //     window.alert(errata);
+  //   }
   };
 
     return (
