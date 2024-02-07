@@ -44,7 +44,7 @@ function Login() {
   };
 
     return (
-      <>
+      <div className='bg-green-100 h-full flex justify-center items-center'>
         <div className='bg-red-100'>
           <h1>Log in</h1>
                 <form method="POST">
@@ -83,7 +83,7 @@ function Login() {
                   </div>
                 </form>
         </div>
-      </>
+      </div>
     )
   }
 

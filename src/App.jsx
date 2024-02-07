@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="flex flex-col h-screen">
       <Header/>
-      <div className="flex-grow flex-col">
+      <div className="flex-grow">
         <Outlet/>
       </div>
       <Footer/>
