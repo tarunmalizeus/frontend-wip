@@ -46,28 +46,26 @@ function Login() {
     return (
       <>
       
-        <h1>Login</h1>
+        <h1>Log in</h1>
 
               <form method="POST">
                 <div>
-                  <i></i>
                   <input
                     type="email"
                     name="email"
                     id="email"
-                    placeholder="Your Email"
+                    placeholder="Email Id"
                     value={user.email}
                     onChange={handleInputs}
                   />
                 </div>
 
                 <div>
-                  <i></i>
                   <input
                     type="password"
                     name="password"
                     id="password"
-                    placeholder="Your password"
+                    placeholder="Password"
                     value={user.password}
                     onChange={handleInputs}
                     autoComplete="off"
