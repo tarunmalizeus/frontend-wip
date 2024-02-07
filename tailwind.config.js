@@ -5,7 +5,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+
+    extend: {
+      colors:{
+        background:"EEEEEE",
+        vuejs:"49e659",
+        reactjs:{
+          100:"#61DAFB",
+        }
+      },
+ 
+    },
   },
   plugins: [],
 }

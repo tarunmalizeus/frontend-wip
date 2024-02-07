@@ -13,11 +13,13 @@ import Review from './pages/signup/Review';
 
 function App() {
   return (
-    <>
+    <div className="flex flex-col h-screen">
       <Header/>
-      <Outlet/>
+      <div className="flex-grow flex-col">
+        <Outlet/>
+      </div>
       <Footer/>
-    </>
+    </div>
   )
 }
 

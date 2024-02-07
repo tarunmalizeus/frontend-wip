@@ -45,52 +45,44 @@ function Login() {
 
     return (
       <>
-      
-        <h1 className="text-3xl font-bold underline">Log in</h1>
-
-              <form method="POST">
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Email Id"
-                    value={user.email}
-                    onChange={handleInputs}
-                  />
-                </div>
-
-                <div>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="Password"
-                    value={user.password}
-                    onChange={handleInputs}
-                    autoComplete="off"
-                  />
-                </div>
-
-                <div>
-
-                  <button
-                    type="submit"
-                    name="signin"
-                    id="signin"
-                    value="Log In"
-                    onClick={PostData}
-                  >
-                    Log In
-                  </button>
-
-                  <NavLink to="/Signup">Register now</NavLink>
-
-                </div>
-              </form>
-
-
-      
+        <div className='bg-red-100'>
+          <h1>Log in</h1>
+                <form method="POST">
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="Email Id"
+                      value={user.email}
+                      onChange={handleInputs}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      placeholder="Password"
+                      value={user.password}
+                      onChange={handleInputs}
+                      autoComplete="off"
+                    />
+                  </div>
+                  <div>
+                    <button
+                      type="submit"
+                      name="signin"
+                      id="signin"
+                      value="Log In"
+                      onClick={PostData}
+                    >
+                      Log In
+                    </button>
+                    <NavLink to="/Signup">Register now</NavLink>
+                  </div>
+                </form>
+        </div>
       </>
     )
   }
