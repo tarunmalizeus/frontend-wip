@@ -44,12 +44,14 @@ function Login() {
   };
 
     return (
-      <div className='bg-green-100 h-full flex justify-center items-center'>
-        <div className='bg-red-100'>
-          <h1>Log in</h1>
-                <form method="POST">
-                  <div>
+      <div className='bg-background h-full flex justify-center items-center'>
+        <div className='bg-white h-2/3 w-2/5 border-bordertop border-t-4 fle-col'>
+                <h1 className='text-2xl text-center mt-2'>Log in</h1>
+                <form className='bg-white flex flex-col h-full justify-around items-center p-4' method="POST">
+
+                  <div className='flex flex-col w-full'>
                     <input
+                      className='border-b-2'
                       type="email"
                       name="email"
                       id="email"
@@ -57,9 +59,13 @@ function Login() {
                       value={user.email}
                       onChange={handleInputs}
                     />
+                  <button className="w-full text-right text-sm text-darkgreen"> FORGOT EMAIL ID?</button>
                   </div>
-                  <div>
+
+                  
+                  <div className='flex flex-col w-full'>
                     <input
+                      className='border-b-2'
                       type="password"
                       name="password"
                       id="password"
@@ -68,9 +74,20 @@ function Login() {
                       onChange={handleInputs}
                       autoComplete="off"
                     />
+                  <button className="w-full text-right text-sm text-darkgreen"> FORGOT PASSWORD?</button>
                   </div>
-                  <div>
+
+
+                  <div className="flex justify-start w-full">
+                    <div className="flex">
+                    <input type="checkbox" id="rememberMe" name="rememberMe" />
+                    <label htmlFor="rememberMe" className="ml-2">Remember me</label>
+                    </div>
+                  </div>
+
                     <button
+
+                      className="bg-lightgreen  w-1/2 p-2 mt-4"
                       type="submit"
                       name="signin"
                       id="signin"
@@ -79,8 +96,15 @@ function Login() {
                     >
                       Log In
                     </button>
-                    <NavLink to="/Signup">Register now</NavLink>
+
+                  <div className='flex flex-col items-center'>
+                    <div className='text-xs'>
+                    Not registered yet?
+                    </div>
+
+                    <NavLink className='text-darkgreen' to="/Signup">CREATE AN ACCOUNT</NavLink>
                   </div>
+
                 </form>
         </div>
       </div>
