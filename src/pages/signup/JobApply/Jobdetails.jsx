@@ -2,6 +2,7 @@ import Jobcardstatic from "./Jobcardstatic"
 import { useParams } from "react-router-dom";
 import Process from "./Process";
 import Apply from "./Apply";
+import Role from "./Role";
 
 function Jobdetails() {
   const jobDataArray = [
@@ -29,7 +30,7 @@ function Jobdetails() {
         "from_time": "2023-03-01",
         "to_time": "2023-08-01",
         "location_name": "Boston",
-        "roles_in_job": "Associate Product Manager",
+        "roles_in_job": ["Associate Product Manager","Data Science Intern"],
         "internship": "No"
     }
 ];
@@ -45,7 +46,10 @@ function Jobdetails() {
         <Process/>
         <Apply/>
 
-      
+        {(jobDataArray[job_id].roles_in_job).map((role,idx) => (
+                    <Role key={idx} job={role} />
+                ))} 
+
 
       </>
     )
