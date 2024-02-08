@@ -1,11 +1,14 @@
+import React from 'react';
 
-
-function Role() {
+function Role({ job }) {
     return (
-      <>
-        <h1>Role</h1>
-      </>
-    )
-  }
+        <>
+            <h1>Role</h1>
+            <p>{job}</p>
+            {console.log(job)}
+        </>
+    );
+}
 
-export default Role
+export default Role;
+

@@ -12,7 +12,7 @@ function Jobdetails() {
         "from_time": "2023-01-01",
         "to_time": "2023-06-01",
         "location_name": "New York",
-        "roles_in_job": "Junior Developer",
+        "roles_in_job": ["Associate Product Manager","Data Science Intern"],
         "internship": "No"
     },
     {
@@ -21,7 +21,7 @@ function Jobdetails() {
         "from_time": "2023-02-01",
         "to_time": "2023-07-01",
         "location_name": "San Francisco",
-        "roles_in_job": "Data Science Intern",
+        "roles_in_job": ["Associate Product Manager","Data Science Intern"],
         "internship": "Yes"
     },
     {
