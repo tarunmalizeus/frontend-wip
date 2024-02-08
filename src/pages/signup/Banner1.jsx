@@ -27,10 +27,13 @@ function Banner1() {
   };
 
   return (
-    <div>
+    <div className='flex flex-row justify-between p-4'>
       <button onClick={handleBack}>Back</button>
-      <button onClick={handleCancel}>Cancel</button>
-      {isReview && <button onClick={handleSubmit}>Submit</button>}
+      <div> Create An Account</div>
+      <div>
+        <button onClick={handleCancel}>Cancel</button>
+        {isReview && <button onClick={handleSubmit}>Submit</button>}
+      </div>
     </div>
   );
 }

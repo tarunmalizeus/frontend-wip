@@ -44,7 +44,7 @@ function Login() {
   };
 
     return (
-      <div className='bg-background h-full flex justify-center items-center'>
+      <div className='h-full flex justify-center items-center'>
         <div className='bg-white h-2/3 w-2/5 border-bordertop border-t-4 fle-col'>
                 <h1 className='text-2xl text-center mt-2'>Log in</h1>
                 <form className='bg-white flex flex-col h-full justify-around items-center p-4' method="POST">

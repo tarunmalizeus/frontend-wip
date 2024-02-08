@@ -6,16 +6,16 @@ import Error from './pages/Error'
 import Landingpage from './pages/Landingpage'
 import Signup from './pages/signup/Signup'
 import Login from './pages/Login'
-import MainSignup1 from './pages/signup/MainSignup1';
-import MainSignup2 from './pages/signup/MainSignup2';
-import MainSignup3 from './pages/signup/MainSignup3';
-import Review from './pages/signup/Review';
+import MainSignup1 from './pages/signup/MainSignup/MainSignup1';
+import MainSignup2 from './pages/signup/MainSignup/MainSignup2';
+import MainSignup3 from './pages/signup/MainSignup/MainSignup3';
+import Review from './pages/signup/MainSignup/Review';
 
 function App() {
   return (
     <div className="flex flex-col h-screen">
       <Header/>
-      <div className="flex-grow">
+      <div className="flex-grow bg-background h-full">
         <Outlet/>
       </div>
       <Footer/>
