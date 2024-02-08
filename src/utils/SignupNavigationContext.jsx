@@ -10,7 +10,6 @@ export const SignupNavigationProvider = ({ children }) => {
   const [navigationState, setNavigationState] = useState({
     isMainSignup1: false,
     isMainSignup2: false,
-    isMainSignup3: false,
     isReview: false,
   });
 
@@ -18,9 +17,8 @@ export const SignupNavigationProvider = ({ children }) => {
     // Determine the current step based on the location
     const isMainSignup1 = !location.pathname.includes('mainsignup2') && !location.pathname.includes('mainsignup3') && !location.pathname.includes('review');
     const isMainSignup2 = location.pathname.includes('mainsignup2');
-    const isMainSignup3 = location.pathname.includes('mainsignup3');
     const isReview = location.pathname.includes('review');
-    setNavigationState({ isMainSignup1, isMainSignup2, isMainSignup3, isReview });
+    setNavigationState({ isMainSignup1, isMainSignup2, isReview });
   }, [location]);
 
   return (

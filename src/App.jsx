@@ -8,7 +8,6 @@ import Signup from './pages/signup/Signup'
 import Login from './pages/Login'
 import MainSignup1 from './pages/signup/MainSignup/MainSignup1';
 import MainSignup2 from './pages/signup/MainSignup/MainSignup2';
-import MainSignup3 from './pages/signup/MainSignup/MainSignup3';
 import Review from './pages/signup/MainSignup/Review';
 
 function App() {
@@ -46,10 +45,6 @@ const appRouter=createBrowserRouter([
               path: "mainsignup2", // This path is for navigating to MainSignup2
               element: <MainSignup2 />
              }, 
-             {
-              path: "mainsignup3", // This path is for navigating to MainSignup2
-              element: <MainSignup3 />
-             },
              {
               path: "review", // This path is for navigating to MainSignup2
               element: <Review/>

@@ -7,8 +7,10 @@ export const useSignupData = () => useContext(SignupContext);
 export const SignupProvider = ({ children }) => {
   const [signupData, setSignupData] = useState({
     // Initialize state structure for signup data
+    name: '',
     email: '',
     password: '',
+    percentage: 0,
     // Add more fields as necessary
   });
 

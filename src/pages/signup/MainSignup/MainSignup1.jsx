@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useSignupData } from '../../../utils/SignupContext.jsx';
+import { useSignupData } from './SignupContext.jsx';
 
 function MainSignup1() {
   const { signupData, updateSignupData } = useSignupData();
