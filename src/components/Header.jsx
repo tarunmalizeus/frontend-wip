@@ -19,6 +19,11 @@ function Header() {
                 <li >Login</li>
                 </Link>
 
+
+                <Link to="jobs">
+                <li >Jobs</li>
+                </Link>
+
               </ul>
         </div> 
       </>

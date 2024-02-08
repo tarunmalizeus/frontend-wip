@@ -9,12 +9,13 @@ import Login from './pages/Login'
 import MainSignup1 from './pages/signup/MainSignup/MainSignup1';
 import MainSignup2 from './pages/signup/MainSignup/MainSignup2';
 import Review from './pages/signup/MainSignup/Review';
+import Jobs from './pages/Jobs';
 
 function App() {
   return (
     <div className="flex flex-col h-screen">
       <Header/>
-      <div className="flex-grow bg-background h-full">
+      <div className="flex-grow bg-background h-full overflow-auto">
         <Outlet/>
       </div>
       <Footer/>
@@ -46,9 +47,10 @@ const appRouter=createBrowserRouter([
               element: <MainSignup2 />
              }, 
              {
-              path: "review", // This path is for navigating to MainSignup2
+              path: "review", 
               element: <Review/>
-             }
+             },
+
             ]
          },
 
@@ -57,7 +59,12 @@ const appRouter=createBrowserRouter([
             element: <Login/>
          },
 
-
+         {
+          path: "jobs", 
+          element: <Jobs/>
+         },
+         
+         
 
       ]
   },
