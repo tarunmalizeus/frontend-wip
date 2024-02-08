@@ -70,9 +70,7 @@ function Jobdetails() {
 
     return (
       <div className="space-y-2">
-      <AccordionItem title="Job Card">
         <Jobcardstatic job={jobDataArray[job_id]} />
-      </AccordionItem>
       <AccordionItem title="Process">
         <Process />
       </AccordionItem>

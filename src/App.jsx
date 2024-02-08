@@ -9,7 +9,7 @@ import Login from './pages/Login'
 import MainSignup1 from './pages/signup/MainSignup/MainSignup1';
 import MainSignup2 from './pages/signup/MainSignup/MainSignup2';
 import Review from './pages/signup/MainSignup/Review';
-import Jobs from './pages/Jobs';
+import Jobs from './pages/JobView/Jobs';
 import Jobdetails from './pages/JobApply/Jobdetails';
 
 function App() {
