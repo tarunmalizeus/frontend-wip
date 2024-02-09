@@ -3,7 +3,6 @@ import { useJobApplyData } from '../../utils/JobApplyContext';
 
 function Confirmation() {
   const {formData } = useJobApplyData();
-  console.log(formData);
   return (
     <div>
       <h1>Confirmation</h1>

@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { useSignupData } from '../../../utils/SignupContext.jsx';
+import { useSignupData } from '../../utils/SignupContext.jsx';
 
-function MainSignup1() {
+function Education() {
   const { signupData, updateSignupData } = useSignupData();
 
   const handleChange = (e) => {
@@ -12,13 +12,13 @@ function MainSignup1() {
   return (
     <form>
       <input
-        name="email"
-        value={signupData.email}
+        name="percentage"
+        value={signupData.percentage}
         onChange={handleChange}
-        placeholder="Email"
+        placeholder="Percentage"
       />
     </form>
   );
   }
 
-export default MainSignup1
+export default Education

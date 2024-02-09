@@ -1,30 +1,28 @@
+//separate file for routing to keep App.js clean
 import './App.css'
 import { createBrowserRouter, Outlet } from 'react-router-dom';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Error from './pages/Error'
 import Landingpage from './pages/Landingpage'
-import Signup from './pages/signup/Signup'
+import Signup from './pages/Signup/Signup'
 import Login from './pages/Login'
-import MainSignup1 from './pages/signup/MainSignup/MainSignup1';
-import MainSignup2 from './pages/signup/MainSignup/MainSignup2';
-import Review from './pages/signup/MainSignup/Review';
-import Jobs from './pages/JobView/Jobs';
-import Jobdetails from './pages/JobView/Jobdetails';
-import Confirmation from './pages/JobView/Confirmation';
-import { JobApplyProvider } from './utils/JobApplyContext';
-import Jobview from './pages/JobView/Jobview';
+import MainSignup1 from './pages/Signup/Page1';
+import MainSignup2 from './pages/Signup/Page2';
+import Review from './pages/Signup/Review';
+import Jobs from './pages/Job/Job';
+import Jobdetails from './pages/Job/JobDetails';
+import Confirmation from './pages/Job/Confirmation';
+import Jobview from './pages/Job/JobView';
 
 function App() {
 
   return (
     <div className="flex flex-col h-screen">
       <Header/>
-      <JobApplyProvider>
       <div className="flex-grow bg-background h-full overflow-auto">
         <Outlet/>
       </div>
-      </JobApplyProvider>
       <Footer/>
     </div>
   )
@@ -46,7 +44,6 @@ const appRouter=createBrowserRouter([
             children:[
              {
               index:true,
-              // path: "mainsignup1",
               element: <MainSignup1/>
              },
              {
@@ -59,10 +56,6 @@ const appRouter=createBrowserRouter([
              },
             ]
          },
-
-
-
-
 
          {
             path: "/login",

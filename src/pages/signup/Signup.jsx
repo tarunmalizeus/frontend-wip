@@ -1,6 +1,6 @@
-import Banner1 from "./Banner1"
-import Banner2 from "./Banner2"
-import Footer1 from "./Footer1"
+import Banner1 from "../../components/Signup/Banner1.jsx"
+import Banner2 from "../../components/Signup/Banner2.jsx"
+import Footer1 from "../../components/Signup/Footer1.jsx"
 import {Outlet } from 'react-router-dom';
 import { SignupNavigationProvider } from "../../utils/SignupNavigationContext.jsx";
 import { SignupProvider } from '../../utils/SignupContext.jsx';

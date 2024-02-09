@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Education from './Education';
-import Professional from './Professional';
+import Education from '../../components/Signup/Education';
+import Professional from '../../components/Signup/Professional';
 
 function AccordionItem({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,5 +1,5 @@
 import Apply from './Apply'
-import '../index.css'
+import '../../index.css'
 
 function Processandapply() {
     return (
