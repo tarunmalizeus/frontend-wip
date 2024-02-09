@@ -1,6 +1,6 @@
 import { useJobApplyData } from '../../utils/JobApplyContext';
 
-
+// TimeSlotPreference.js
 import React, { useContext, useCallback } from 'react';
 
 
@@ -22,6 +22,7 @@ const Apply = () => {
 
   return (
     <div className="bg-white p-4 max-w-lg mx-auto my-4 shadow-md rounded">
+    {console.log(formData)}
       <h2 className="text-lg font-semibold mb-4">Time Slots & Preferences</h2>
 
       <div className="mb-4">
