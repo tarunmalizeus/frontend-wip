@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useSignupData } from './SignupContext.jsx';
+import { useSignupData } from '../../../utils/SignupContext.jsx';
 
 function Education() {
   const { signupData, updateSignupData } = useSignupData();

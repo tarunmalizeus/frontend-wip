@@ -3,7 +3,7 @@ import Banner2 from "./Banner2"
 import Footer1 from "./Footer1"
 import {Outlet } from 'react-router-dom';
 import { SignupNavigationProvider } from "../../utils/SignupNavigationContext.jsx";
-import { SignupProvider } from './MainSignup/SignupContext.jsx';
+import { SignupProvider } from '../../utils/SignupContext.jsx';
 
 function Signup() {
     return (

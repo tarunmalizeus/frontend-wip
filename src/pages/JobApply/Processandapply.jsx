@@ -41,7 +41,7 @@ function Processandapply() {
           <li>Every round is an elimination round. Candidates need to clear all rounds to get selected.</li>
         </ul>
         
-        <div className="text-sm  pt-2 ">
+        <div className="text-xs  pt-2 ">
           <p>Round 1: 4th August, 2018</p>
           <p>Aptitude Test: 25 Questions</p>
         </div>
