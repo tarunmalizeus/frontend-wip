@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Role from "./Role";
 import { useState } from "react";
 import Processandapply from "./Processandapply";
-
+// import { JobApplyContext } from "../../utils/JobApplyContext"; 
 
 
 function AccordionItem({ title, children }) {
@@ -68,20 +68,22 @@ function Jobdetails() {
   // console.log(job_id);
 
     return (
+
+
+
       <div className="space-y-2 m-4">
-        <Jobcardstatic job={jobDataArray[job_id]} />
-
-      <AccordionItem title="Pre-requisites & Application Process">
-        <Processandapply />
-      </AccordionItem>
-
-      {(jobDataArray[job_id].roles_in_job).map((role, idx) => (
-        <AccordionItem key={idx} title={role}>
-          <Role job={role} />
-        </AccordionItem>
-      ))}
-      
-    </div>
+          {/* <JobApplyContext> */}
+          <Jobcardstatic job={jobDataArray[job_id]} />
+          <AccordionItem title="Pre-requisites & Application Process">
+            <Processandapply />
+          </AccordionItem>
+        {/* </JobApplyContext> */}
+        {(jobDataArray[job_id].roles_in_job).map((role, idx) => (
+          <AccordionItem key={idx} title={role}>
+            <Role job={role} />
+          </AccordionItem>
+        ))}
+            </div>
 
 
     )
