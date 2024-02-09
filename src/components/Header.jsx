@@ -3,10 +3,8 @@ import {Link } from 'react-router-dom';
 function Header() {
     return (
       <>
-        <h1> Header</h1>
-
         <div >
-            <ul style={{display:"flex"}}>
+            <ul className='flex flex-row justify-around'>
                 <Link to="/">
                     <li   >Landingpage</li>
                 </Link>
@@ -15,13 +13,17 @@ function Header() {
                 <li >Signup</li>
                 </Link>
 
-                <Link to="login">
+                <Link to="/login">
                 <li >Login</li>
                 </Link>
 
 
-                <Link to="jobs">
+                <Link to="/jobs">
                 <li >Jobs</li>
+                </Link>
+
+                <Link to="/confirmation">
+                <li >Confirmation</li>
                 </Link>
 
               </ul>
