@@ -17,7 +17,6 @@ function MainSignup1() {
         onChange={handleChange}
         placeholder="Email"
       />
-      {/* More inputs as needed */}
     </form>
   );
   }

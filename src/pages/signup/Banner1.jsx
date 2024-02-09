@@ -6,23 +6,23 @@ function Banner1() {
   const navigate = useNavigate();
   const { isMainSignup1,isReview } = useSignupNavigation();
 
-  // Function to navigate back or to the landing page
+
   const handleBack = () => {
     if (isMainSignup1) {
-      navigate('/'); // Navigate to the landing page if on MainSignup1
+      navigate('/'); 
     } else {
-      navigate(-1); // Go back to the previous page otherwise
+      navigate(-1); 
     }
   };
 
-  // Function to cancel and navigate to the landing page
+
   const handleCancel = () => {
-    navigate('/'); // Navigate to the landing page
+    navigate('/'); 
   };
 
-  // Function to handle submit, which could be navigating to a confirmation page
+  
   const handleSubmit = () => {
-    // navigate('/confirmation'); // Example navigation after submit
+    
     console.log("Backend call to submit data")
   };
 

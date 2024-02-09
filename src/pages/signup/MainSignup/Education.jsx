@@ -17,7 +17,6 @@ function Education() {
         onChange={handleChange}
         placeholder="Percentage"
       />
-      {/* More inputs as needed */}
     </form>
   );
   }

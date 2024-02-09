@@ -1,9 +1,10 @@
-// FormContext.js
-import React, { createContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
-const JobApplyContext = createContext(null);
+const JobApplyContext = createContext();
 
-export const FormProvider = ({ children }) => {
+export const useJobApplyData = () => useContext(JobApplyContext);
+
+export const JobApplyProvider = ({ children }) => {
   const [formData, setFormData] = useState({
     timeSlot: null,
     preferences: {
@@ -38,5 +39,3 @@ export const FormProvider = ({ children }) => {
     </JobApplyContext.Provider>
   );
 };
-
-export default JobApplyContext;

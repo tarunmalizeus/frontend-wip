@@ -6,13 +6,13 @@ function Footer1() {
     const { isMainSignup1, isMainSignup2, isMainSignup3,isReview } = useSignupNavigation();
     const navigate = useNavigate();
   
-    // Function to navigate to the next page
+
     const nextPage = () => {
       if (isMainSignup1) navigate('mainsignup2');
       else if (isMainSignup2) navigate('review');
     };
   
-    // Function to navigate to the previous page
+
     const prevPage = () => {
       if (isReview) navigate('mainsignup2');
       else if (isMainSignup2) navigate('');

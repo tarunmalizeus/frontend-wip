@@ -44,7 +44,7 @@ const appRouter=createBrowserRouter([
               element: <MainSignup1/>
              },
              {
-              path: "mainsignup2", // This path is for navigating to MainSignup2
+              path: "mainsignup2", 
               element: <MainSignup2 />
              }, 
              {
