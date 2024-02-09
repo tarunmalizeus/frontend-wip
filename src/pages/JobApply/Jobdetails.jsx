@@ -21,7 +21,7 @@ function AccordionItem({ title, children }) {
         </span>
       </button>
       {isOpen && (
-        <div className="p-4 border-t border-gray-200">
+        <div className=" border-t border-gray-200">
           {children}
         </div>
       )}
@@ -70,6 +70,7 @@ function Jobdetails() {
     return (
       <div className="space-y-2 m-4">
         <Jobcardstatic job={jobDataArray[job_id]} />
+
       <AccordionItem title="Pre-requisites & Application Process">
         <Processandapply />
       </AccordionItem>
@@ -79,6 +80,7 @@ function Jobdetails() {
           <Role job={role} />
         </AccordionItem>
       ))}
+      
     </div>
 
 
