@@ -13,7 +13,7 @@ function Signup() {
         <Banner2/>
 
         <SignupProvider>
-        <div className="flex-grow bg-background h-full">
+        <div className="flex-grow bg-background h-full overflow-auto">
         <Outlet/>
         </div>
         </SignupProvider>
