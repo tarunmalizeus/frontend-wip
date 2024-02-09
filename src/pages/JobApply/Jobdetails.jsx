@@ -1,9 +1,8 @@
 import Jobcardstatic from "./Jobcardstatic"
 import { useParams } from "react-router-dom";
-import Process from "./Process";
-import Apply from "./Apply";
 import Role from "./Role";
 import { useState } from "react";
+import Processandapply from "./Processandapply";
 
 
 
@@ -11,9 +10,9 @@ function AccordionItem({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-gray-200 rounded-md">
+    <div className="border border-gray-200 rounded-md shadow-md">
       <button
-        className="flex justify-between items-center w-full px-4 py-2 bg-gray-200 hover:bg-gray-300 focus:outline-none"
+        className="flex justify-between items-center w-full px-4 py-2 bg-accordianblue hover:bg-gray-300 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="font-semibold">{title}</span>
@@ -69,32 +68,20 @@ function Jobdetails() {
   // console.log(job_id);
 
     return (
-      <div className="space-y-2">
+      <div className="space-y-2 m-4">
         <Jobcardstatic job={jobDataArray[job_id]} />
-      <AccordionItem title="Process">
-        <Process />
+      <AccordionItem title="Pre-requisites & Application Process">
+        <Processandapply />
       </AccordionItem>
-      <AccordionItem title="Apply">
-        <Apply />
-      </AccordionItem>
+
       {(jobDataArray[job_id].roles_in_job).map((role, idx) => (
-        <AccordionItem key={idx} title={`Role ${idx + 1}`}>
+        <AccordionItem key={idx} title={role}>
           <Role job={role} />
         </AccordionItem>
       ))}
     </div>
 
 
-      // <>
-      //   <h1>Jobdetails</h1>
-      //   <Jobcardstatic job={jobDataArray[job_id]}/>
-      //   <Process/>
-      //   <Apply/>
-
-      //   {(jobDataArray[job_id].roles_in_job).map((role,idx) => (
-      //               <Role key={idx} job={role} />
-      //           ))} 
-      // </>
     )
   }
 

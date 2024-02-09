@@ -3,7 +3,7 @@ import React from 'react';
 
 function Jobcardstatic({ job }) {
   return (
-    <div className="w-screem shadow-lg bg-white p-4 m-4">
+    <div className="w-screem shadow-lg bg-white p-4 ">
 
             <div className='pb-4 border-b-2'>
           <div className='flex flex-row justify-between items-start'>
