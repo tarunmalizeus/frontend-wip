@@ -22,7 +22,7 @@ function Header() {
                 <li >Jobs</li>
                 </Link>
 
-                <Link to="/confirmation">
+                <Link to="/jobs/confirmation">
                 <li >Confirmation</li>
                 </Link>
 

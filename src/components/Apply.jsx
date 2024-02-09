@@ -1,4 +1,4 @@
-import { useJobApplyData } from '../../utils/JobApplyContext';
+import { useJobApplyData } from '../utils/JobApplyContext';
 
 // TimeSlotPreference.js
 import React, { useContext, useCallback } from 'react';

@@ -10,9 +10,10 @@ import MainSignup1 from './pages/signup/MainSignup/MainSignup1';
 import MainSignup2 from './pages/signup/MainSignup/MainSignup2';
 import Review from './pages/signup/MainSignup/Review';
 import Jobs from './pages/JobView/Jobs';
-import Jobdetails from './pages/JobApply/Jobdetails';
-import Confirmation from './pages/JobApply/Confirmation';
+import Jobdetails from './pages/JobView/Jobdetails';
+import Confirmation from './pages/JobView/Confirmation';
 import { JobApplyProvider } from './utils/JobApplyContext';
+import Jobview from './pages/JobView/Jobview';
 
 function App() {
 
@@ -56,9 +57,12 @@ const appRouter=createBrowserRouter([
               path: "review", 
               element: <Review/>
              },
-
             ]
          },
+
+
+
+
 
          {
             path: "/login",
@@ -67,17 +71,24 @@ const appRouter=createBrowserRouter([
 
          {
           path: "/jobs", 
-          element: <Jobs/>
+          element: <Jobs/>,
+          children:[
+            {
+              index:true,
+             element: <Jobview/>
+            },
+            {
+             path: ":job_id", 
+             element: <Jobdetails/>
+            },
+            {
+              path: "confirmation", 
+              element: <Confirmation/>
+             },         
+             
+          ]
          },
-         {
-          path:"jobs/:job_id",
-          element: <Jobdetails/>
-         },
-         {
-          path: "/confirmation", 
-          element: <Confirmation/>
-         },         
-         
+
 
       ]
   },

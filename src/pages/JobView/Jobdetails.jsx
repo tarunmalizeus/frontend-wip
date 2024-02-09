@@ -1,9 +1,10 @@
-import Jobcardstatic from "./Jobcardstatic"
+import Jobcardstatic from "../../components/Jobcardstatic.jsx"
 import { useParams } from "react-router-dom";
-import Role from "./Role";
+import Role from "../../components/Role.jsx";
 import { useState } from "react";
-import Processandapply from "./Processandapply";
-// import { JobApplyProvider } from '../../utils/JobApplyContext.jsx';
+import Processandapply from "../../components/Processandapply.jsx";
+import Confirmation from "./Confirmation.jsx";
+import { JobApplyProvider } from '../../utils/JobApplyContext.jsx';
 
 
 function AccordionItem({ title, children }) {
@@ -77,6 +78,7 @@ function Jobdetails() {
           <AccordionItem title="Pre-requisites & Application Process">
             <Processandapply />
           </AccordionItem>
+          {/* <Confirmation/>  */}
         {/* </JobApplyProvider> */}
         {(jobDataArray[job_id].roles_in_job).map((role, idx) => (
           <AccordionItem key={idx} title={role}>
