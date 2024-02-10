@@ -5,6 +5,7 @@ import {Outlet } from 'react-router-dom';
 import { SignupNavigationProvider } from "../../utils/SignupNavigationContext.jsx";
 import { SignupProvider } from '../../utils/SignupContext.jsx';
 
+
 function Signup() {
     return (
       <SignupNavigationProvider>
