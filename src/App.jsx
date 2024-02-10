@@ -7,8 +7,8 @@ import Error from './pages/Error'
 import Landingpage from './pages/Landingpage'
 // import Signup from './pages/Signup/Signup'
 import Login from './pages/Login'
-import MainSignup1 from './pages/Signup/Page1';
-import MainSignup2 from './pages/Signup/Page2';
+import Page1 from './pages/Signup/Page1';
+import Page2 from './pages/Signup/Page2';
 import Review from './pages/Signup/Review';
 import Jobs from './pages/Job/Job';
 import Jobdetails from './pages/Job/JobDetails';
@@ -44,7 +44,7 @@ const appRouter=createBrowserRouter([
         //     children:[
         //      {
         //       index:true,
-        //       element: <MainSignup1/>
+        //       element: <Page1/>
         //      },
         //      {
         //       path: "mainsignup2", 
