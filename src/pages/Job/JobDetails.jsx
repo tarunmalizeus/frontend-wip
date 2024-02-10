@@ -1,8 +1,8 @@
-import Jobcardstatic from "../../components/Job/Jobcardstatic.jsx"
+import Jobcardstatic from "../../components/job/Jobcardstatic.jsx"
 import { useParams } from "react-router-dom";
-import Role from "../../components/Job/Role.jsx";
+import Role from "../../components/job/Role.jsx";
 import { useState } from "react";
-import Processandapply from "../../components/Job/Processandapply.jsx";
+import Processandapply from "../../components/job/Processandapply.jsx";
 import Confirmation from "./Confirmation.jsx";
 import { JobApplyProvider } from '../../utils/JobApplyContext.jsx';
 

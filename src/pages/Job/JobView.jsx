@@ -1,5 +1,5 @@
 import React from 'react';
-import Jobcard from '../../components/Job/Jobcard';
+import Jobcard from '../../components/job/Jobcard';
 
 function Jobview() {
     const jobDataArray = [
