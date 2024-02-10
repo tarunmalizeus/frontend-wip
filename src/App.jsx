@@ -5,7 +5,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Error from './pages/Error'
 import Landingpage from './pages/Landingpage'
-import Signup from './pages/Signup/Signup'
+// import Signup from './pages/Signup/Signup'
 import Login from './pages/Login'
 import MainSignup1 from './pages/Signup/Page1';
 import MainSignup2 from './pages/Signup/Page2';
@@ -38,24 +38,24 @@ const appRouter=createBrowserRouter([
               path: "/",
               element: <Landingpage/>
           },
-          {
-            path: "/signup",
-            element: <Signup/>,
-            children:[
-             {
-              index:true,
-              element: <MainSignup1/>
-             },
-             {
-              path: "mainsignup2", 
-              element: <MainSignup2 />
-             }, 
-             {
-              path: "review", 
-              element: <Review/>
-             },
-            ]
-         },
+        //   {
+        //     path: "/signup",
+        //     element: <Signup/>,
+        //     children:[
+        //      {
+        //       index:true,
+        //       element: <MainSignup1/>
+        //      },
+        //      {
+        //       path: "mainsignup2", 
+        //       element: <MainSignup2 />
+        //      }, 
+        //      {
+        //       path: "review", 
+        //       element: <Review/>
+        //      },
+        //     ]
+        //  },
 
          {
             path: "/login",
