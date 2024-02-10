@@ -5,11 +5,11 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Error from './pages/Error'
 import Landingpage from './pages/Landingpage'
-// import Signup from './pages/Signup/Signup'
-import Login from './pages/Login'
-import Page1 from './pages/Signup/Page1';
-import Page2 from './pages/Signup/Page2';
-import Review from './pages/Signup/Review';
+import Signup from './pages/signup/Signup';
+import Page1 from './pages/signup/Page1';
+import Page2 from './pages/signup/Page2';
+import Login from './pages/Login';
+import Review from './pages/signup/Review';
 import Jobs from './pages/Job/Job';
 import Jobdetails from './pages/Job/JobDetails';
 import Confirmation from './pages/Job/Confirmation';
@@ -38,24 +38,24 @@ const appRouter=createBrowserRouter([
               path: "/",
               element: <Landingpage/>
           },
-        //   {
-        //     path: "/signup",
-        //     element: <Signup/>,
-        //     children:[
-        //      {
-        //       index:true,
-        //       element: <Page1/>
-        //      },
-        //      {
-        //       path: "mainsignup2", 
-        //       element: <MainSignup2 />
-        //      }, 
-        //      {
-        //       path: "review", 
-        //       element: <Review/>
-        //      },
-        //     ]
-        //  },
+          {
+            path: "/signup",
+            element: <Signup/>,
+            children:[
+             {
+              index:true,
+              element: <Page1/>
+             },
+             {
+              path: "mainsignup2", 
+              element: <Page2 />
+             }, 
+             {
+              path: "review", 
+              element: <Review/>
+             },
+            ]
+         },
 
          {
             path: "/login",
