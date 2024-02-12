@@ -10,10 +10,10 @@ import Page1 from './pages/signup/Page1';
 import Page2 from './pages/signup/Page2';
 import Login from './pages/Login';
 import Review from './pages/signup/Review';
-// import Jobs from './pages/job/Jobs';
-// import Jobdetails from './pages/job/JobDetails';
-// import Confirmation from './pages/job/Confirmation';
-// import Jobview from './pages/job/JobView';
+import Jobs from './pages/job/Jobs';
+import Jobdetails from './pages/job/JobDetails';
+import Confirmation from './pages/job/Confirmation';
+import Jobview from './pages/job/JobView';
 
 function App() {
 
@@ -62,25 +62,25 @@ const appRouter=createBrowserRouter([
             element: <Login/>
          },
 
-        //  {
-        //   path: "/jobs", 
-        //   element: <Jobs/>,
-        //   children:[
-        //     {
-        //       index:true,
-        //      element: <Jobview/>
-        //     },
-        //     {
-        //      path: ":job_id", 
-        //      element: <Jobdetails/>
-        //     },
-        //     {
-        //       path: "confirmation", 
-        //       element: <Confirmation/>
-        //      },         
+         {
+          path: "/jobs", 
+          element: <Jobs/>,
+          children:[
+            {
+              index:true,
+             element: <Jobview/>
+            },
+            {
+             path: ":job_id", 
+             element: <Jobdetails/>
+            },
+            {
+              path: "confirmation", 
+              element: <Confirmation/>
+             },         
              
-        //   ]
-        //  },
+          ]
+         },
 
 
       ]
