@@ -10,7 +10,7 @@ import Page1 from './pages/signup/Page1';
 import Page2 from './pages/signup/Page2';
 import Login from './pages/Login';
 import Review from './pages/signup/Review';
-import Jobs from './pages/job/Job';
+import Jobs from './pages/job/Jobs';
 import Jobdetails from './pages/job/JobDetails';
 import Confirmation from './pages/job/Confirmation';
 import Jobview from './pages/job/JobView';
