@@ -33,7 +33,7 @@ function AccordionItem({ title, children }) {
 
 
 
-function Jobdetails() {
+function JobDetails() {
   const jobDataArray = [
     {
         "job_id": 0,
@@ -91,4 +91,4 @@ function Jobdetails() {
     )
   }
 
-export default Jobdetails
+export default JobDetails
