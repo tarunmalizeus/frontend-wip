@@ -6,6 +6,7 @@ import React, { useCallback } from 'react';
 const Apply = () => {
   const { formData, updateFormData, togglePreference, updateResume  } = useJobApplyData();
 
+
   const handleTimeSlotChange = useCallback((event) => {
     updateFormData('timeSlot', event.target.value);
   }, [updateFormData]);

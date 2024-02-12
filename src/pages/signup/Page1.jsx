@@ -10,9 +10,7 @@ function PersonalDetails() {
     updateSignupData({ [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value });
   };
 
-  // Handle file input separately
   const handleFileChange = (e) => {
-    // Assuming you want to store the file in the same state object
     updateSignupData({ [e.target.name]: e.target.files[0] });
   };
 
