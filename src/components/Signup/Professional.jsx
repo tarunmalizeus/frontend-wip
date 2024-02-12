@@ -99,7 +99,7 @@ function Professional() {
             type="checkbox"
             name="experiencedTech"
             value="JavaScript"
-            // checked={signupData.experiencedTech.includes('JavaScript')}
+            checked={signupData.experiencedTech.includes('JavaScript')}
             onChange={handleCheckboxChange}
           />
           JavaScript
@@ -110,7 +110,7 @@ function Professional() {
             type="checkbox"
             name="experiencedTech"
             value="AngularJS" 
-            // checked={signupData.experiencedTech.includes('JavaScript')}
+            checked={signupData.experiencedTech.includes('AngularJS')}
             onChange={handleCheckboxChange}
           />
           Angular JS
@@ -123,7 +123,7 @@ function Professional() {
             type="checkbox"
             name="experiencedTech"
             value="React"
-            // checked={signupData.experiencedTech.includes('JavaScript')}
+            checked={signupData.experiencedTech.includes('React')}
             onChange={handleCheckboxChange}
           />
           React
@@ -134,7 +134,7 @@ function Professional() {
             type="checkbox"
             name="experiencedTech"
             value="NodeJS"
-            // checked={signupData.experiencedTech.includes('JavaScript')}
+            checked={signupData.experiencedTech.includes('NodeJS')}
             onChange={handleCheckboxChange}
           />
           Node JS
@@ -145,7 +145,7 @@ function Professional() {
             type="checkbox"
             name="experiencedTech"
             value="Others"
-            // checked={signupData.experiencedTech.includes('JavaScript')}
+            checked={signupData.experiencedTech.includes('Others')}
             onChange={handleCheckboxChange}
           />
           Others
@@ -177,7 +177,7 @@ function Professional() {
             type="checkbox"
             name="familiarTech"
             value="JavaScript"
-            // checked={signupData.familiarTech.includes('JavaScript')}
+            checked={signupData.familiarTech.includes('JavaScript')}
             onChange={handleCheckboxChange}
           />
           JavaScript
@@ -188,9 +188,9 @@ function Professional() {
         <label>
           <input
             type="checkbox"
-            name="experiencedTech"
+            name="familiarTech"
             value="AngularJS" 
-            // checked={signupData.experiencedTech.includes('JavaScript')}
+            checked={signupData.familiarTech.includes('AngularJS')}
             onChange={handleCheckboxChange}
           />
           Angular JS
@@ -201,9 +201,9 @@ function Professional() {
         <label>
           <input
             type="checkbox"
-            name="experiencedTech"
+            name="familiarTech"
             value="React"
-            // checked={signupData.experiencedTech.includes('JavaScript')}
+            checked={signupData.familiarTech.includes('React')}
             onChange={handleCheckboxChange}
           />
           React
@@ -212,9 +212,9 @@ function Professional() {
         <label>
           <input
             type="checkbox"
-            name="experiencedTech"
+            name="familiarTech"
             value="NodeJS"
-            // checked={signupData.experiencedTech.includes('JavaScript')}
+            checked={signupData.familiarTech.includes('NodeJS')}
             onChange={handleCheckboxChange}
           />
           Node JS
@@ -223,31 +223,13 @@ function Professional() {
         <label>
           <input
             type="checkbox"
-            name="experiencedTech"
+            name="familiarTech"
             value="Others"
-            // checked={signupData.experiencedTech.includes('JavaScript')}
+            checked={signupData.familiarTech.includes('Others')}
             onChange={handleCheckboxChange}
           />
           Others
         </label>
-
-
-        <label>
-                          <div>
-
-              If Others, Please Mention
-
-                          </div>
-              <input
-                type="text"
-                name="otherFamiliarTech"
-                value={signupData.otherCollege}
-                onChange={handleChange}
-                />
-                        </label>
-
-
-
 
 
         <label>
