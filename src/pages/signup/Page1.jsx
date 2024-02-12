@@ -41,7 +41,7 @@ function PersonalDetails() {
   };
 
   return (
-
+    
     <div className='flex flex-row p-4 m-4 bg-white h-screen justify-between '>
       <form className='flex flex-col  '>
         <div>First name</div>
@@ -103,6 +103,7 @@ function PersonalDetails() {
             className='my-1 border-b-2'
             type="checkbox"
             name="instructionalDesigner"
+            
             checked={signupData.instructionalDesigner || false}
             onChange={handleChange}
           />
@@ -110,6 +111,7 @@ function PersonalDetails() {
         </label>
 
 
+          {/* {console.log(signupData.instructionalDesigner)} */}
         <label>
           <input
             type="checkbox"

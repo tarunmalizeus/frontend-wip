@@ -45,7 +45,7 @@ export const SignupProvider = ({ children }) => {
     percentage: 0,
     portfolioUrl: '',
     resumeFile: null,  // Store the resume file
-    unstructionalDesigner: false,
+    instructionalDesigner: false,
     softwareEngineer: false,
     softwareQualityEngineer: false,
     jobUpdates: false, 

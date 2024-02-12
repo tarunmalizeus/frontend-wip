@@ -13,13 +13,14 @@ function Review() {
       <p>{signupData.email}</p>
       <p>{signupData.phone}</p>
       <p>{signupData.portfolioUrl}</p>
-      {/* <p>{signupData.resumeFile}</p> */}
       <p>Resume: {signupData.resumeFile ? signupData.resumeFile.name : 'None'}</p>
-      <p>{signupData.instructionalDesigner}</p>
-      <p>{signupData.softwareEngineer}</p>
-      <p>{signupData.softwareQualityEngineer}</p>
-      {/* <p>{signupData.jobUpdates}</p> */}
-      {/* <p>{signupData.referralName}</p> / */}
+      {signupData.instructionalDesigner ? <p>Instructional Designer</p> : null}
+      {signupData.softwareEngineer ? <p>Software Engineer</p> : null}
+      {signupData.softwareQualityEngineer ? <p>Software Quality Engineer</p> : null}
+      {signupData.jobUpdates ? <p>Job Updates: Yes</p> : <p>Job Updates: No</p>}
+
+      <p>{signupData.jobUpdates}</p>
+      <p>{signupData.referralName}</p> 
       {/* <p>{signupData.percentage}</p> */}
     </div>
   );
