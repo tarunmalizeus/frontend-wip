@@ -41,7 +41,7 @@ function PersonalDetails() {
   };
 
   return (
-    
+
     <div className='flex flex-row p-4 m-4 bg-white h-screen justify-between '>
       <form className='flex flex-col  '>
         <div>First name</div>
@@ -102,8 +102,8 @@ function PersonalDetails() {
           <input
             className='my-1 border-b-2'
             type="checkbox"
-            name="preferredJobRoleInstructionalDesigner"
-            checked={signupData.preferredJobRoleInstructionalDesigner || false}
+            name="instructionalDesigner"
+            checked={signupData.instructionalDesigner || false}
             onChange={handleChange}
           />
           Instructional Designer
@@ -113,8 +113,8 @@ function PersonalDetails() {
         <label>
           <input
             type="checkbox"
-            name="preferredJobRoleSoftwareEngineer"
-            checked={signupData.preferredJobRoleSoftwareEngineer || false}
+            name="softwareEngineer"
+            checked={signupData.softwareEngineer || false}
             onChange={handleChange}
           />
           Software Engineer
@@ -122,8 +122,8 @@ function PersonalDetails() {
         <label>
           <input
             type="checkbox"
-            name="preferredJobRoleSoftwareQualityEngineer"
-            checked={signupData.preferredJobRoleSoftwareQualityEngineer || false}
+            name="softwareQualityEngineer"
+            checked={signupData.softwareQualityEngineer || false}
             onChange={handleChange}
           />
           Software Quality Engineer
@@ -136,8 +136,8 @@ function PersonalDetails() {
         <div>If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</div>
         <input
           className='my-4 border-b-2'
-          name="portfolioUrl"
-          value={signupData.portfolioUrl}
+          name="referralName"
+          value={signupData.referralName}
           onChange={handleChange}
 
         />
