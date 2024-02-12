@@ -41,6 +41,7 @@ function PersonalDetails() {
   };
 
   return (
+    
     <div className='flex flex-row p-4 m-4 bg-white h-screen justify-between '>
       <form className='flex flex-col  '>
         <div>First name</div>

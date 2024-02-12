@@ -9,57 +9,90 @@ function Education() {
   };
 
   return (
-    <form>
+
+    <form className='flex flex-col p-4 bg-white'>
+
       <label>
         Aggregate Percentage*
+      </label>
         <input
+        className='my-3 border-b-2 w-1/4'
           type="number"
           name="percentage"
           value={signupData.percentage}
           onChange={handleChange}
           placeholder="Aggregate Percentage"
         />
-      </label>
-      <label>
-        Year Of Passing*
-        <select name="yearOfPassing" value={signupData.yearOfPassing} onChange={handleChange}>
-          <option value="2020">2020</option>
-          {/* Add more options for other years */}
-        </select>
-      </label>
-      <label>
-        Qualification*
-        <select name="qualification" value={signupData.qualification} onChange={handleChange}>
-          <option value="B.Tech">Bachelor in Technology (B.Tech)</option>
-          {/* Add more options for other qualifications */}
-        </select>
-      </label>
-      <label>
-        Stream*
-        <select name="stream" value={signupData.stream} onChange={handleChange}>
-          <option value="Information Technology">Information Technology</option>
-          {/* Add more options for other streams */}
-        </select>
-      </label>
-      <label>
-        College*
-        <select name="college" value={signupData.college} onChange={handleChange}>
-          <option value="PIT">Pune Institute of Technology (PIT)</option>
-          {/* Add more options for other colleges */}
-        </select>
-      </label>
-      <label>
-        If Others, Please Enter Your College Name
-        <input
-          type="text"
-          name="otherCollege"
-          value={signupData.otherCollege}
-          onChange={handleChange}
-          placeholder="Other College Name"
-        />
-      </label>
-      <label>
+
+          <label>
+            Year Of Passing
+          </label>
+            <select
+            className='my-1 border-b-2 w-1/4'
+            name="yearOfPassing" value={signupData.yearOfPassing} onChange={handleChange}>
+              <option value="2020">2020</option>
+            </select>
+
+
+            <div className='flex flex-row justify-between'>
+              <div className='flex flex-col w-1/3'>
+                        <label className='my-3 border-b-2 '>
+                          <div>
+                            Qualification*
+                          </div>
+              <select className='w-full' name="qualification" value={signupData.qualification} onChange={handleChange}>
+                <option value="B.Tech">Bachelor in Technology (B.Tech)</option>
+
+              </select>
+                        </label>
+
+
+
+                        <label className='my-3 border-b-2'>
+                          <div>
+                            College*
+                          </div>
+              <select className='w-full' name="college" value={signupData.college} onChange={handleChange}>
+                <option value="PIT">Pune Institute of Technology (PIT)</option>
+              </select>
+                        </label>
+                      </div>
+              
+              
+              
+                      <div className='flex flex-col w-1/3'>
+              <label className='my-3 border-b-2'>
+                <div>
+              Stream*
+
+                </div>
+              <select className='w-full' name="stream" value={signupData.stream} onChange={handleChange}>
+                <option value="Information Technology">Information Technology</option>
+              </select>
+                        </label>
+              
+                        <label className='my-3 border-b-2'>
+                          <div>
+              If Others, Please Enter Your College Name
+
+                          </div>
+              <input
+                type="text"
+                name="otherCollege"
+                value={signupData.otherCollege}
+                onChange={handleChange}
+                placeholder="Other College Name"
+                />
+                        </label>
+              
+                        </div>
+            </div>
+
+      <label className='my-3 border-b-2 w-1/4'>
+        <div>
+
         Where Is Your College Located?*
+        </div>
         <input
           type="text"
           name="collegeLocation"
@@ -69,6 +102,7 @@ function Education() {
         />
       </label>
     </form>
+
   );
 }
 

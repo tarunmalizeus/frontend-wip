@@ -6,15 +6,15 @@ function AccordionItem({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b">
+    <div className="border border-gray-200 rounded-md shadow-md">
       <button
-        className="py-2 px-4 w-full text-left font-semibold bg-gray-200"
+        className="flex justify-between items-center w-full px-4 py-2 bg-accordianblue hover:bg-gray-300 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
         {title}
       </button>
       {isOpen && (
-        <div className="p-4">
+        <div className="border-t border-gray-200">
           {children}
         </div>
       )}
@@ -24,7 +24,7 @@ function AccordionItem({ title, children }) {
 
 function MainSignup2() {
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 m-4">
       <AccordionItem title="Education">
         <Education />
       </AccordionItem>

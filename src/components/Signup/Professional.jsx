@@ -24,10 +24,11 @@ function Professional() {
   };
 
   return (
-    <form>
-<label>
+    <form className='flex flex-col p-4 bg-white'>
+
+        <label className='my-3  w-1/4'>
         Applicant Type*
-        <div>
+        <div className='space-x-4'>
           <input
             type="radio"
             name="applicantType"
@@ -36,6 +37,8 @@ function Professional() {
             onChange={handleRadioChange}
           />
           Fresher
+
+
           <input
             type="radio"
             name="applicantType"
@@ -44,43 +47,52 @@ function Professional() {
             onChange={handleRadioChange}
           />
           Experienced
+
+
         </div>
       </label>
 
       <label>
+        <div>
         Years Of Experience*
+        </div>
         <input
+        className='my-3 border-b-2 w-1/4'
           type="number"
           name="yearsOfExperience"
           value={signupData.yearsOfExperience}
           onChange={handleChange}
-          placeholder="Years Of Experience"
         />
       </label>
 
       <label>
+        <div>
         Current CTC (in Rupees)*
+        </div>
         <input
+        className='my-3 border-b-2 w-1/4'
           type="number"
           name="currentCTC"
           value={signupData.currentCTC}
           onChange={handleChange}
-          placeholder="Current CTC"
         />
       </label>
 
       <label>
+        <div>
         Expected CTC (in Rupees)*
+        </div>
+
         <input
+        className='my-3 border-b-2 w-1/4'
           type="number"
           name="expectedCTC"
           value={signupData.expectedCTC}
           onChange={handleChange}
-          placeholder="Expected CTC"
         />
       </label>
 
-      <fieldset>
+      <fieldset         className='my-3 border-b-2 w-1/2 flex flex-col'>
         <legend>Select the Technologies You're Experienced In*</legend>
         <label>
           <input
@@ -92,9 +104,73 @@ function Professional() {
           />
           JavaScript
         </label>
+
+        <label>
+          <input
+            type="checkbox"
+            name="experiencedTech"
+            value="AngularJS" 
+            // checked={signupData.experiencedTech.includes('JavaScript')}
+            onChange={handleCheckboxChange}
+          />
+          Angular JS
+        </label>
+
+
+
+        <label>
+          <input
+            type="checkbox"
+            name="experiencedTech"
+            value="React"
+            // checked={signupData.experiencedTech.includes('JavaScript')}
+            onChange={handleCheckboxChange}
+          />
+          React
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            name="experiencedTech"
+            value="NodeJS"
+            // checked={signupData.experiencedTech.includes('JavaScript')}
+            onChange={handleCheckboxChange}
+          />
+          Node JS
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            name="experiencedTech"
+            value="Others"
+            // checked={signupData.experiencedTech.includes('JavaScript')}
+            onChange={handleCheckboxChange}
+          />
+          Others
+        </label>
+
+
+        <label>
+                          <div>
+
+              If Others, Please Mention
+
+                          </div>
+              <input
+                type="text"
+                name="otherFamiliarTech"
+                value={signupData.otherCollege}
+                onChange={handleChange}
+                />
+                        </label>
       </fieldset>
 
-      <fieldset>
+
+
+
+      <fieldset  className='my-3 border-b-2 w-1/2 flex flex-col'>
         <legend>Select the Technologies You're Familiar With*</legend>
         <label>
           <input
@@ -106,9 +182,94 @@ function Professional() {
           />
           JavaScript
         </label>
-        {/* Add other checkboxes for different technologies */}
+
+
+
+        <label>
+          <input
+            type="checkbox"
+            name="experiencedTech"
+            value="AngularJS" 
+            // checked={signupData.experiencedTech.includes('JavaScript')}
+            onChange={handleCheckboxChange}
+          />
+          Angular JS
+        </label>
+
+
+
+        <label>
+          <input
+            type="checkbox"
+            name="experiencedTech"
+            value="React"
+            // checked={signupData.experiencedTech.includes('JavaScript')}
+            onChange={handleCheckboxChange}
+          />
+          React
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            name="experiencedTech"
+            value="NodeJS"
+            // checked={signupData.experiencedTech.includes('JavaScript')}
+            onChange={handleCheckboxChange}
+          />
+          Node JS
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            name="experiencedTech"
+            value="Others"
+            // checked={signupData.experiencedTech.includes('JavaScript')}
+            onChange={handleCheckboxChange}
+          />
+          Others
+        </label>
+
+
+        <label>
+                          <div>
+
+              If Others, Please Mention
+
+                          </div>
+              <input
+                type="text"
+                name="otherFamiliarTech"
+                value={signupData.otherCollege}
+                onChange={handleChange}
+                />
+                        </label>
+
+
+
+
+
+        <label>
+                          <div>
+
+              If Others, Please Mention
+
+                          </div>
+              <input
+                type="text"
+                name="otherFamiliarTech"
+                value={signupData.otherCollege}
+                onChange={handleChange}
+                />
+                        </label>
+
       </fieldset>
-      <fieldset>
+
+
+
+
+      <fieldset className='my-3 space-y-2'>
         <legend>Are You Currently On Notice Period?</legend>
         <label>
           <input
@@ -131,9 +292,13 @@ function Professional() {
           No
         </label>
         {signupData.onNoticePeriod === 'Yes' && (
-          <div>
+          <div className='flex flex-row justify-between'>
+
             <label>
-              When Will Your Notice Period End?*
+              <div>
+
+              If Yes, When Will Your Notice Period End?*
+              </div>
               <input
                 type="date"
                 name="noticePeriodEnd"
@@ -141,14 +306,18 @@ function Professional() {
                 onChange={handleChange}
               />
             </label>
-            <label>
-              How Long is Your Notice Period? (in Months)*
+
+
+            <label className='border-b-2 w-1/2'>
+              <div>
+              How Long is Your Notice Period? (Mention in Months)
+              </div>
               <input
+                className='w-full'
                 type="number"
                 name="noticePeriodLength"
                 value={signupData.noticePeriodLength}
                 onChange={handleChange}
-                placeholder="Length of Notice Period"
               />
             </label>
           </div>
@@ -177,6 +346,24 @@ function Professional() {
           />
           No
         </label>
+
+
+        {signupData.appearedForTests === 'Yes' && (
+          <label >
+            <div>
+            If Yes, Please Mention The Test Names
+            </div>
+            <input
+             className='border-b-2 w-1/2'
+              type="text"
+              name="testNames"
+              value={signupData.testNames}
+              onChange={handleChange}
+            />
+          </label>
+        )}
+
+
       </fieldset>    
 
     </form>
