@@ -23,8 +23,10 @@ function Review() {
           <button><Link to="/signup/mainsignup2">Edit</Link></button>
         </div>
 
-        <EducationalQualification/>
-        <ProfessionalQualification/>
+        <div className='space-y-4'>
+          <EducationalQualification/>
+          <ProfessionalQualification/>
+        </div>
 
 
 
