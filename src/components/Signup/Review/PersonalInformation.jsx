@@ -2,17 +2,7 @@ import { useSignupData } from "../../../utils/SignupContext"
 
 
 function PersonalInformation() {
-  const { signupData, updateSignupData } = useSignupData();
-
-  const handleChange = (e) => {
-    updateSignupData({ [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.placeholder });
-  };
-
-  // Handle file input separately
-  const handleFileChange = (e) => {
-    // Assuming you want to store the file in the same state object
-    updateSignupData({ [e.target.name]: e.target.files[0] });
-  };
+  const { signupData} = useSignupData();
     return (
 
     <div className='flex flex-row p-4 m-4 bg-white h-screen justify-between '>
