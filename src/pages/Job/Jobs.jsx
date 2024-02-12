@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom"
 import { JobApplyProvider } from "../../utils/JobApplyContext"
 
-function Job() {
+function Jobs() {
     return (
       <>
         <JobApplyProvider>
@@ -11,4 +11,4 @@ function Job() {
     )
   }
 
-export default Job
+export default Jobs
