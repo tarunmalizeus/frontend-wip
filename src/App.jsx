@@ -11,9 +11,9 @@ import Page2 from './pages/signup/Page2';
 import Login from './pages/Login';
 import Review from './pages/signup/Review';
 // import Jobs from './pages/job/Jobs';
-import Jobdetails from './pages/job/JobDetails';
-import Confirmation from './pages/job/Confirmation';
-import Jobview from './pages/job/JobView';
+// import Jobdetails from './pages/job/JobDetails';
+// import Confirmation from './pages/job/Confirmation';
+// import Jobview from './pages/job/JobView';
 
 function App() {
 
