@@ -19,56 +19,67 @@ function PersonalDetails() {
   return (
     
     <div className='flex flex-row p-4 m-4 bg-white h-screen justify-between '>
-      <form className='flex flex-col  '>
-        <div>First name</div>
-        <input
-          className='my-1 border-b-2'
-          name="firstName"
-          value={signupData.firstName}
-          onChange={handleChange}
-        />
+      <form className='flex flex-col '>
+        <div>
+          <div>First name</div>
+          <input
+            className='my-1 border-b-2'
+            name="firstName"
+            value={signupData.firstName}
+            onChange={handleChange}
+          />
+        </div>
+<div>
+  
+          <div>Last name</div>
+          <input
+            className='my-1 border-b-2'
+            name="lastName"
+            value={signupData.lastName}
+            onChange={handleChange}
+          />
+</div>
 
-        <div>Last name</div>
-        <input
-          className='my-1 border-b-2'
-          name="lastName"
-          value={signupData.lastName}
-          onChange={handleChange}
-        />
+        <div>
+          <div>Email</div>
+          <input
+            className='my-1 border-b-2'
+            type="email"
+            name="email"
+            value={signupData.email}
+            onChange={handleChange}
+          />
+        </div>
 
-        <div>Email</div>
-        <input
-          className='my-1 border-b-2'
-          type="email"
-          name="email"
-          value={signupData.email}
-          onChange={handleChange}
-        />
+        <div>
+          <div>Phone</div>
+          <input
+            className='my-1 border-b-2'
+            name="phone"
+            value={signupData.phone}
+            onChange={handleChange}
+          />
+        </div>
 
-        <div>Phone</div>
-        <input
-          className='my-1 border-b-2'
-          name="phone"
-          value={signupData.phone}
-          onChange={handleChange}
-        />
+        <div>
+          <div>Resume</div>
+          <input
+            className='my-4'
+            type="file"
+            name="resumeFile"
+            onChange={handleFileChange}
+          />
+        </div>
 
-        <div>Resume</div>
-        <input
-          className='my-4'
-          type="file"
-          name="resumeFile"
-          onChange={handleFileChange}
-        />
-
-        <div>Enter Portfolio URL (if any)</div>
-        <input
-          className='my-1 border-b-2'
-          name="portfolioUrl"
-          value={signupData.portfolioUrl}
-          onChange={handleChange}
-
-        />
+        <div>
+          <div>Enter Portfolio URL (if any)</div>
+          <input
+            className='my-1 border-b-2'
+            name="portfolioUrl"
+            value={signupData.portfolioUrl}
+            onChange={handleChange}
+          />
+        </div>
 
 
           <div className='flex flex-col'>
@@ -87,7 +98,6 @@ function PersonalDetails() {
         </label>
 
 
-          {/* {console.log(signupData.instructionalDesigner)} */}
         <label>
           <input
             type="checkbox"
@@ -110,15 +120,17 @@ function PersonalDetails() {
 
         </div>
 
-
-        <div>If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</div>
-        <input
-          className='my-4 border-b-2'
-          name="referralName"
-          value={signupData.referralName}
-          onChange={handleChange}
-
-        />
+<div>
+  
+          <div>If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</div>
+          <input
+            className='my-4 border-b-2'
+            name="referralName"
+            value={signupData.referralName}
+            onChange={handleChange}
+  
+          />
+</div>
 
 
         <label>

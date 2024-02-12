@@ -16,55 +16,63 @@ function PersonalInformation() {
     return (
 
     <div className='flex flex-row p-4 m-4 bg-white h-screen justify-between '>
-      <form className='flex flex-col  '>
-        <div>First name</div>
-        <input
-          className='my-1 border-b-2'
-          name="firstName"
-          placeholder={signupData.firstName}
-        />
+      <form className='flex flex-col space-y-2'>
+        <div>
+          <div>First name</div>
+          <input
+            className='my-1'
+            name="firstName"
+            placeholder={signupData.firstName}
+          />
+        </div>
 
-        <div>Last name</div>
-        <input
-          className='my-1 border-b-2'
-          name="lastName"
-          placeholder={signupData.lastName}
-        />
+        <div>
+          <div>Last name</div>
+          <input
+            className='my-1'
+            name="lastName"
+            placeholder={signupData.lastName}
+          />
+        </div>
 
-        <div>Email</div>
-        <input
-          className='my-1 border-b-2'
-          type="email"
-          name="email"
-          placeholder={signupData.email}
-        />
+        <div>
+          <div>Email</div>
+          <input
+            className='my-1'
+            type="email"
+            name="email"
+            placeholder={signupData.email}
+          />
+        </div>
 
-        <div>Phone</div>
-        <input
-          className='my-1 border-b-2'
-          name="phone"
-          placeholder={signupData.phone}
-        />
+        <div>
+          <div>Phone</div>
+          <input
+            className='my-1'
+            name="phone"
+            placeholder={signupData.phone}
+          />
+        </div>
         
         <div className='my-1' >
         <p>Resume: {signupData.resumeFile ? signupData.resumeFile.name : 'None'}</p>
         </div>
 
-        <div>Enter Portfolio URL (if any)</div>
-        <input
-          className='my-1 border-b-2'
-          name="portfolioUrl"
-          placeholder={signupData.portfolioUrl}
-
-        />
+        <div>
+          <div>Enter Portfolio URL (if any)</div>
+          <input
+            className='my-1'
+            name="portfolioUrl"
+            placeholder={signupData.portfolioUrl}
+          />
+        </div>
 
 
           <div className='flex flex-col'>
         <label>
-
           <div>Preferred Job riles</div>
           <input
-            className='my-1 border-b-2'
+            className='my-1'
             type="checkbox"
             name="instructionalDesigner"
             checked={signupData.instructionalDesigner || false}
@@ -98,13 +106,14 @@ function PersonalInformation() {
         </div>
 
 
-        <div>If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</div>
-        <input
-          className='my-4 border-b-2'
-          name="referralName"
-          placeholder={signupData.referralName}
-
-        />
+        <div>
+          <div>If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</div>
+          <input
+            className='my-4'
+            name="referralName"
+            placeholder={signupData.referralName}
+          />
+        </div>
 
 
         <label>
