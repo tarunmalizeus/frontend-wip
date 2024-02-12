@@ -1,10 +1,10 @@
 
 import React from 'react';
 import { useSignupData } from '../../utils/SignupContext.jsx';
-import PersonalInformation from '../../components/signup/Review/PersonalInformation.jsx';
+import PersonalInformation from '../../components/signup/Review/PersonalInformation';
 import { Link } from 'react-router-dom';
-import EducationalQualification from '../../components/signup/Review/EducationalQualification.jsx';
-import ProfessionalQualification from '../../components/signup/Review/ProfessionalQualification.jsx';
+import EducationalQualification from '../../components/signup/Review/EducationalQualification';
+import ProfessionalQualification from '../../components/signup/Review/ProfessionalQualification';
 
 function Review() {
   const { signupData} = useSignupData();
