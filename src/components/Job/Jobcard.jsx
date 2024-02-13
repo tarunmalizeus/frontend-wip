@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Jobcard({ job }) {
+  // console.log(job);
   return (
     <div className="w-screem shadow-lg bg-white p-4 m-4">
           <div className='pb-4 border-b-2'>

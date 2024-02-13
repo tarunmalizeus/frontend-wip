@@ -20,7 +20,7 @@ const Apply = () => {
   }, [updateResume]);
 
   return (
-    <div className="bg-white p-4 max-w-lg mx-auto my-4 shadow-md rounded">
+    <div className="bg-white p-4  mx-auto my-4 shadow-md rounded">
       <h2 className="text-lg font-semibold mb-4">Time Slots & Preferences</h2>
 
       <div className="mb-4">
@@ -99,8 +99,8 @@ const Apply = () => {
       </div>
 
       <div className="flex items-center justify-start">
-        <label className="px-4 py-2 bg-gray-800 text-white text-sm font-medium rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 cursor-pointer">
-          <span className="mr-2">⬆️</span> UPLOAD UPDATED RESUME
+        <label className="px-4 py-2 bg-lightgreen text-white text-sm font-medium rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 cursor-pointer">
+          <span className="mr-2">⬆</span> UPLOAD UPDATED RESUME
           <input
             type="file"
             className="hidden"

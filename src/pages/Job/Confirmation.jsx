@@ -4,7 +4,7 @@ import { useJobApplyData } from '../../utils/JobApplyContext';
 function Confirmation() {
   const {formData } = useJobApplyData();
   return (
-    <div>
+    <div className='p-4 m-16 bg-white'>
       <h1>Confirmation</h1>
       <div>
         <p>Time Slot: {formData.timeSlot}</p>

@@ -14,6 +14,7 @@ import Jobs from './pages/job/Jobs';
 import Jobdetails from './pages/job/JobDetails';
 import Confirmation from './pages/job/Confirmation';
 import Jobview from './pages/job/JobView';
+// import 'dotenv/config';
 
 function App() {
 

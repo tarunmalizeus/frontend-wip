@@ -33,7 +33,7 @@ function Jobcardstatic({ job }) {
                       id="aaply"
                       value="Apply"
                       >
-                      Apply
+                      <Link to="/jobs/confirmation">Apply</Link>
               </button>
 
 
