@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import Jobcard from '../../components/job/Jobcard';
 import { useEffect, useState } from "react";
 import Loading from '../Loading'
@@ -10,8 +10,9 @@ function Jobview() {
     useEffect(() => {
         const fetchEnrollments = async () => {
           try {
-            const response = await fetch(`http://localhost:3000/Api/job`);
-            // const response = await fetch(`${process.env.REACT_APP_BACKEND}/Api/job`);
+            // const response = await fetch(`http://localhost:3000/Api/job`);
+            // console.log(process.env.REACT_APP_BACKEND)
+            const response = await fetch(`${import.meta.env.VITE_BACKEND}/Api/job`);
             if (response.ok) {
               const data = await response.json();
               setEnrollments(data);
@@ -30,7 +31,7 @@ function Jobview() {
         fetchEnrollments();
       }, []);
 
-      console.log(enrollments)
+      // console.log(enrollments)
 
         return (
           loading || !enrollments ? <Loading /> :(
