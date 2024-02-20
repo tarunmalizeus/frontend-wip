@@ -15,14 +15,22 @@ import Jobdetails from './pages/job/JobDetails';
 import Confirmation from './pages/job/Confirmation';
 import Jobview from './pages/job/JobView';
 // import 'dotenv/config';
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 function App() {
+
+  const client = new ApolloClient({
+    cache: new InMemoryCache(),
+    uri: "http://localhost:4000",
+  });
 
   return (
     <div className="flex flex-col h-screen">
       <Header/>
       <div className="flex-grow bg-background h-full overflow-auto">
+      <ApolloProvider client={client}>
         <Outlet/>
+        </ApolloProvider>
       </div>
       <Footer/>
     </div>
