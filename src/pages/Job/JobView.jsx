@@ -4,16 +4,24 @@ import Loading from '../Loading';
 import { useQuery, gql } from "@apollo/client";
 
 const QUERY_ALL_JOBS = gql`
-  query Query {
-    jobs {
-      name
-      internship
-      job_id
-      location_id
-      to_time
-      from_time
+
+query Query {
+  jobs {
+    name
+    internship
+    job_id
+    to_time
+    from_time
+    roles {
+      role_name
+    }
+    location_city {
+      location_name
     }
   }
+}
+
+
 `;
 
 function Jobview() {
@@ -21,7 +29,6 @@ function Jobview() {
 
   if (loading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
-  console.log(data.jobs);
 
   return (
     <div className="flex flex-col">
