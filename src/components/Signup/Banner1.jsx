@@ -78,8 +78,8 @@ function Banner1() {
 
           
 
-            percentage: signupData.percentage,
-            yearOfPassing: signupData.yearOfPassing,
+            percentage: parseFloat(signupData.percentage),
+            yearOfPassing: parseInt(signupData.yearOfPassing),
             qualification: signupData.qualification,
             stream: signupData.stream,
             college: signupData.college,

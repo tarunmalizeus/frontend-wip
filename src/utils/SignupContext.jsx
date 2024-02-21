@@ -23,9 +23,9 @@ export const SignupProvider = ({ children }) => {
     referralName: '',
     percentage: 0,
     yearOfPassing: '2020', // Default selection
-    qualification: 'B.Tech', // Default selection
+    qualification: 'Bachelor of Technology', // Default selection
     stream: 'Computer Science', // Default selection
-    college: 'PIT', // Default selection
+    college: 'MIT', // Default selection
     otherCollege: '',
     collegeLocation: '',
     applicantType: 'Fresher', // Default 
