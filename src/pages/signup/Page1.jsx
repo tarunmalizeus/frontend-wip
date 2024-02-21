@@ -50,6 +50,28 @@ function PersonalDetails() {
         </div>
 
         <div>
+          <div>Password</div>
+          <input
+            className='my-1 border-b-2'
+            type="password"
+            name="password"
+            value={signupData.password}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <div>Confirm Password</div>
+          <input
+            className='my-1 border-b-2'
+            type="password"
+            name="confirmPassword"
+            value={signupData.confirmPassword}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
           <div>Phone</div>
           <input
             className='my-1 border-b-2'
@@ -143,10 +165,34 @@ function PersonalDetails() {
         
       </form>
 
-      <div>
-        <img src="https://via.placeholder.com/150" alt="profile" />
-      </div>
 
+
+    <div className='flex flex-col items-center '>
+
+
+    <div>
+      {signupData.imageFile && ( 
+        <img 
+          src={URL.createObjectURL(signupData.imageFile)} 
+          alt="profile" 
+          className="preview-image rounded-full h-36 w-36" 
+        /> 
+      )} 
+    </div>
+
+
+
+        <input
+            className='my-4 '
+            type="file"
+            name="imageFile"
+            onChange={
+              handleFileChange
+              // console.log('imageFile');
+            }
+          />
+
+      </div>
     </div>
   );
 }

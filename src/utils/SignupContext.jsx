@@ -10,9 +10,11 @@ export const SignupProvider = ({ children }) => {
     firstName: '',
     lastName: '',
     email: '',
+    password: '',
     phone: '',
     password: '',
     portfolioUrl: '',
+    imageFile: null,  // Store the image file
     resumeFile: null,  // Store the resume file
     instructionalDesigner: false,
     softwareEngineer: false,
