@@ -1,10 +1,10 @@
 import { gql } from '@apollo/client';
 
 export const GET_QUALIFICATIONS = gql`
-  query GetQualifications {
+query Qualifications {
     qualifications {
-      id
-      name
+        qualification_id
+        qualification_name
     }
   }
 `;

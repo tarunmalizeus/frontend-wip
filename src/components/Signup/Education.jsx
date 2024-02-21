@@ -1,9 +1,23 @@
 import React from 'react';
 import { useSignupData } from '../../utils/SignupContext';
 import { GET_QUALIFICATIONS } from '../../graphqlQueries';
+import { useQuery } from '@apollo/client';
+import { useState, useEffect } from 'react';
+
 
 function Education() {
   const { signupData, updateSignupData } = useSignupData();
+
+
+  const [qualifications, setQualifications] = useState([]);
+  const { loading, error, data } = useQuery(GET_QUALIFICATIONS);
+
+  useEffect(() => {
+    if (!loading && !error) {
+      setQualifications(data.qualifications); // Assuming your GraphQL query returns an array of qualification objects
+    }
+  }, [loading, error, data]);
+
 
   const handleChange = (e) => {
     updateSignupData({ [e.target.name]: e.target.value });
@@ -41,7 +55,7 @@ function Education() {
 
 
                         //Qualificatiom
-          <label className='my-3 border-b-2 '>
+          {/* <label className='my-3 border-b-2 '>
             <div>
               Qualification*
             </div>
@@ -49,7 +63,25 @@ function Education() {
               <option value="B.Tech">Bachelor in Technology (B.Tech)</option>
 
             </select>
-          </label>
+          </label> */}
+
+<label className='my-3 border-b-2'>
+      <div>Qualification*</div>
+      <select className='w-full' name="qualification" value={signupData.qualification} onChange={handleChange}>
+        {loading ? (
+          <option value="">Loading...</option>
+        ) : error ? (
+          <option value="">Error loading qualifications</option>
+        ) : (
+          qualifications.map(qualification => (
+            <option key={qualification.qualification_id} value={qualification.qualification_name}>
+              {qualification.qualification_name}
+            </option>
+          ))
+        )}
+      </select>
+    </label>
+
 
 
                         //College
