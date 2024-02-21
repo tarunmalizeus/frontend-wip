@@ -1,22 +1,13 @@
 import React from 'react';
 import { useSignupData } from '../../utils/SignupContext';
-import { GET_QUALIFICATIONS } from '../../graphqlQueries';
-import { useQuery } from '@apollo/client';
-import { useState, useEffect } from 'react';
+
+import Qualification from './Qualification';
+import College from './College';
+import Stream from './Stream';
 
 
 function Education() {
   const { signupData, updateSignupData } = useSignupData();
-
-
-  const [qualifications, setQualifications] = useState([]);
-  const { loading, error, data } = useQuery(GET_QUALIFICATIONS);
-
-  useEffect(() => {
-    if (!loading && !error) {
-      setQualifications(data.qualifications); // Assuming your GraphQL query returns an array of qualification objects
-    }
-  }, [loading, error, data]);
 
 
   const handleChange = (e) => {
@@ -52,47 +43,18 @@ function Education() {
       <div className='flex flex-row justify-between'>
         <div className='flex flex-col w-1/3'>
 
+      <Qualification/>
 
 
-                        //Qualificatiom
-          {/* <label className='my-3 border-b-2 '>
-            <div>
-              Qualification*
-            </div>
-            <select className='w-full' name="qualification" value={signupData.qualification} onChange={handleChange}>
-              <option value="B.Tech">Bachelor in Technology (B.Tech)</option>
-
-            </select>
-          </label> */}
-
-<label className='my-3 border-b-2'>
-      <div>Qualification*</div>
-      <select className='w-full' name="qualification" value={signupData.qualification} onChange={handleChange}>
-        {loading ? (
-          <option value="">Loading...</option>
-        ) : error ? (
-          <option value="">Error loading qualifications</option>
-        ) : (
-          qualifications.map(qualification => (
-            <option key={qualification.qualification_id} value={qualification.qualification_name}>
-              {qualification.qualification_name}
-            </option>
-          ))
-        )}
-      </select>
-    </label>
-
-
-
-                        //College
-          <label className='my-3 border-b-2'>
+      <College/>
+          {/* <label className='my-3 border-b-2'>
             <div>
               College*
             </div>
             <select className='w-full' name="college" value={signupData.college} onChange={handleChange}>
               <option value="PIT">Pune Institute of Technology (PIT)</option>
             </select>
-          </label>
+          </label> */}
 
 
         </div>
@@ -101,17 +63,9 @@ function Education() {
 
         <div className='flex flex-col w-1/3'>
 
+          <Stream/>
 
-          //Stream
-          <label className='my-3 border-b-2'>
-            <div>
-              Stream*
 
-            </div>
-            <select className='w-full' name="stream" value={signupData.stream} onChange={handleChange}>
-              <option value="Information Technology">Information Technology</option>
-            </select>
-          </label>
 
 
 
