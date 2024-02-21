@@ -40,17 +40,25 @@ function Banner1() {
           input: {
             firstName: "John",
             lastName: "Doe",
-            email: "react@example.com",
-            password: "password123",
             phone: "1234567890",
             portfolioUrl: "https://example.com/portfolio",
+            jobUpdates: false,
+            referralName: "Jane Smith",
+
+            familiarTech: ["HTML", "CSS"],
+            otherExperiencedTech: "",
+
+            email: "6@example.com",
+            password: "password123",
+    
             imageFile: "path/to/image.jpg",
             resumeFile: "path/to/resume.pdf",
+
             instructionalDesigner: true,
             softwareEngineer: false,
             softwareQualityEngineer: true,
-            jobUpdates: true,
-            referralName: "Jane Smith",
+
+            //education
             percentage: 80,
             yearOfPassing: 2019,
             qualification: "B.Tech",
@@ -58,13 +66,13 @@ function Banner1() {
             college: "ABC University",
             otherCollege: "",
             collegeLocation: "City",
+
             applicantType: "Fresher",
             yearsOfExperience: 0,
             currentCTC: 0,
             expectedCTC: 50000,
             experiencedTech: ["JavaScript", "React"],
-            familiarTech: ["HTML", "CSS"],
-            otherExperiencedTech: "",
+
             otherFamiliarTech: "",
             onNoticePeriod: "Yes",
             noticePeriodEnd: "2024-03-01",
@@ -74,9 +82,9 @@ function Banner1() {
           }
         }
       });
-      console.log(result);
+      // console.log(result);
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   };
 

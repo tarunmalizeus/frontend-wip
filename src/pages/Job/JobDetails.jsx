@@ -66,7 +66,7 @@ function JobDetails() {
 
   //backend call to get complete job details
   const {job_id}=useParams();
-  // console.log(job_id);
+
 
     return (
 

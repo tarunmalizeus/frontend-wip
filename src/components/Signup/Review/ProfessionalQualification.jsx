@@ -137,7 +137,6 @@ function ProfessionalQualification() {
             <div>
             If Yes, Please Mention The Test Names
             </div>
-            {console.log(signupData.testNames)}
             <div>
               {signupData.testNames===''?'-':signupData.testNames}
             </div>

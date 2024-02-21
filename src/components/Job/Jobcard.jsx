@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 function Jobcard({ job }) {
   const {job_id ,name, from_time, to_time, location_city, internship, roles} = job;
 
-  console.log(job)
   return (
     <div className="w-screem shadow-lg bg-white p-4 m-4">
           <div className='pb-4 border-b-2'>
@@ -26,7 +25,6 @@ function Jobcard({ job }) {
 
             <p className="text-sm">Job Role:</p>
             <div className='flex flex-row'>
-              {/* {console.log(roles_in_job)} */}
               {roles.map((role, index) => (
                 <div  key={index} className="pr-2">
                   <div className>{role.role_name}</div>

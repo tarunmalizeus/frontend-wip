@@ -188,7 +188,6 @@ function PersonalDetails() {
             name="imageFile"
             onChange={
               handleFileChange
-              // console.log('imageFile');
             }
           />
 
