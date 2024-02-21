@@ -19,6 +19,15 @@ function Banner1() {
   const [createUserMutation, { data, loading, error }] = useMutation(CREATE_USER);
 
 
+  //clg the ducation data
+  console.log(signupData.percentage);
+  console.log(signupData.yearOfPassing);
+  console.log(signupData.qualification);
+  console.log(signupData.stream);
+  console.log(signupData.college);
+  console.log(signupData.otherCollege);
+  console.log(signupData.collegeLocation);
+
   const handleBack = () => {
     if (isMainSignup1) {
       navigate('/'); 
@@ -59,13 +68,26 @@ function Banner1() {
             softwareQualityEngineer: true,
 
             //education
-            percentage: 80,
-            yearOfPassing: 2019,
-            qualification: "B.Tech",
-            stream: "Computer Science",
-            college: "ABC University",
-            otherCollege: "",
-            collegeLocation: "City",
+            // percentage: 80,
+            // yearOfPassing: 2019,
+            // qualification: "B.Tech",
+            // stream: "Computer Science",
+            // college: "ABC University",
+            // otherCollege: "",
+            // collegeLocation: "City",
+
+            
+
+
+            percentage: signupData.percentage,
+            yearOfPassing: signupData.yearOfPassing,
+            qualification: signupData.qualification,
+            stream: signupData.stream,
+            college: signupData.college,
+            otherCollege: signupData.otherCollege,
+            collegeLocation: signupData.collegeLocation,
+            
+
 
             applicantType: "Fresher",
             yearsOfExperience: 0,
