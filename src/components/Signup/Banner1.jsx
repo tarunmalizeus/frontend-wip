@@ -1,10 +1,22 @@
 import { useNavigate } from 'react-router-dom';
 import { useSignupNavigation } from "../../utils/SignupNavigationContext.jsx";
+import { useSignupData } from '../../utils/SignupContext.jsx';
+import { useMutation, gql } from '@apollo/client';
 
+
+const CREATE_USER = gql`
+  mutation CreateUser($input: CreateUserInput!) {
+    createUser(input: $input) {
+      user_id
+    }
+  }
+`;
 
 function Banner1() {
+  const { signupData} = useSignupData();
   const navigate = useNavigate();
   const { isMainSignup1,isReview } = useSignupNavigation();
+  const [createUserMutation, { data, loading, error }] = useMutation(CREATE_USER);
 
 
   const handleBack = () => {
@@ -21,9 +33,51 @@ function Banner1() {
   };
 
   
-  const handleSubmit = () => {
-    
-    console.log("Backend call to submit data")
+  const handleSubmit = async () => {
+    try {
+      const result = await createUserMutation({
+        variables: {
+          input: {
+            firstName: "John",
+            lastName: "Doe",
+            email: "react@example.com",
+            password: "password123",
+            phone: "1234567890",
+            portfolioUrl: "https://example.com/portfolio",
+            imageFile: "path/to/image.jpg",
+            resumeFile: "path/to/resume.pdf",
+            instructionalDesigner: true,
+            softwareEngineer: false,
+            softwareQualityEngineer: true,
+            jobUpdates: true,
+            referralName: "Jane Smith",
+            percentage: 80,
+            yearOfPassing: 2019,
+            qualification: "B.Tech",
+            stream: "Computer Science",
+            college: "ABC University",
+            otherCollege: "",
+            collegeLocation: "City",
+            applicantType: "Fresher",
+            yearsOfExperience: 0,
+            currentCTC: 0,
+            expectedCTC: 50000,
+            experiencedTech: ["JavaScript", "React"],
+            familiarTech: ["HTML", "CSS"],
+            otherExperiencedTech: "",
+            otherFamiliarTech: "",
+            onNoticePeriod: "Yes",
+            noticePeriodEnd: "2024-03-01",
+            noticePeriodLength: 30,
+            appearedForTests: "Yes",
+            testNames: "Technical Test, Aptitude Test"
+          }
+        }
+      });
+      console.log(result);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

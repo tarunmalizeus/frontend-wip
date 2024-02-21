@@ -10,10 +10,10 @@ function Signup() {
     return (
       <SignupNavigationProvider>
         <div  className='flex flex-col h-full' >
+        <SignupProvider>
         <Banner1/>
         <Banner2/>
 
-        <SignupProvider>
         <div className="flex-grow bg-background h-full overflow-auto">
         <Outlet/>
         </div>

@@ -116,10 +116,15 @@ function PersonalInformation() {
         </label>
         
       </form>
-
       <div>
-        <img src="https://via.placeholder.com/150" alt="profile" />
-      </div>
+      {signupData.imageFile && ( 
+        <img 
+          src={URL.createObjectURL(signupData.imageFile)} 
+          alt="profile" 
+          className="preview-image rounded-full h-36 w-36" 
+        /> 
+      )} 
+    </div>
 
     </div>
     )
