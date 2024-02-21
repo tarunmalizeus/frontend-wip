@@ -57,7 +57,7 @@ function Banner1() {
             familiarTech: ["HTML", "CSS"],
             otherExperiencedTech: "",
 
-            email: "6@example.com",
+            email: "7@example.com",
             password: "password123",
     
             imageFile: "path/to/image.jpg",
@@ -67,25 +67,24 @@ function Banner1() {
             softwareEngineer: false,
             softwareQualityEngineer: true,
 
-            //education
-            // percentage: 80,
-            // yearOfPassing: 2019,
-            // qualification: "B.Tech",
-            // stream: "Computer Science",
-            // college: "ABC University",
-            // otherCollege: "",
-            // collegeLocation: "City",
 
-            
+            percentage: 80,
+            yearOfPassing: 2019,
+            qualification: "Bachelor of Technology",
+            stream: "Computer Science",
+            college: "Stanford",
+            otherCollege: "",
+            collegeLocation: "City",
 
+          
 
-            percentage: signupData.percentage,
-            yearOfPassing: signupData.yearOfPassing,
-            qualification: signupData.qualification,
-            stream: signupData.stream,
-            college: signupData.college,
-            otherCollege: signupData.otherCollege,
-            collegeLocation: signupData.collegeLocation,
+            // percentage: signupData.percentage,
+            // yearOfPassing: signupData.yearOfPassing,
+            // qualification: signupData.qualification,
+            // stream: signupData.stream,
+            // college: signupData.college,
+            // otherCollege: signupData.otherCollege,
+            // collegeLocation: signupData.collegeLocation,
             
 
 

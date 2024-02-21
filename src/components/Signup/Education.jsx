@@ -44,19 +44,7 @@ function Education() {
         <div className='flex flex-col w-1/3'>
 
       <Qualification/>
-
-
       <College/>
-          {/* <label className='my-3 border-b-2'>
-            <div>
-              College*
-            </div>
-            <select className='w-full' name="college" value={signupData.college} onChange={handleChange}>
-              <option value="PIT">Pune Institute of Technology (PIT)</option>
-            </select>
-          </label> */}
-
-
         </div>
 
 
@@ -64,11 +52,6 @@ function Education() {
         <div className='flex flex-col w-1/3'>
 
           <Stream/>
-
-
-
-
-
 
           <label className='my-3 border-b-2'>
             <div>
