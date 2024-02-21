@@ -10,7 +10,7 @@ function Stream() {
     const { loading, error, data } = useQuery(GET_STREAM);
   
     const handleChange = (e) => {
-      updateStreamData({ [e.target.name]: e.target.value });
+      updateSignupData({ [e.target.name]: e.target.value });
     };
   
   
@@ -26,7 +26,7 @@ function Stream() {
       <>
 <label className='my-3 border-b-2'>
       <div>Qualification*</div>
-      <select className='w-full' name="qualification" value={signupData.stream} onChange={handleChange}>
+      <select className='w-full' name="stream" value={signupData.stream} onChange={handleChange}>
         {loading ? (
           <option value="">Loading...</option>
         ) : error ? (

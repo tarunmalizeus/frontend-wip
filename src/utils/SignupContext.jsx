@@ -24,7 +24,7 @@ export const SignupProvider = ({ children }) => {
     percentage: 0,
     yearOfPassing: '2020', // Default selection
     qualification: 'B.Tech', // Default selection
-    stream: 'Information Technology', // Default selection
+    stream: 'Computer Science', // Default selection
     college: 'PIT', // Default selection
     otherCollege: '',
     collegeLocation: '',
