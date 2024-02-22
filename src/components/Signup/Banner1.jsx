@@ -92,14 +92,18 @@ function Banner1() {
             yearsOfExperience: 0,
             currentCTC: 0,
             expectedCTC: 50000,
-            experiencedTech: ["JavaScript", "React"],
-
-            otherFamiliarTech: "",
             onNoticePeriod: "Yes",
             noticePeriodEnd: "2024-03-01",
             noticePeriodLength: 30,
             appearedForTests: "Yes",
-            testNames: "Technical Test, Aptitude Test"
+            testNames: "Technical Test, Aptitude Test",
+
+
+            experiencedTech: ["JavaScript", "React"],
+            otherExperiencedTech: "",
+            familiarTech: ["HTML", "CSS"],
+            otherFamiliarTech: "",
+
           }
         }
       });
