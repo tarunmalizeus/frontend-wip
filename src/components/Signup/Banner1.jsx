@@ -54,9 +54,6 @@ function Banner1() {
             jobUpdates: false,
             referralName: "Jane Smith",
 
-            familiarTech: ["HTML", "CSS"],
-            otherExperiencedTech: "",
-
             email: "7@example.com",
             password: "password123",
     
