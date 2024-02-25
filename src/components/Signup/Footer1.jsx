@@ -19,9 +19,9 @@ function Footer1() {
     };
   
     return (
-      <div>
-        {!isMainSignup1 && <button onClick={prevPage}>Previous</button>}
-        {!isReview && <button onClick={nextPage}>Next</button>}
+      <div className="flex place-self-center gap-5">
+        {!isMainSignup1 && <button  className="px-4 text-xl py-2 bg-[#3FD28B] rounded-lg" onClick={prevPage}>Previous</button>}
+        {!isReview && <button  className="px-4 text-xl py-2 bg-[#3FD28B] rounded-lg" onClick={nextPage}>Next</button>}
       </div>
     );
   }

@@ -1,10 +1,13 @@
 import { useRef } from 'react';
 import default_pfp from '../../assets/default_pfp.png';
 import upload_resume from '../../assets/Upload_black_24dp.svg';
+import { useState } from 'react';
 
 import { useSignupData } from '../../utils/SignupContext';
 
 function PersonalDetails() {
+
+
   const photoInputRef = useRef(null);
   
   const handlePhotoButtonClick = () => {
@@ -24,7 +27,61 @@ function PersonalDetails() {
 
   const { signupData, updateSignupData } = useSignupData();
 
+
+  const [firstNameError, setFirstNameError] = useState("");
+  const [lastNameError, setLastNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [cpasswordError, setCpasswordError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
+  const [resumeError, setResumeError] = useState("");
+  const [pfpError, setPfpError] = useState("");
+  const [roleError, setRoleError] = useState("");
+
   const handleChange = (e) => {
+    let name, value;
+    name = e.target.name;
+    value = e.target.value;
+    if(name === "firstName"){
+      const nameRegex = /^[a-zA-Z]+$/;
+      if (!nameRegex.test(value)) {
+        setFirstNameError("Please enter a valid name.");
+      } else {
+        setFirstNameError("");
+      }
+    }
+  
+    if(name === "lastName"){
+      const nameRegex = /^[a-zA-Z]+$/;
+      if (!nameRegex.test(value)) {
+        setLastNameError("Please enter a valid name.");
+      } else {
+        setLastNameError("");
+      }
+    }
+
+
+
+    if (name === "email") {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(value)) {
+        setEmailError("Please enter a valid email address.");
+      } else {
+        setEmailError("");
+      }
+    }
+
+    if(name === "confirmPassword"){
+      if (value !== signupData.password) {
+        setCpasswordError("Passwords do not match.");
+      } else {
+        setCpasswordError("");
+      }
+    }
+
+
+
+
     updateSignupData({ [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value });
   };
 
@@ -34,7 +91,6 @@ function PersonalDetails() {
 
   return (
     console.log(signupData.resumeFile),
-    // console.log(signupData.imageFile),
 
     <div className='flex flex-row p-8 mx-4 bg-white justify-between '>
       <div className='flex flex-col gap-8'>
@@ -46,6 +102,7 @@ function PersonalDetails() {
             value={signupData.firstName}
             onChange={handleChange}
           />
+          {firstNameError && <p className="text-red-500">{firstNameError}</p>}
         </div>
 
         <div>
@@ -57,6 +114,7 @@ function PersonalDetails() {
             value={signupData.lastName}
             onChange={handleChange}
           />
+          {lastNameError && <p className="text-red-500">{lastNameError}</p>}
         </div>
 
         <div>
@@ -68,6 +126,7 @@ function PersonalDetails() {
             value={signupData.email}
             onChange={handleChange}
           />
+          {emailError && <p className="text-red-500">{emailError}</p>}
         </div>
 
         <div>
@@ -90,6 +149,7 @@ function PersonalDetails() {
             value={signupData.confirmPassword}
             onChange={handleChange}
           />
+          {cpasswordError && <p className="text-red-500">{cpasswordError}</p>}
         </div>
 
         <div>
@@ -100,6 +160,7 @@ function PersonalDetails() {
             value={signupData.phone}
             onChange={handleChange}
           />
+          {phoneError && <p className="text-red-500">{phoneError}</p>}
         </div> 
 
 
@@ -125,6 +186,8 @@ function PersonalDetails() {
               style={{ display: 'none' }}    
               accept="application/pdf"
             />
+
+            {resumeError && <p className="text-red-500">{resumeError}</p>}  
 
             </div>
 
@@ -178,6 +241,7 @@ function PersonalDetails() {
           Software Quality Engineer
         </label>
 
+        {roleError && <p className="text-red-500">{roleError}</p>}  
 
         </div>
 
@@ -232,15 +296,9 @@ function PersonalDetails() {
             <div className="text-gray-500 text-base self-center -my-6 font-semibold">
               max image size 5mb*
             </div>
-
+            {pfpError && <p className="text-red-500">{pfpError}</p>}
           </div>
         </div>
-
-
-
-
-
-
 
     </div>
   );
