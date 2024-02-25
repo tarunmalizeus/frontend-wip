@@ -160,8 +160,8 @@ function Professional() {
                           </div>
               <input
                 type="text"
-                name="otherFamiliarTech"
-                value={signupData.otherCollege}
+                name="otherExperiencedTech"
+                value={signupData.otherExperiencedTech}
                 onChange={handleChange}
                 />
                         </label>
@@ -241,7 +241,7 @@ function Professional() {
               <input
                 type="text"
                 name="otherFamiliarTech"
-                value={signupData.otherCollege}
+                value={signupData.otherFamiliarTech}
                 onChange={handleChange}
                 />
                         </label>

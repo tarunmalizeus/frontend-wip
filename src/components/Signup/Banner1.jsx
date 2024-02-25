@@ -47,6 +47,12 @@ function Banner1() {
       const result = await createUserMutation({
         variables: {
           input: {
+            //login
+            email: "17@example.com",
+            password: "password123",
+
+
+            //user details
             firstName: "John",
             lastName: "Doe",
             phone: "1234567890",
@@ -54,9 +60,6 @@ function Banner1() {
             jobUpdates: false,
             referralName: "Jane Smith",
 
-            email: "7@example.com",
-            password: "password123",
-    
             imageFile: "path/to/image.jpg",
             resumeFile: "path/to/resume.pdf",
 
@@ -65,42 +68,46 @@ function Banner1() {
             softwareQualityEngineer: true,
 
 
-            // percentage: 80,
-            // yearOfPassing: 2019,
-            // qualification: "Bachelor of Technology",
-            // stream: "Computer Science",
-            // college: "Stanford",
-            // otherCollege: "",
-            // collegeLocation: "City",
+            //Education
+            percentage: 80,
+            yearOfPassing: 2019,
+            qualification: "Bachelor of Technology",
+            stream: "Computer Science",
+            college: "Stanford",
+            otherCollege: "",
+            collegeLocation: "City",
 
-          
-
-            percentage: parseFloat(signupData.percentage),
-            yearOfPassing: parseInt(signupData.yearOfPassing),
-            qualification: signupData.qualification,
-            stream: signupData.stream,
-            college: signupData.college,
-            otherCollege: signupData.otherCollege,
-            collegeLocation: signupData.collegeLocation,
+            // percentage: parseFloat(signupData.percentage),
+            // yearOfPassing: parseInt(signupData.yearOfPassing),
+            // qualification: signupData.qualification,
+            // stream: signupData.stream,
+            // college: signupData.college,
+            // otherCollege: signupData.otherCollege,
+            // collegeLocation: signupData.collegeLocation,
             
-
 
             applicantType: "Fresher",
             yearsOfExperience: 0,
             currentCTC: 0,
             expectedCTC: 50000,
+                        
+            experiencedTech: ["JavaScript", "React"],
+            otherExperiencedTech: "",
+            familiarTech: ["JavaScript", "React"],
+            otherFamiliarTech: "",
+            
+
+            // experiencedTech: signupData.experiencedTech,
+            // otherExperiencedTech: "",
+            // familiarTech: signupData.familiarTech,
+            // otherFamiliarTech: "",
+
+
             onNoticePeriod: "Yes",
             noticePeriodEnd: "2024-03-01",
             noticePeriodLength: 30,
             appearedForTests: "Yes",
             testNames: "Technical Test, Aptitude Test",
-
-
-            experiencedTech: ["JavaScript", "React"],
-            otherExperiencedTech: "",
-            familiarTech: ["HTML", "CSS"],
-            otherFamiliarTech: "",
-
           }
         }
       });

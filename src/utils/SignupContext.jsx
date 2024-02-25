@@ -28,20 +28,27 @@ export const SignupProvider = ({ children }) => {
     college: 'MIT', // Default selection
     otherCollege: '',
     collegeLocation: '',
+
+
     applicantType: 'Fresher', // Default 
     yearsOfExperience: 0,
     currentCTC: 0,
     expectedCTC: 0,
-    experiencedTech: [], // Array for checkboxes
-    familiarTech: [], // Array for checkboxes
-    otherExperiencedTech: '',
-    otherFamiliarTech: '',
+
+    
+    
     onNoticePeriod: 'No', // Default
     noticePeriodEnd: '', 
     noticePeriodLength: 0,
     appearedForTests: 'No', 
     testNames: '',
 
+    
+    otherExperiencedTech: '',
+    otherFamiliarTech: '',
+    
+    experiencedTech: [], // Array for checkboxes
+    familiarTech: [], // Array for checkboxes
   });
 
   const updateSignupData = (newData) => {
