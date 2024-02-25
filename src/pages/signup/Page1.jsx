@@ -23,8 +23,8 @@ function PersonalDetails() {
   
   
   const { signupData, updateSignupData } = useSignupData();
-  console.log(signupData.instructionalDesigner, signupData.softwareEngineer, signupData.softwareQualityEngineer);
-  console.log(signupData.instructionalDesigner || signupData.softwareEngineer || signupData.softwareQualityEngineer);
+  // console.log(signupData.instructionalDesigner, signupData.softwareEngineer, signupData.softwareQualityEngineer);
+  // console.log(signupData.instructionalDesigner || signupData.softwareEngineer || signupData.softwareQualityEngineer);
 
   const {
     firstNameError, setFirstNameError,
