@@ -13,6 +13,7 @@ export const Page1ErrorProvider = ({ children }) => {
   const [firstNameError, setFirstNameError] = useState("");
   const [lastNameError, setLastNameError] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const [cpasswordError, setCpasswordError] = useState("");
   const [phoneError, setPhoneError] = useState("");
   const [resumeError, setResumeError] = useState("");
@@ -25,6 +26,7 @@ export const Page1ErrorProvider = ({ children }) => {
         firstNameError, setFirstNameError,
         lastNameError, setLastNameError,
         emailError, setEmailError,
+        passwordError, setPasswordError,
         cpasswordError, setCpasswordError,
         phoneError, setPhoneError,
         resumeError, setResumeError,

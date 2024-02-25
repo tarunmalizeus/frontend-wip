@@ -7,39 +7,41 @@ import { useSignupData } from '../../utils/SignupContext';
 import { usePage1ErrorContext } from '../../utils/Page1ErrorContext';
 
 function PersonalDetails() {
-
-
+  
   const photoInputRef = useRef(null);
   
   const handlePhotoButtonClick = () => {
     photoInputRef.current.click();
   };
-
-
+  
+  
   const fileInputRef = useRef(null);
-
+  
   const handleFileButtonClick = () => {
     fileInputRef.current.click();
   };
-
-
+  
+  
   const { signupData, updateSignupData } = useSignupData();
+  console.log(signupData.instructionalDesigner, signupData.softwareEngineer, signupData.softwareQualityEngineer);
+  console.log(signupData.instructionalDesigner || signupData.softwareEngineer || signupData.softwareQualityEngineer);
 
-
-
-  const {firstNameError, setFirstNameError} = usePage1ErrorContext();
-  const [lastNameError, setLastNameError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [cpasswordError, setCpasswordError] = useState("");
-  const [phoneError, setPhoneError] = useState("");
-  const [resumeError, setResumeError] = useState("");
-  const [pfpError, setPfpError] = useState("");
-  const [roleError, setRoleError] = useState("");
+  const {
+    firstNameError, setFirstNameError,
+    lastNameError, setLastNameError,
+    passwordError, setPasswordError,
+    cpasswordError, setCpasswordError,
+    emailError, setEmailError,
+    phoneError, setPhoneError,
+    resumeError, setResumeError,
+    pfpError, setPfpError,
+    roleError, setRoleError
+  } = usePage1ErrorContext();
 
   const handleChange = (e) => {
     let name, value;
     name = e.target.name;
-    value = e.target.value;
+    value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
     if(name === "firstName"){
       const nameRegex = /^[a-zA-Z]+$/;
       if (!nameRegex.test(value)) {
@@ -58,8 +60,6 @@ function PersonalDetails() {
       }
     }
 
-
-
     if (name === "email") {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -70,6 +70,15 @@ function PersonalDetails() {
       }
     }
 
+    if(name === "password"){
+      if(value.length < 8){
+        setPasswordError("Password must be at least 8 characters long.");
+      } else {
+        setPasswordError("");
+      }
+
+    }  
+
     if(name === "confirmPassword"){
       if (value !== signupData.password) {
         setCpasswordError("Passwords do not match.");
@@ -78,6 +87,26 @@ function PersonalDetails() {
       }
     }
 
+    if(name === "phone"){
+      const phoneRegex = /^[0-9]{10}$/;
+      if (!phoneRegex.test(value)) {
+        setPhoneError("Please enter a valid phone number.");
+      } else {
+        setPhoneError("");
+      }
+    }
+
+
+
+    if(name === "instructionalDesigner" || name === "softwareEngineer" || name === "softwareQualityEngineer"){
+      setRoleError("");
+      // if(signupData.instructionalDesigner || signupData.softwareEngineer || signupData.softwareQualityEngineer){
+      //   setRoleError("");
+      // } else {
+      //   setRoleError("Please select at least one role.");
+      // }
+    }
+    
 
 
 
@@ -85,6 +114,29 @@ function PersonalDetails() {
   };
 
   const handleFileChange = (e) => {
+
+
+    let name, value;
+    name = e.target.name;
+    value = e.target.value;
+
+
+    if(name === "resumeFile"){
+      if(value.size > 5*1024*1024){
+        setResumeError("File size should be less than 5mb.");
+      } else {
+        setResumeError("");
+      }
+    }
+
+    if(name === "imageFile"){
+      if(value.size > 5*1024*1024){
+        setPfpError("File size should be less than 5mb.");
+      } else {
+        setPfpError("");
+      }
+    }
+
     updateSignupData({ [e.target.name]: e.target.files[0] });
   };
 
@@ -136,7 +188,8 @@ function PersonalDetails() {
             name="password"
             value={signupData.password}
             onChange={handleChange}
-          />
+            />
+            {passwordError && <p className="text-red-500">{passwordError}</p>}
         </div>
 
         <div>
