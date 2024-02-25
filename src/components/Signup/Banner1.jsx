@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSignupNavigation } from "../../utils/SignupNavigationContext.jsx";
 import { useSignupData } from '../../utils/SignupContext.jsx';
 import { useMutation, gql } from '@apollo/client';
+import BackButton from '../../assets/arrow_upward_black_24dp.svg';
 
 
 const CREATE_USER = gql`
@@ -48,7 +49,7 @@ function Banner1() {
         variables: {
           input: {
             //login
-            email: "17@example.com",
+            email: "18@example.com",
             password: "password123",
 
 
@@ -118,12 +119,34 @@ function Banner1() {
   };
 
   return (
-    <div className='flex flex-row justify-between p-4'>
-      <button onClick={handleBack}>Back</button>
+    // <div className='flex flex-row justify-between p-4'>
+    <div className="flex justify-between items-center p-4 px-10  bg-[#3C4E62] text-zinc-100 font-bold text-lg">
+
+      <button onClick={handleBack}>
+          <img
+            className="-rotate-90 cursor-pointer"
+            src={BackButton}
+            alt=""
+            width={30}
+          />
+        </button>
+
       <div> Create An Account</div>
-      <div>
-        <button onClick={handleCancel}>Cancel</button>
-        {isReview && <button onClick={handleSubmit}>Submit</button>}
+
+      <div className="flex gap-4">
+      <button onClick={handleCancel} className="bg-[#3FD28B] px-4 py-1 rounded-md text-slate-900">
+            CANCEL
+          </button>
+
+        <button
+          className={`px-4 py-1 rounded-md text-slate-900 ${isReview ? 'bg-[#3FD28B]' : 'bg-[#3FD28B88] cursor-not-allowed'}`}
+          onClick={isReview ? handleSubmit : undefined}
+          disabled={!isReview}
+        >
+  Submit
+</button>
+
+
       </div>
     </div>
   );
