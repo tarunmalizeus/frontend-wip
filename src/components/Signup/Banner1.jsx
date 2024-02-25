@@ -20,14 +20,7 @@ function Banner1() {
   const [createUserMutation, { data, loading, error }] = useMutation(CREATE_USER);
 
 
-  //clg the ducation data
-  console.log(signupData.percentage);
-  console.log(signupData.yearOfPassing);
-  console.log(signupData.qualification);
-  console.log(signupData.stream);
-  console.log(signupData.college);
-  console.log(signupData.otherCollege);
-  console.log(signupData.collegeLocation);
+  
 
   const handleBack = () => {
     if (isMainSignup1) {
