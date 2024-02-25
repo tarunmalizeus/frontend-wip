@@ -93,7 +93,7 @@ function PersonalDetails() {
         </div>
 
         <div>
-          <div>Phone</div>
+          <div className="text-gray-500 text-sm ">Phone*</div>
           <input
             className='my-1 border-b-2'
             name="phone"
@@ -132,9 +132,9 @@ function PersonalDetails() {
 
 
         <div>
-          <div>Enter Portfolio URL (if any)</div>
+          <div className="text-gray-500 text-sm ">Enter Portfolio URL (if any)</div>
           <input
-            className='my-1 border-b-2'
+            className='my-1 border-b-2 w-full'
             name="portfolioUrl"
             value={signupData.portfolioUrl}
             onChange={handleChange}
@@ -142,10 +142,10 @@ function PersonalDetails() {
         </div>
 
 
-          <div className='flex flex-col'>
-        <label>
+          <div className='flex flex-col gap-4'>
 
-          <div>Preferred Job riles</div>
+          <div className="text-gray-500 text-sm ">Preferred Job roles*</div>
+        <label className='gap-2 flex flex-row'>
           <input
             className='my-1 border-b-2'
             type="checkbox"
@@ -154,11 +154,11 @@ function PersonalDetails() {
             checked={signupData.instructionalDesigner || false}
             onChange={handleChange}
           />
-          Instructional Designer
+          <span>Instructional Designer</span>
         </label>
 
 
-        <label>
+        <label className='gap-2 flex flex-row'>
           <input
             type="checkbox"
             name="softwareEngineer"
@@ -167,7 +167,8 @@ function PersonalDetails() {
           />
           Software Engineer
         </label>
-        <label>
+
+        <label className='gap-2 flex flex-row'>
           <input
             type="checkbox"
             name="softwareQualityEngineer"
@@ -182,9 +183,9 @@ function PersonalDetails() {
 
 <div>
   
-          <div>If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</div>
+          <div className="text-gray-500 text-sm ">If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</div>
           <input
-            className='my-4 border-b-2'
+            className='my-4 border-b-2 w-full'
             name="referralName"
             value={signupData.referralName}
             onChange={handleChange}
@@ -193,7 +194,7 @@ function PersonalDetails() {
 </div>
 
 
-        <label>
+        <label className='gap-2 flex flex-row'>
         <input
           type="checkbox"
           name="jobUpdates"
