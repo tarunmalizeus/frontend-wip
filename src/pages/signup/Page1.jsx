@@ -8,6 +8,7 @@ function PersonalDetails() {
   const photoInputRef = useRef(null);
   
   const handlePhotoButtonClick = () => {
+    console.log('photo button clicked');
     photoInputRef.current.click();
   };
 
@@ -32,11 +33,11 @@ function PersonalDetails() {
   };
 
   return (
-    // console.log(signupData.resumeFile),
+    console.log(signupData.resumeFile),
     // console.log(signupData.imageFile),
 
     <div className='flex flex-row p-8 mx-4 bg-white justify-between '>
-      <form className='flex flex-col gap-8'>
+      <div className='flex flex-col gap-8'>
         <div>
           <div className="text-gray-500 text-sm ">First name*</div>
           <input
@@ -99,18 +100,9 @@ function PersonalDetails() {
             value={signupData.phone}
             onChange={handleChange}
           />
-        </div>
+        </div> 
 
 
-        {/* <div>
-          <div>Resume</div>
-          <input
-            className='my-4'
-            type="file"
-            name="resumeFile"
-            onChange={handleFileChange}
-          />
-        </div> */}
 
     
 
@@ -121,8 +113,9 @@ function PersonalDetails() {
             <div className="text-[#1F7A54] font-semibold text-lg">
 
             <button onClick={handleFileButtonClick}>
-              UPLOAD RESUME 
+            {signupData.resumeFile ? `${signupData.resumeFile.name}` : "UPLOAD RESUME"}
             </button>
+
           <input
               className='my-4'
               type="file"
@@ -137,7 +130,6 @@ function PersonalDetails() {
 
           </div>
 
-        
 
         <div>
           <div>Enter Portfolio URL (if any)</div>
@@ -211,7 +203,7 @@ function PersonalDetails() {
         Send me job related updates via mail
         </label>
         
-      </form>
+      </div>
 
 
 
