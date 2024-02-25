@@ -1,14 +1,24 @@
 import { useRef } from 'react';
 import default_pfp from '../../assets/default_pfp.png';
+import upload_resume from '../../assets/Upload_black_24dp.svg';
+
 import { useSignupData } from '../../utils/SignupContext';
 
 function PersonalDetails() {
+  const photoInputRef = useRef(null);
+  
+  const handlePhotoButtonClick = () => {
+    photoInputRef.current.click();
+  };
+
+
   const fileInputRef = useRef(null);
 
-  const handleButtonClick = () => {
-    // Trigger click event of the input element
+  const handleFileButtonClick = () => {
+    console.log('file button clicked');
     fileInputRef.current.click();
   };
+
 
 
   const { signupData, updateSignupData } = useSignupData();
@@ -22,11 +32,13 @@ function PersonalDetails() {
   };
 
   return (
-    
-    <div className='flex flex-row p-8 mx-4 bg-white h-screen justify-between '>
-      <form className='flex flex-col '>
+    // console.log(signupData.resumeFile),
+    // console.log(signupData.imageFile),
+
+    <div className='flex flex-row p-8 mx-4 bg-white justify-between '>
+      <form className='flex flex-col gap-8'>
         <div>
-          <div>First name</div>
+          <div className="text-gray-500 text-sm ">First name*</div>
           <input
             className='my-1 border-b-2 w-full'
             name="firstName"
@@ -34,21 +46,22 @@ function PersonalDetails() {
             onChange={handleChange}
           />
         </div>
-<div>
+
+        <div>
   
-          <div>Last name</div>
+        <div className="text-gray-500 text-sm ">Last name*</div>
           <input
-            className='my-1 border-b-2'
+            className='my-1 border-b-2 w-full'
             name="lastName"
             value={signupData.lastName}
             onChange={handleChange}
           />
-</div>
+        </div>
 
         <div>
-          <div>Email</div>
+          <div className="text-gray-500 text-sm ">Email*</div>
           <input
-            className='my-1 border-b-2'
+            className='my-1 border-b-2 w-full'
             type="email"
             name="email"
             value={signupData.email}
@@ -57,9 +70,9 @@ function PersonalDetails() {
         </div>
 
         <div>
-          <div>Password</div>
+          <div className="text-gray-500 text-sm ">Password*</div>
           <input
-            className='my-1 border-b-2'
+            className='my-1 border-b-2 w-full'
             type="password"
             name="password"
             value={signupData.password}
@@ -68,9 +81,9 @@ function PersonalDetails() {
         </div>
 
         <div>
-          <div>Confirm Password</div>
+          <div className="text-gray-500 text-sm ">Confirm Password*</div>
           <input
-            className='my-1 border-b-2'
+            className='my-1 border-b-2 w-full'
             type="password"
             name="confirmPassword"
             value={signupData.confirmPassword}
@@ -88,7 +101,8 @@ function PersonalDetails() {
           />
         </div>
 
-        <div>
+
+        {/* <div>
           <div>Resume</div>
           <input
             className='my-4'
@@ -96,7 +110,34 @@ function PersonalDetails() {
             name="resumeFile"
             onChange={handleFileChange}
           />
-        </div>
+        </div> */}
+
+    
+
+        <div className="flex gap-1 -my-3  cursor-pointer items-center">
+
+          <img src={upload_resume} width={24} alt="" />
+
+            <div className="text-[#1F7A54] font-semibold text-lg">
+
+            <button onClick={handleFileButtonClick}>
+              UPLOAD RESUME 
+            </button>
+          <input
+              className='my-4'
+              type="file"
+              name="resumeFile"
+              ref={fileInputRef}
+              onChange={handleFileChange}
+              style={{ display: 'none' }}    
+              accept="application/pdf"
+            />
+
+            </div>
+
+          </div>
+
+        
 
         <div>
           <div>Enter Portfolio URL (if any)</div>
@@ -184,14 +225,11 @@ function PersonalDetails() {
               alt="pfp"
             />
             <div className="text-xl font-semibold text-green-600">
-
-
-
-            <button onClick={handleButtonClick}>UPLOAD PROFILE PHOTO</button>
+            <button onClick={handlePhotoButtonClick}>UPLOAD PROFILE PHOTO</button>
               <input
                 type="file"
                 name="imageFile"
-                ref={fileInputRef}
+                ref={photoInputRef}
                 onChange={handleFileChange}    
                 style={{ display: 'none' }}    
                 accept="image/*"          
@@ -206,19 +244,6 @@ function PersonalDetails() {
         </div>
 
 
-    {/* <div className='flex flex-col items-center '>
-
-
-        <input
-            className='my-4 '
-            type="file"
-            name="imageFile"
-            onChange={
-              handleFileChange
-            }
-          />
-
-      </div> */}
 
 
 
