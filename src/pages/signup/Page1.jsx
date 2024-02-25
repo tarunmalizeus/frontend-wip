@@ -4,6 +4,7 @@ import upload_resume from '../../assets/Upload_black_24dp.svg';
 import { useState } from 'react';
 
 import { useSignupData } from '../../utils/SignupContext';
+import { usePage1ErrorContext } from '../../utils/Page1ErrorContext';
 
 function PersonalDetails() {
 
@@ -11,7 +12,6 @@ function PersonalDetails() {
   const photoInputRef = useRef(null);
   
   const handlePhotoButtonClick = () => {
-    console.log('photo button clicked');
     photoInputRef.current.click();
   };
 
@@ -19,16 +19,15 @@ function PersonalDetails() {
   const fileInputRef = useRef(null);
 
   const handleFileButtonClick = () => {
-    console.log('file button clicked');
     fileInputRef.current.click();
   };
-
 
 
   const { signupData, updateSignupData } = useSignupData();
 
 
-  const [firstNameError, setFirstNameError] = useState("");
+
+  const {firstNameError, setFirstNameError} = usePage1ErrorContext();
   const [lastNameError, setLastNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [cpasswordError, setCpasswordError] = useState("");
@@ -90,7 +89,7 @@ function PersonalDetails() {
   };
 
   return (
-    console.log(signupData.resumeFile),
+
 
     <div className='flex flex-row p-8 mx-4 bg-white justify-between '>
       <div className='flex flex-col gap-8'>

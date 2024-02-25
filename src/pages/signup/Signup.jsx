@@ -4,6 +4,7 @@ import Footer1 from "../../components/signup/Footer1.jsx"
 import {Outlet } from 'react-router-dom';
 import { SignupNavigationProvider } from "../../utils/SignupNavigationContext.jsx";
 import { SignupProvider } from '../../utils/SignupContext.jsx';
+import { Page1ErrorProvider } from "../../utils/Page1ErrorContext.jsx";
 
 
 function Signup() {
@@ -14,12 +15,17 @@ function Signup() {
         <Banner1/>
         <Banner2/>
 
+         <Page1ErrorProvider>
+        
         <div className="flex-grow bg-background h-full overflow-auto">
-        <Outlet/>
+            <Outlet/>
         </div>
-        </SignupProvider>
         
         <Footer1/>
+
+        </Page1ErrorProvider>
+
+        </SignupProvider>
         </div>
       </SignupNavigationProvider>
     )
