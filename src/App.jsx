@@ -16,6 +16,7 @@ import Confirmation from './pages/job/Confirmation';
 import Jobview from './pages/job/JobView';
 // import 'dotenv/config';
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import MainHeader from './components/MainHeader';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
   return (
     <div className="flex flex-col h-screen">
       <Header/>
+      <MainHeader/>
       <div className="flex-grow bg-background h-full overflow-auto">
       <ApolloProvider client={client}>
         <Outlet/>
