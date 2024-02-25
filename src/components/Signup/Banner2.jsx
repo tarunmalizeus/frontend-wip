@@ -13,7 +13,7 @@ function Banner2() {
 
     return (
       <>
-        <div className="bg-white m-2 mx-4 p-4 flex justify-between px-12"> 
+        <div className="bg-white m-6 mx-4 p-4 flex justify-between px-12"> 
 
         <div
         onClick={() => setPage('')}

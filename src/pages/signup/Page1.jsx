@@ -1,9 +1,16 @@
-
-
-import React from 'react';
+import { useRef } from 'react';
+import default_pfp from '../../assets/default_pfp.png';
 import { useSignupData } from '../../utils/SignupContext';
 
 function PersonalDetails() {
+  const fileInputRef = useRef(null);
+
+  const handleButtonClick = () => {
+    // Trigger click event of the input element
+    fileInputRef.current.click();
+  };
+
+
   const { signupData, updateSignupData } = useSignupData();
 
   const handleChange = (e) => {
@@ -16,12 +23,12 @@ function PersonalDetails() {
 
   return (
     
-    <div className='flex flex-row p-4 m-4 bg-white h-screen justify-between '>
+    <div className='flex flex-row p-8 mx-4 bg-white h-screen justify-between '>
       <form className='flex flex-col '>
         <div>
           <div>First name</div>
           <input
-            className='my-1 border-b-2'
+            className='my-1 border-b-2 w-full'
             name="firstName"
             value={signupData.firstName}
             onChange={handleChange}
@@ -167,19 +174,39 @@ function PersonalDetails() {
 
 
 
-    <div className='flex flex-col items-center '>
+      <div className="w-full grid justify-end content-start p-4">
+          <div className="flex flex-col gap-8">
+            <img
+              className="rounded-full self-center"
+              src={!signupData.imageFile?default_pfp:URL.createObjectURL(signupData.imageFile)}
+              width={200}
+              height={200}
+              alt="pfp"
+            />
+            <div className="text-xl font-semibold text-green-600">
 
 
-    <div>
-      {signupData.imageFile && ( 
-        <img 
-          src={URL.createObjectURL(signupData.imageFile)} 
-          alt="profile" 
-          className="preview-image rounded-full h-36 w-36" 
-        /> 
-      )} 
-    </div>
 
+            <button onClick={handleButtonClick}>UPLOAD PROFILE PHOTO</button>
+              <input
+                type="file"
+                name="imageFile"
+                ref={fileInputRef}
+                onChange={handleFileChange}    
+                style={{ display: 'none' }}    
+                accept="image/*"          
+              />
+            </div>
+
+            <div className="text-gray-500 text-base self-center -my-6 font-semibold">
+              max image size 5mb*
+            </div>
+
+          </div>
+        </div>
+
+
+    {/* <div className='flex flex-col items-center '>
 
 
         <input
@@ -191,7 +218,12 @@ function PersonalDetails() {
             }
           />
 
-      </div>
+      </div> */}
+
+
+
+
+
     </div>
   );
 }
