@@ -24,9 +24,9 @@ function ProfessionalComponent() {
   };
 
   return (
-    <form className='flex flex-col p-4 bg-white gap-8'>
+    <form className='flex flex-col p-8 bg-white gap-8'>
 
-        <label className='my-3  w-1/4 flex flex-col gap-2'>
+        <label className='my-3  w-full flex flex-col gap-2'>
           <div className="text-gray-500 text-sm ">Applicant Type*</div>
         
         <div className='space-x-4'>
