@@ -303,8 +303,8 @@ function Professional() {
 
           <div className='flex flex-row justify-between'>
 
-            <label>
-              <div>
+            <label className='flex flex-col gap-2'>
+              <div className="text-gray-500 text-sm ">
 
               If Yes, When Will Your Notice Period End?*
               </div>
@@ -317,8 +317,8 @@ function Professional() {
             </label>
 
 
-            <label className='border-b-2 w-1/2'>
-              <div>
+            <label className='border-b-2 w-1/2 flex flex-col gap-2'>
+              <div className="text-gray-500 text-sm ">
               How Long is Your Notice Period? (Mention in Months)
               </div>
               <input
@@ -332,29 +332,35 @@ function Professional() {
           </div>
 
       
-      <fieldset>
+      <div className='flex flex-col gap-2'>
+
         <legend className="text-gray-500 text-sm ">Have You Appeared for Any Tests in the Past 6 Months?</legend>
-        <label>
-          <input
-            type="radio"
-            name="appearedForTests"
-            value="Yes"
-            checked={signupData.appearedForTests === 'Yes'}
-            onChange={handleRadioChange}
-          />
-          Yes
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="appearedForTests"
-            value="No"
-            checked={signupData.appearedForTests === 'No'}
-            onChange={handleRadioChange}
-          />
-          No
-        </label>
-            </fieldset>    
+
+        <div className='space-x-8'>
+          <label className='space-x-2'>
+            <input
+              type="radio"
+              name="appearedForTests"
+              value="Yes"
+              checked={signupData.appearedForTests === 'Yes'}
+              onChange={handleRadioChange}
+            />
+            <span>Yes</span>
+          </label>
+
+          <label className='space-x-2'>
+            <input
+              type="radio"
+              name="appearedForTests"
+              value="No"
+              checked={signupData.appearedForTests === 'No'}
+              onChange={handleRadioChange}
+            />
+            <span>No</span>
+          </label>
+        </div>
+
+            </div>    
 
           <label >
             <div className="text-gray-500 text-sm ">
