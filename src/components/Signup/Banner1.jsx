@@ -83,8 +83,10 @@ function Banner1() {
         }
       });
 
-      if (result.data.createUser.user_id) {
-        console.log(user_id);
+      
+      if (result.data.createUser) {
+        // console.log(result.data.createUser.user_id)
+        window.alert('User created successfully');
         navigate('/login');
       }
 
