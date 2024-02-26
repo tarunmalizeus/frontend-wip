@@ -24,7 +24,7 @@ function College() {
     return (
       <>
     <label className='my-3 border-b-2'>
-      <div>College*</div>
+      <div className="text-gray-500 text-sm ">College*</div>
       <select className='w-full' name="college" value={signupData.college} onChange={handleChange}>
         {loading ? (
           <option value="">Loading...</option>

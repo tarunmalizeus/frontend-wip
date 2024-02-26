@@ -25,7 +25,7 @@ function Stream() {
     return (
       <>
 <label className='my-3 border-b-2'>
-      <div>Stream*</div>
+      <div className="text-gray-500 text-sm ">Stream*</div>
       <select className='w-full' name="stream" value={signupData.stream} onChange={handleChange}>
         {loading ? (
           <option value="">Loading...</option>

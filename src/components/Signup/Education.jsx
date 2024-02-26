@@ -18,7 +18,7 @@ function Education() {
 
     <form className='flex flex-col p-4 bg-white'>
 
-      <label>
+      <label className="text-gray-500 text-sm ">
         Aggregate Percentage*
       </label>
       <input
@@ -30,7 +30,7 @@ function Education() {
         placeholder="Aggregate Percentage"
       />
 
-      <label>
+      <label className="text-gray-500 text-sm ">
         Year Of Passing
       </label>
       <select
@@ -54,7 +54,7 @@ function Education() {
           <Stream/>
 
           <label className='my-3 border-b-2'>
-            <div>
+            <div className="text-gray-500 text-sm ">
               If Others, Please Enter Your College Name
 
             </div>
@@ -63,7 +63,7 @@ function Education() {
               name="otherCollege"
               value={signupData.otherCollege}
               onChange={handleChange}
-              placeholder="Other College Name"
+
             />
           </label>
 
@@ -71,7 +71,7 @@ function Education() {
       </div>
 
       <label className='my-3 border-b-2 w-1/4'>
-        <div>
+        <div className="text-gray-500 text-sm ">
 
           Where Is Your College Located?*
         </div>
@@ -80,7 +80,6 @@ function Education() {
           name="collegeLocation"
           value={signupData.collegeLocation}
           onChange={handleChange}
-          placeholder="College Location"
         />
       </label>
     </form>

@@ -3,7 +3,7 @@ import Education from '../../components/signup/Education';
 import Professional from '../../components/signup/Professional';
 
 function AccordionItem({ title, children }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className="border border-gray-200 rounded-md shadow-md">

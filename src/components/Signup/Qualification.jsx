@@ -24,7 +24,7 @@ function Qualification() {
     return (
       <>
 <label className='my-3 border-b-2'>
-      <div>Qualification*</div>
+      <div className="text-gray-500 text-sm ">Qualification*</div>
       <select className='w-full' name="qualification" value={signupData.qualification} onChange={handleChange}>
         {loading ? (
           <option value="">Loading...</option>
