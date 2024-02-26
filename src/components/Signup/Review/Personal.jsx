@@ -11,7 +11,7 @@ function Personal() {
       <div className='flex flex-row p-8 mx-4 bg-white justify-between '>
       <div className='flex flex-col gap-8'>
         <div>
-          <div className="text-gray-500 text-sm ">First name*</div>
+          <div className="text-gray-500 text-sm ">First name </div>
           <input
             className='my-1  w-full bg-white'
             name="firstName"
@@ -23,7 +23,7 @@ function Personal() {
 
         <div>
   
-        <div className="text-gray-500 text-sm ">Last name*</div>
+        <div className="text-gray-500 text-sm ">Last name </div>
           <input
             className='my-1  w-full bg-white'
             name="lastName"
@@ -33,7 +33,7 @@ function Personal() {
         </div>
 
         <div>
-          <div className="text-gray-500 text-sm ">Email*</div>
+          <div className="text-gray-500 text-sm ">Email </div>
           <input
             className='my-1  w-full bg-white'
             type="email"
@@ -46,7 +46,7 @@ function Personal() {
 
 
         <div>
-          <div className="text-gray-500 text-sm ">Phone*</div>
+          <div className="text-gray-500 text-sm ">Phone </div>
           <input
             className='my-1  bg-white'
             name="phone"
@@ -88,7 +88,7 @@ function Personal() {
 
           <div className='flex flex-col gap-4'>
 
-          <div className="text-gray-500 text-sm ">Preferred Job roles*</div>
+          <div className="text-gray-500 text-sm ">Preferred Job roles </div>
         <label className='gap-2 flex flex-row'>
           <input
             className='my-1 '

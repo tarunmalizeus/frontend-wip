@@ -13,7 +13,7 @@ function Education() {
         <form className='flex flex-col p-8 mx-4 bg-white gap-8'>
         <div className='flex flex-col'>
           <label className="text-gray-500 text-sm ">
-            Aggregate Percentage*
+            Aggregate Percentage 
           </label>
           <input
             className='my-3  w-1/4 bg-white'
@@ -50,7 +50,7 @@ function Education() {
         <div className='flex flex-col'>
           <label className='my-3  w-1/4'>
             <div className="text-gray-500 text-sm ">
-              Where Is Your College Located?*
+              Where Is Your College Located? 
             </div>
             <input
               type="text"
@@ -75,7 +75,7 @@ function Education() {
 
       //   <div className="space-y-1">
       //       <label>
-      //       Aggregate Percentage*
+      //       Aggregate Percentage 
       //     </label>
       //     <div>
       //     {signupData.percentage}
@@ -97,7 +97,7 @@ function Education() {
       //         <div className='flex flex-col w-1/3'>
       //                   <label className='my-3 space-y-1'>
       //                     <div>
-      //                       Qualification*
+      //                       Qualification 
       //                     </div>
       //                       <div>
       //                         {signupData.qualification}
@@ -108,7 +108,7 @@ function Education() {
 
       //                   <label className='my-3'>
       //                     <div>
-      //                       College*
+      //                       College 
       //                     </div>
       //                       <div>
       //                         {signupData.college}
@@ -121,7 +121,7 @@ function Education() {
       //                 <div className='flex flex-col w-1/3'>
       //         <label className='my-3'>
       //           <div>
-      //         Stream*
+      //         Stream 
 
       //           </div>
       //           <div>
@@ -145,7 +145,7 @@ function Education() {
       // <label className='my-3 w-1/4'>
       //   <div>
 
-      //   Where Is Your College Located?*
+      //   Where Is Your College Located? 
       //   </div>
       //   <div>
       //     {signupData.collegeLocation}

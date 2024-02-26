@@ -8,7 +8,7 @@ function Professional() {
 
 
       <form className='flex flex-col p-8 mx-4 bg-white gap-8'>
-
+ 
         <label className='my-3   flex flex-col gap-2  w-full'>
           <div className="text-gray-500 text-sm ">Applicant Type*</div>
           <div className='space-x-4 flex flex-row w-full'>
@@ -21,7 +21,7 @@ function Professional() {
             // className='mr-2'
             />
             <span>Fresher</span>
-            <input
+            <input 
               disabled
               type="radio"
               name="applicantType"
@@ -33,7 +33,7 @@ function Professional() {
               Experienced
             </span>
 
-          </div>
+          </div> 
         </label>
 
 
@@ -45,7 +45,7 @@ function Professional() {
           <input
             disabled
             className='my-3  w-1/4 bg-white'
-            type="number"
+            type="number" 
             name="yearsOfExperience"
             value={signupData.yearsOfExperience}
           />
@@ -58,7 +58,7 @@ function Professional() {
           <input
             disabled
             className='my-3  w-1/4  bg-white'  
-            type="number"
+            type="number" 
             name="currentCTC"
             value={signupData.currentCTC}
           />
@@ -77,7 +77,7 @@ function Professional() {
             value={signupData.expectedCTC}
           />
         </label>
-
+ 
 
         <fieldset className='my-3  w-1/2 flex flex-col gap-4'>
 
@@ -103,7 +103,7 @@ function Professional() {
               type="checkbox"
               name="experiencedTech"
               value="AngularJS"
-              checked={signupData.experiencedTech.includes('AngularJS')}
+              checked={signupData.experiencedTech.inclu es('AngularJS')}
 
               className='mr-2'
             />
@@ -153,7 +153,7 @@ function Professional() {
 
 
           <label>
-            <div>
+            <div> 
 
               If Others, Please Mention
 
