@@ -1,7 +1,7 @@
-import { GET_COLLEGES } from '../../graphqlQueries';
+import { GET_COLLEGES } from '../../../graphqlQueries';
 import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
-import { useSignupData } from '../../utils/SignupContext';
+import { useSignupData } from '../../../utils/SignupContext';
 
 function College() {
     const { signupData, updateSignupData } = useSignupData();

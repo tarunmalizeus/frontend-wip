@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSignupData } from '../../utils/SignupContext';
+import { useSignupData } from '../../../utils/SignupContext';
 
 import Qualification from './Qualification';
 import College from './College';
