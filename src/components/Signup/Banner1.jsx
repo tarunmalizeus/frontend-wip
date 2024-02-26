@@ -42,72 +42,45 @@ function Banner1() {
         variables: {
           input: {
             //login
-            email: "18@example.com",
-            password: "password123",
+            email: signupData.email,
+            password: signupData.password,
 
+            firstName: signupData.firstName,
+            lastName: signupData.lastName,
+            phone: signupData.phone,
+            portfolioUrl: signupData.portfolioUrl,
+            jobUpdates: signupData.jobUpdates,
+            referralName: signupData.referralName,
+            imageFile: signupData.imageFile,
+            resumeFile: signupData.resumeFile,
+            instructionalDesigner: signupData.instructionalDesigner,
+            softwareEngineer: signupData.softwareEngineer,
+            softwareQualityEngineer: signupData.softwareQualityEngineer,
+            percentage: parseFloat(signupData.percentage),
+            yearOfPassing: parseInt(signupData.yearOfPassing),
+            qualification: signupData.qualification,
+            stream: signupData.stream,
+            college: signupData.college,
+            otherCollege: signupData.otherCollege,
+            collegeLocation: signupData.collegeLocation,
+            applicantType: signupData.applicantType,
+            yearsOfExperience: parseInt(signupData.yearsOfExperience),
+            currentCTC: parseInt(signupData.currentCTC),
+            expectedCTC: parseInt(signupData.expectedCTC),
+            experiencedTech: signupData.experiencedTech,
+            otherExperiencedTech: signupData.otherExperiencedTech,
+            familiarTech: signupData.familiarTech,
+            otherFamiliarTech: signupData.otherFamiliarTech,
+            onNoticePeriod: signupData.onNoticePeriod,
+            noticePeriodEnd: signupData.noticePeriodEnd,
+            noticePeriodLength: parseInt(signupData.noticePeriodLength),
+            appearedForTests: signupData.appearedForTests,
+            testNames: signupData.testNames,
 
-            //user details
-            firstName: "John",
-            lastName: "Doe",
-            phone: "1234567890",
-            portfolioUrl: "https://example.com/portfolio",
-            jobUpdates: false,
-            referralName: "Jane Smith",
-
-            imageFile: "path/to/image.jpg",
-            resumeFile: "path/to/resume.pdf",
-
-            instructionalDesigner: true,
-            softwareEngineer: false,
-            softwareQualityEngineer: true,
-
-
-            //Education
-            percentage: 80,
-            yearOfPassing: 2019,
-            qualification: "Bachelor of Technology",
-            stream: "Computer Science",
-            college: "Stanford",
-            otherCollege: "",
-            collegeLocation: "City",
-
-            // percentage: parseFloat(signupData.percentage),
-            // yearOfPassing: parseInt(signupData.yearOfPassing),
-            // qualification: signupData.qualification,
-            // stream: signupData.stream,
-            // college: signupData.college,
-            // otherCollege: signupData.otherCollege,
-            // collegeLocation: signupData.collegeLocation,
-            
-
-            applicantType: "Fresher",
-            yearsOfExperience: 0,
-            currentCTC: 0,
-            expectedCTC: 50000,
-                        
-            experiencedTech: ["JavaScript", "React"],
-            otherExperiencedTech: "",
-            familiarTech: ["JavaScript", "React"],
-            otherFamiliarTech: "",
-            
-
-            // experiencedTech: signupData.experiencedTech,
-            // otherExperiencedTech: "",
-            // familiarTech: signupData.familiarTech,
-            // otherFamiliarTech: "",
-
-
-            onNoticePeriod: "Yes",
-            noticePeriodEnd: "2024-03-01",
-            noticePeriodLength: 30,
-            appearedForTests: "Yes",
-            testNames: "Technical Test, Aptitude Test",
           }
         }
       });
-      // console.log(result);
     } catch (error) {
-      // console.error(error);
     }
   };
 
