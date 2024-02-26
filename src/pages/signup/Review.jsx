@@ -17,7 +17,7 @@ function Review() {
         <Personal/>
 
         <div className='flex flex-row justify-between m-4'>
-          <h1>Qualification</h1>
+          <h1>Qualifications</h1>
           <button><Link to="/signup/mainsignup2">Edit</Link></button>
         </div>
 
