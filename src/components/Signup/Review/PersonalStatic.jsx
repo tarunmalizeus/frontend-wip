@@ -4,7 +4,7 @@ import upload_resume from '../../../assets/Upload_black_24dp.svg';
 import { useSignupData } from "../../../utils/SignupContext"
 
 
-function PersonalInformation() {
+function Personal() {
   const { signupData} = useSignupData();
     return (
 
@@ -290,4 +290,4 @@ function PersonalInformation() {
     )
   }
 
-export default PersonalInformation
+export default Personal

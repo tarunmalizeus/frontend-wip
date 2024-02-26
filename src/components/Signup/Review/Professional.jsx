@@ -1,6 +1,6 @@
 import { useSignupData } from "../../../utils/SignupContext"
 
-function ProfessionalQualification() {
+function Professional() {
   const { signupData} = useSignupData();
     return (
       <div>
@@ -161,4 +161,4 @@ function ProfessionalQualification() {
     )
   }
 
-export default ProfessionalQualification
+export default Professional

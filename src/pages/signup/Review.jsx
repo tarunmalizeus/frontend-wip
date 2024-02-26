@@ -1,9 +1,9 @@
 
 import React from 'react';
-import PersonalInformation from '../../components/signup/Review/PersonalInformation';
+import Personal from '../../components/signup/Review/PersonalStatic';
 import { Link } from 'react-router-dom';
-import EducationalQualification from '../../components/signup/Review/EducationalQualification';
-import ProfessionalQualification from '../../components/signup/Review/ProfessionalQualification';
+import Education from '../../components/signup/Review/EducationStatic';
+import Professional from '../../components/signup/Review/Professional';
 
 function Review() {
 
@@ -14,7 +14,7 @@ function Review() {
           <button><Link to="/signup">Edit</Link></button>
         </div>
 
-        <PersonalInformation/>
+        <Personal/>
 
         <div className='flex flex-row justify-between m-4'>
           <h1>Qualification</h1>
@@ -22,8 +22,8 @@ function Review() {
         </div>
 
         <div className='space-y-4'>
-          <EducationalQualification/>
-          <ProfessionalQualification/>
+          <Education/>
+          <Professional/>
         </div>
 
     </div>
