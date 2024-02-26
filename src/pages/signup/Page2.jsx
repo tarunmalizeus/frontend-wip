@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Education from '../../components/signup/Page2/Education';
-import Professional from '../../components/signup/Page2/Professional';
+import EducationComponent from '../../components/signup/Page2/EducationComponent';
+import ProfessionalComponent from '../../components/signup/Page2/ProfessionalComponent';
 
 function AccordionItem({ title, children }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -26,10 +26,10 @@ function MainSignup2() {
   return (
     <div className="space-y-2 m-4">
       <AccordionItem title="Education Qualiffications">
-        <Education />
+        <EducationComponent />
       </AccordionItem>
       <AccordionItem title="Professional Qualifications">
-        <Professional />
+        <ProfessionalComponent />
       </AccordionItem>
     </div>
   );

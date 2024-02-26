@@ -6,7 +6,7 @@ import College from './College';
 import Stream from './Stream';
 
 
-function Education() {
+function EducationComponent() {
   const { signupData, updateSignupData } = useSignupData();
 
 
@@ -98,4 +98,4 @@ function Education() {
   );
 }
 
-export default Education;
+export default EducationComponent;

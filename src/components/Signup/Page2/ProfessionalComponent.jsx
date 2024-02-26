@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSignupData } from '../../../utils/SignupContext';
 
-function Professional() {
+function ProfessionalComponent() {
   const { signupData, updateSignupData } = useSignupData();
 
   const handleCheckboxChange = (e) => {
@@ -381,4 +381,4 @@ function Professional() {
   );
 }
 
-export default Professional;
+export default ProfessionalComponent;
