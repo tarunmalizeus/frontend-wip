@@ -25,10 +25,10 @@ function AccordionItem({ title, children }) {
 function MainSignup2() {
   return (
     <div className="space-y-2 m-4">
-      <AccordionItem title="Education">
+      <AccordionItem title="Education Qualiffications">
         <Education />
       </AccordionItem>
-      <AccordionItem title="Professional">
+      <AccordionItem title="Professional Qualifications">
         <Professional />
       </AccordionItem>
     </div>
