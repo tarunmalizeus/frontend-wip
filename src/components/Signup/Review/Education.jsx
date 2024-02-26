@@ -10,7 +10,7 @@ function Education() {
 
       <div>
         <h1 className="bg-accordianblue p-4 mx-4">Educational Qualifications</h1>
-        <form className='flex flex-col p-4 mx-4 bg-white gap-8'>
+        <form className='flex flex-col p-8 mx-4 bg-white gap-8'>
         <div className='flex flex-col'>
           <label className="text-gray-500 text-sm ">
             Aggregate Percentage*

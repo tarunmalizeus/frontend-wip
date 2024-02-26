@@ -7,12 +7,11 @@ function Professional() {
         <h1 className="bg-accordianblue p-4 mx-4">Professional Qualification</h1>
 
 
-        <form className='flex flex-col p-4 mx-4 bg-white gap-8'>
+        <form className='flex flex-col p-8 mx-4 bg-white gap-8'>
 
-<label className='my-3  w-1/4 flex flex-col gap-2'>
+<label className='my-3   flex flex-col gap-2  w-full'>
   <div className="text-gray-500 text-sm ">Applicant Type*</div>
-
-<div className='space-x-4'>
+<div className='space-x-4 flex flex-row w-full'>
   <input
     type="radio"
     name="applicantType"
