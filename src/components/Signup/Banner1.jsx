@@ -109,7 +109,7 @@ function Banner1() {
           onClick={isReview ? handleSubmit : undefined}
           disabled={!isReview}
         >
-  Submit
+  CREATE
 </button>
 
 

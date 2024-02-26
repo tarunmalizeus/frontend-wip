@@ -18,8 +18,6 @@ function EducationComponent() {
 
     <form className='flex flex-col p-4 bg-white gap-8'>
 
-      
-
       <div className='flex flex-col'>
         <label className="text-gray-500 text-sm ">
           Aggregate Percentage*

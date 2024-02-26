@@ -2,12 +2,9 @@ import { useSignupData } from "../../../utils/SignupContext"
 
 function EducationalQualification() {
   const { signupData } = useSignupData();
-
-
-
     return (
       <div >
-        <h1 className="bg-accordianblue p-4 mx-4">EducationalQualification</h1>
+        <h1 className="bg-accordianblue p-8 mx-4">EducationalQualification</h1>
         <div className='flex flex-col p-4 mx-4 bg-white space-y-4'>
 
         <div className="space-y-1">
