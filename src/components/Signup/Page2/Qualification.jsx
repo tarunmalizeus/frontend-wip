@@ -23,7 +23,7 @@ function Qualification() {
 
     return (
       <>
-<label className='my-3 border-b-2'>
+<label className='my-3 border-b-2 gap-2 flex flex-col'>
       <div className="text-gray-500 text-sm ">Qualification*</div>
       <select className='w-full' name="qualification" value={signupData.qualification} onChange={handleChange}>
         {loading ? (

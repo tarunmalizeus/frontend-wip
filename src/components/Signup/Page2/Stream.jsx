@@ -24,7 +24,7 @@ function Stream() {
 
     return (
       <>
-<label className='my-3 border-b-2'>
+<label className='my-3 border-b-2 gap-2 flex flex-col'>
       <div className="text-gray-500 text-sm ">Stream*</div>
       <select className='w-full' name="stream" value={signupData.stream} onChange={handleChange}>
         {loading ? (

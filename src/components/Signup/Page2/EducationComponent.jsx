@@ -33,7 +33,7 @@ function EducationComponent() {
       </div>
 
 
-      <div className='flex flex-col'>
+      <div className='flex flex-col gap-2'>
         <label className="text-gray-500 text-sm ">
           Year Of Passing*
         </label>
@@ -56,7 +56,7 @@ function EducationComponent() {
 
           <Stream/>
 
-          <label className='my-3 border-b-2'>
+          <label className='my-3 border-b-2 flex flex-col gap-2'>
             <div className="text-gray-500 text-sm ">
               If Others, Please Enter Your College Name
 

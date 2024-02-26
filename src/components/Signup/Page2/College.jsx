@@ -23,7 +23,7 @@ function College() {
 
     return (
       <>
-    <label className='my-3 border-b-2'>
+    <label className='my-3 border-b-2 gap-2 flex flex-col'>
       <div className="text-gray-500 text-sm ">College*</div>
       <select className='w-full' name="college" value={signupData.college} onChange={handleChange}>
         {loading ? (
