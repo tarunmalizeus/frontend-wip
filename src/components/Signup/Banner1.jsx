@@ -78,9 +78,18 @@ function Banner1() {
             testNames: signupData.testNames,
 
           }
+
+
         }
       });
-    } catch (error) {
+
+      if (result.data.createUser.user_id) {
+        console.log(user_id);
+        navigate('/login');
+      }
+
+    } 
+      catch (error) {
     }
   };
 
