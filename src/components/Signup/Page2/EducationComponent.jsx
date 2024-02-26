@@ -35,7 +35,7 @@ function EducationComponent() {
 
       <div className='flex flex-col'>
         <label className="text-gray-500 text-sm ">
-          Year Of Passing
+          Year Of Passing*
         </label>
         <select
           className='my-1 border-b-2 w-1/4'

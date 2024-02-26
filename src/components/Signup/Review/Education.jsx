@@ -1,7 +1,7 @@
 import { useSignupData } from "../../../utils/SignupContext"
-import College from "../Page2/College";
-import Qualification from "../Page2/Qualification";
-import Stream from "../Page2/Stream";
+import QualificationStatic from "./Qualification";
+import StreamStatic from "./StreamStatic";
+import CollegeStatic from "./CollegeStatic";
 
 
 function Education() {
@@ -39,13 +39,13 @@ function Education() {
       <div className='flex flex-row justify-between '>
         <div className='flex flex-col w-1/3 gap-8'>
 
-      <Qualification/>
-      <College/>
+      <QualificationStatic/>
+      <CollegeStatic/>
         </div>
 
         <div className='flex flex-col w-1/3 gap-8'>
 
-          <Stream/>
+          <StreamStatic/>
 
           <label className='my-3 border-b-2'>
             <div className="text-gray-500 text-sm ">
