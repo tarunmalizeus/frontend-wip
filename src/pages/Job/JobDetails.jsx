@@ -5,6 +5,7 @@ import { useState } from "react";
 import Processandapply from "../../components/job/Processandapply.jsx";
 import { useQuery, gql } from "@apollo/client";
 import Loading from '../Loading';
+import { useLocation } from 'react-router-dom';
 
 const QUERY_JOBS_BY_ID = gql`
 query JobById($jobId: Int!) {
@@ -19,7 +20,6 @@ query JobById($jobId: Int!) {
     name
     roles {
       role_name
-      role_id
     }
   }
 }
@@ -52,37 +52,11 @@ function AccordionItem({ title, children }) {
 
 
 function JobDetails() {
-  const jobDataArray = [
-    {
-        "job_id": 0,
-        "name": "Software Engineer",
-        "from_time": "2023-01-01",
-        "to_time": "2023-06-01",
-        "location_name": "New York",
-        "roles_in_job": ["Associate Product Manager","Data Science Intern"],
-        "internship": "No"
-    },
-    {
-        "job_id": 1,
-        "name": "Data Analyst",
-        "from_time": "2023-02-01",
-        "to_time": "2023-07-01",
-        "location_name": "San Francisco",
-        "roles_in_job": ["Associate Product Manager","Data Science Intern"],
-        "internship": "Yes"
-    },
-    {
-        "job_id": 2,
-        "name": "Product Manager",
-        "from_time": "2023-03-01",
-        "to_time": "2023-08-01",
-        "location_name": "Boston",
-        "roles_in_job": ["Associate Product Manager","Data Science Intern"],
-        "internship": "No"
-    }
-];
+  //failue
+  // const location = useLocation();
+  // console.log(location);
+  // const data1 = location.state.data;
 
-  //backend call to get complete job details
   const {job_id}=useParams();
   const { loading, error, data } = useQuery(QUERY_JOBS_BY_ID, {
     variables: { jobId: parseInt(job_id) },

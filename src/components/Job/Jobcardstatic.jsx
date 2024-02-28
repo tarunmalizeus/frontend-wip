@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 
 function Jobcardstatic({job}) {
-  console.log(job.jobById.location_city.location_name)
+
+
   return (
     <div className="w-screem shadow-lg bg-white p-4 ">
 
@@ -53,7 +54,7 @@ function Jobcardstatic({job}) {
               ))}
             </div>
             <p ><span className="bg-backgroundyellow rounded-l-md rounded-r-md px-2">Internship: {job.jobById.internship}</span></p>
-        </div>
+        </div> 
 
     </div>
   );

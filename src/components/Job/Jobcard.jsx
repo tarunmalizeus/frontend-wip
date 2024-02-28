@@ -36,13 +36,29 @@ function Jobcard({ job }) {
           
           <div className='flex flex-row justify-center'>
             <button>
-              <Link to={"/jobs/"+job_id}>
+              <Link
+              to = {{
+                pathname: `/jobs/${job_id}`,
+                //failure
+                // state: {
+                //   job: job
+                // }
+              }}
+              >
                 <div
                   className="bg-lightgreen py-1 px-4 "
                 >
                   VIEW MORE DETAILS
                 </div>
               </Link>
+{/* 
+              <Link to={"/jobs/"+job_id}>
+                <div
+                  className="bg-lightgreen py-1 px-4 "
+                >
+                  VIEW MORE DETAILS
+                </div>
+              </Link> */}
             </button>
           </div> 
 

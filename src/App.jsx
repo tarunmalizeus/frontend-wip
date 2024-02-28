@@ -17,6 +17,7 @@ import Jobview from './pages/job/JobView';
 // import 'dotenv/config';
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import MainHeader from './components/MainHeader';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
 
