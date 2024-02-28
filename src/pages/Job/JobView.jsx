@@ -20,8 +20,6 @@ query Query {
     }
   }
 }
-
-
 `;
 
 function Jobview() {

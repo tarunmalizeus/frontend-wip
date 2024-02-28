@@ -1,9 +1,31 @@
 import { useJobApplyData } from '../../utils/JobApplyContext';
 import React, { useCallback } from 'react';
+import { useQuery, gql } from "@apollo/client";
+
+
+const QUERY_SLOT_PREF = gql`
+query JobById($job_id: Int!) {
+  jobById(job_id: $job_id) {
+    slots {
+      slot_id
+      from_time
+      to_time
+    }
+  }
+}
+`;
+
 
 
 const Apply = ({jobIdAndPref}) => {
     const {job_id,roles}=jobIdAndPref;
+    const { loading, error, data } = useQuery(QUERY_SLOT_PREF, {
+        variables: { job_id: job_id },
+      });
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error.message}</p>;
+    // console.log(data.jobById.slots)
     // console.log(job_id)
     // console.log(roles)
 
@@ -28,7 +50,9 @@ const Apply = ({jobIdAndPref}) => {
 
       <div className="mb-4">
         <p>Select a Time Slot :</p>
-        <div className="flex items-center mb-2">
+
+
+        {/* <div className="flex items-center mb-2">
           <input
             id="timeSlot1"
             type="radio"
@@ -42,6 +66,10 @@ const Apply = ({jobIdAndPref}) => {
             9:00 AM to 11:00 AM
           </label>
         </div>
+
+
+
+
         <div className="flex items-center mb-4">
           <input
             id="timeSlot2"
@@ -55,8 +83,30 @@ const Apply = ({jobIdAndPref}) => {
           <label htmlFor="timeSlot2" className="ml-2 text-sm font-medium text-gray-700">
             1:00 PM to 3:00 PM
           </label>
-        </div>
+        </div> */}
+
+{data.jobById.slots.map((slot, index) => (
+  <div className="flex items-center mb-2" key={slot.slot_id}>
+    <input
+      id={`timeSlot${index}`}
+      type="radio"
+      name="timeSlot"
+      value={`${slot.from_time}-${slot.to_time}`}
+      checked={formData.timeSlot === `${slot.from_time}-${slot.to_time}`}
+      onChange={handleTimeSlotChange}
+      className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+    />
+    <label htmlFor={`timeSlot${index}`} className="ml-2 text-sm font-medium text-gray-700">
+      {`${slot.from_time} to ${slot.to_time}`}
+    </label>
+  </div>
+))}
+
+
+
+
       </div>
+
 
       <div className="mb-4">
         <p>Select Your Preference :</p>
