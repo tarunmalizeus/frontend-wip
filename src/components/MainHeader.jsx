@@ -4,9 +4,10 @@ import { useNavigate } from 'react-router-dom';
 
 function MainHeader() {
 
-
+    const navigate = useNavigate();
   
     const signOut = () => {
+      // console.log('signout')
       localStorage.removeItem('user');
       navigate('/login');
     };
