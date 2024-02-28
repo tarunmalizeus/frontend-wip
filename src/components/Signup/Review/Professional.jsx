@@ -103,7 +103,7 @@ function Professional() {
               type="checkbox"
               name="experiencedTech"
               value="AngularJS"
-              checked={signupData.experiencedTech.inclu es('AngularJS')}
+              checked={signupData.experiencedTech.includes('AngularJS')}
 
               className='mr-2'
             />
