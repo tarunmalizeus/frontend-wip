@@ -3,9 +3,27 @@ import { useParams } from "react-router-dom";
 import Role from "../../components/job/Role.jsx";
 import { useState } from "react";
 import Processandapply from "../../components/job/Processandapply.jsx";
-import Confirmation from "./Confirmation.jsx";
-import { JobApplyProvider } from '../../utils/JobApplyContext.jsx';
+import { useQuery, gql } from "@apollo/client";
+import Loading from '../Loading';
 
+const QUERY_JOBS_BY_ID = gql`
+query JobById($jobId: Int!) {
+  jobById(job_id: $jobId) {
+    job_id
+    internship
+    from_time
+    to_time
+    location_city {
+      location_name
+    }
+    name
+    roles {
+      role_name
+      role_id
+    }
+  }
+}
+`;
 
 function AccordionItem({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,25 +84,23 @@ function JobDetails() {
 
   //backend call to get complete job details
   const {job_id}=useParams();
-
-
+  const { loading, error, data } = useQuery(QUERY_JOBS_BY_ID, {
+    variables: { jobId: parseInt(job_id) },
+  });
+  if (loading) return <Loading />;
+  if (error) return <p>Error: {error.message}</p>;
+  // console.log(data.jobById);
     return (
-
-
-
       <div className="space-y-2 m-4">
-          {/* <JobApplyProvider> */}
-          <Jobcardstatic job={jobDataArray[job_id]} />
+          <Jobcardstatic job={data} />
           <AccordionItem title="Pre-requisites & Application Process">
             <Processandapply />
           </AccordionItem>
-          {/* <Confirmation/>  */}
-        {/* </JobApplyProvider> */}
-        {(jobDataArray[job_id].roles_in_job).map((role, idx) => (
+        {/* {(data.jobById.roles_in_job).map((role, idx) => (
           <AccordionItem key={idx} title={role}>
             <Role job={role} />
           </AccordionItem>
-        ))}
+        ))} */}
             </div>
 
 

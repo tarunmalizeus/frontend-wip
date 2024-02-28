@@ -1,25 +1,26 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-function Jobcardstatic({ job }) {
+function Jobcardstatic({job}) {
   return (
     <div className="w-screem shadow-lg bg-white p-4 ">
+
 
             <div className='pb-4 border-b-2'>
           <div className='flex flex-row justify-between items-start'>
 
 
               <div>
-                <div className="text-xl mb-2 text-lightgreen">{job.name}</div>
+                <div className="text-xl mb-2 text-lightgreen">{job.jobById.name}</div>
                 <div className=''>
                   <p className='text-sm'>Date & time:</p>
                 </div>
                 <div className='flex flex-row justify-start'>
                   <div className=' border-r-2'>
-                      <p className="pr-1">{job.from_time} to {job.to_time}</p>
+                      <p className="pr-1">{job.jobById.from_time} to {job.jobById.to_time}</p>
                   </div>
                   <div className='pl-1'>
-                    <p className="">{job.location_name}</p>
+                    <p className="">{job.jobById.location_name}</p>
                   </div>
                 </div>
               </div>
@@ -40,18 +41,17 @@ function Jobcardstatic({ job }) {
           </div>
             </div>
             
-
           <div className='flex flex-col py-3'>
 
             <p className="text-sm">Job Role:</p>
             <div className='flex flex-row'>
-              {job.roles_in_job.map((role, index) => (
+              {job.jobById.roles.map((role, index) => (
                 <div  key={index} className="pr-2">
-                  <div className>{role}</div>
+                  <div className>{role.role_name}</div>
                 </div>
               ))}
             </div>
-            <p ><span className="bg-backgroundyellow rounded-l-md rounded-r-md px-2">Internship: {job.internship}</span></p>
+            <p ><span className="bg-backgroundyellow rounded-l-md rounded-r-md px-2">Internship: {job.jobById.internship}</span></p>
         </div>
 
     </div>
