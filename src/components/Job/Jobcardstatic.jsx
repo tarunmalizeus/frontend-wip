@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 
 function Jobcardstatic({job}) {
+  console.log(job.jobById.location_city.location_name)
   return (
     <div className="w-screem shadow-lg bg-white p-4 ">
 
@@ -20,7 +21,7 @@ function Jobcardstatic({job}) {
                       <p className="pr-1">{job.jobById.from_time} to {job.jobById.to_time}</p>
                   </div>
                   <div className='pl-1'>
-                    <p className="">{job.jobById.location_name}</p>
+                    <p className="">{job.jobById.location_city.location_name}</p>
                   </div>
                 </div>
               </div>
