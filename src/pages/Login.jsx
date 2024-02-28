@@ -1,7 +1,20 @@
+import { useMutation, gql } from "@apollo/client";
 import { useState } from 'react';
 import {useNavigate, NavLink } from 'react-router-dom';
 
 function Login() {
+  const navigate = useNavigate();
+
+  const LOGIN_USER = gql`
+  mutation Mutation($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      user_id
+    }
+  }
+  `;
+
+  const [loginUser] = useMutation(LOGIN_USER);
+
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -13,42 +26,31 @@ function Login() {
     const value = e.target.value;
     setUser({ ...user, [name]: value });
   };
-
   
 
   const PostData = async (e) => {
-  //   e.preventDefault();
 
-  //   const response = await fetch(`${process.env.REACT_APP_BACKEND}/Api/signin`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({user}),
-  //   });
+    try {
+      const { data } = await loginUser({
+        variables: { email: user.email, password: user.password },
+      }); 
+      if(data){
+        console.log(data.login.user_id); 
+        localStorage.setItem('user', data.login.user_id);
+        window.alert('Login Successful');
+        navigate('/jobs');
+      }
+    } catch (error) {
+      console.error('Error:', error.message);
+    }
 
-  //   //This is how the fetch api works
-  //   const data1 = await response.json();
-  //   const data2 = response.status;
-
-  //   const errata = data1.error;
-
-  //   if (data2 === 200) {
-  //   //   console.log(data1.accessToken);
-  //     window.alert('Successfully login');
-  //     sessionStorage.setItem("accessToken",data1.accessToken);
-  //     // navigate('/');
-  //     window.location.reload();
-  //   } else {
-  //     window.alert(errata);
-  //   }
   };
 
     return (
       <div className='h-full flex justify-center items-center'>
         <div className='bg-white h-2/3 w-2/5 border-bordertop border-t-4 fle-col'>
                 <h1 className='text-2xl text-center mt-2'>Log in</h1>
-                <form className='bg-white flex flex-col h-full justify-around items-center p-4' method="POST">
+                <div className='bg-white flex flex-col h-full justify-around items-center p-4' method="POST">
 
                   <div className='flex flex-col w-full'>
                     <input
@@ -106,7 +108,7 @@ function Login() {
                     <NavLink className='text-darkgreen' to="/Signup">CREATE AN ACCOUNT</NavLink>
                   </div>
 
-                </form>
+                </div>
         </div>
       </div>
     )
