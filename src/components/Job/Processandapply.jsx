@@ -1,7 +1,13 @@
 import Apply from './Apply'
 import '../../index.css'
 
-function Processandapply() {
+
+
+
+function Processandapply({pref, slots}) {
+    const {job_id,roles}=pref;
+    console.log(roles)
+
     return (
       <div className='space-y-4'>
         <div className='bg-white shadow-md p-4'>
