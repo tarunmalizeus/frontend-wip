@@ -1,9 +1,12 @@
 import { useJobApplyData } from '../../utils/JobApplyContext';
-
 import React, { useCallback } from 'react';
 
 
-const Apply = () => {
+const Apply = ({jobIdAndPref}) => {
+    const {job_id,roles}=jobIdAndPref;
+    // console.log(job_id)
+    // console.log(roles)
+
   const { formData, updateFormData, togglePreference, updateResume  } = useJobApplyData();
 
 

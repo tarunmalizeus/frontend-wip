@@ -69,7 +69,7 @@ function JobDetails() {
           <Jobcardstatic job={data} />
           <AccordionItem title="Pre-requisites & Application Process">
             {/* {console.log(data.jobById.roles)} */}
-            <Processandapply pref={{job_id:data.jobById.job_id, roles:data.jobById}}/>
+            <Processandapply jobIdAndPref={{job_id:data.jobById.job_id, roles:data.jobById}}/>
           </AccordionItem>
         {(data.jobById.roles).map((role, idx) => (
           <AccordionItem key={role.role_id} title={role.role_name}>

@@ -4,9 +4,9 @@ import '../../index.css'
 
 
 
-function Processandapply({pref, slots}) {
-    const {job_id,roles}=pref;
-    console.log(roles)
+function Processandapply({jobIdAndPref}) {
+    // const {job_id,roles}=jobIdAndPref;
+    // console.log(roles)
 
     return (
       <div className='space-y-4'>
@@ -54,7 +54,7 @@ function Processandapply({pref, slots}) {
       </div>
         </div>
       
-        <Apply/>
+        <Apply jobIdAndPref={jobIdAndPref}/>
       </div>
     )
   }
