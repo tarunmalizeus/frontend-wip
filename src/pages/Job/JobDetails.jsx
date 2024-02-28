@@ -20,6 +20,8 @@ query JobById($jobId: Int!) {
     name
     roles {
       role_name
+      role_id
+      job_id
     }
   }
 }
@@ -54,7 +56,6 @@ function AccordionItem({ title, children }) {
 function JobDetails() {
   //failue
   // const location = useLocation();
-  // console.log(location);
   // const data1 = location.state.data;
 
   const {job_id}=useParams();
@@ -63,18 +64,17 @@ function JobDetails() {
   });
   if (loading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
-  // console.log(data.jobById);
     return (
       <div className="space-y-2 m-4">
           <Jobcardstatic job={data} />
           <AccordionItem title="Pre-requisites & Application Process">
             <Processandapply />
           </AccordionItem>
-        {/* {(data.jobById.roles_in_job).map((role, idx) => (
-          <AccordionItem key={idx} title={role}>
-            <Role job={role} />
+        {(data.jobById.roles).map((role, idx) => (
+          <AccordionItem key={role.role_id} title={role.role_name}>
+            <Role role={role} />
           </AccordionItem>
-        ))} */}
+        ))}
             </div>
 
 
