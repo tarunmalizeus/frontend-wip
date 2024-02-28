@@ -18,18 +18,17 @@ query JobById($job_id: Int!) {
 
 
 const Apply = ({jobIdAndPref}) => {
+  const { formData, updateFormData, togglePreference, updateResume  } = useJobApplyData();
     const {job_id,roles}=jobIdAndPref;
+    console.log(job_id)
     const { loading, error, data } = useQuery(QUERY_SLOT_PREF, {
         variables: { job_id: job_id },
       });
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error.message}</p>;
-    // console.log(data.jobById.slots)
-    // console.log(job_id)
+    // if (loading) return <p>Loading...</p>;
+    // if (error) return <p>Error: {error.message}</p>;
     // console.log(roles)
 
-  const { formData, updateFormData, togglePreference, updateResume  } = useJobApplyData();
 
 
   const handleTimeSlotChange = useCallback((event) => {
@@ -85,7 +84,8 @@ const Apply = ({jobIdAndPref}) => {
           </label>
         </div> */}
 
-{data.jobById.slots.map((slot, index) => (
+
+  {data && (data.jobById.slots.map((slot, index) => (
   <div className="flex items-center mb-2" key={slot.slot_id}>
     <input
       id={`timeSlot${index}`}
@@ -100,7 +100,7 @@ const Apply = ({jobIdAndPref}) => {
       {`${slot.from_time} to ${slot.to_time}`}
     </label>
   </div>
-))}
+)))}
 
 
 
