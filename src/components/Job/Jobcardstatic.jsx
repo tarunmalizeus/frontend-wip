@@ -1,7 +1,42 @@
-import { Link } from 'react-router-dom';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useJobApplyData } from '../../utils/JobApplyContext';
+import { useMutation, gql } from '@apollo/client';
+
+const APPLY_JOB = gql`
+  mutation ApplyJob($input: ApplyJobInput!) {
+    applyJob(input: $input) {
+      job_id
+    }
+  }
+`;
+
 
 function Jobcardstatic({job}) {
+  const navigate = useNavigate();
+  const {jobApplyData} = useJobApplyData();
+
+
+  const apply = async () => {
+    
+
+    // try {
+    //   const result= await applyJobMutation({
+    //     variables: {
+    //       input: {
+    //         job_id: job.jobById.job_id,
+    //       },
+    //     },
+    //   });
+    // }
+    // catch (error) {
+    //   console.log(error);
+    // }
+
+
+
+    // navigate('/jobs/confirmation');
+  }
 
 
   return (
@@ -30,13 +65,15 @@ function Jobcardstatic({job}) {
 
               <button
 
+
+                      onClick={apply}
                       className="bg-lightgreen  px-4 py-1"
                       type="submit"
                       name="aaply"
                       id="aaply"
                       value="Apply"
                       >
-                      <Link to="/jobs/confirmation">Apply</Link>
+                      Apply
               </button>
 
 
