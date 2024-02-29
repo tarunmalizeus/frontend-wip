@@ -20,7 +20,7 @@ query JobById($job_id: Int!) {
 const Apply = ({jobIdAndPref}) => {
   const { formData, updateFormData, togglePreference, updateResume  } = useJobApplyData();
     const {job_id,roles}=jobIdAndPref;
-    console.log(job_id)
+    console.log(roles)
     const { loading, error, data } = useQuery(QUERY_SLOT_PREF, {
         variables: { job_id: job_id },
       });
@@ -51,40 +51,6 @@ const Apply = ({jobIdAndPref}) => {
         <p>Select a Time Slot :</p>
 
 
-        {/* <div className="flex items-center mb-2">
-          <input
-            id="timeSlot1"
-            type="radio"
-            name="timeSlot"
-            value="9AM-11AM"
-            checked={formData.timeSlot === '9AM-11AM'}
-            onChange={handleTimeSlotChange}
-            className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
-          />
-          <label htmlFor="timeSlot1" className="ml-2 text-sm font-medium text-gray-700">
-            9:00 AM to 11:00 AM
-          </label>
-        </div>
-
-
-
-
-        <div className="flex items-center mb-4">
-          <input
-            id="timeSlot2"
-            type="radio"
-            name="timeSlot"
-            value="1PM-3PM"
-            checked={formData.timeSlot === '1PM-3PM'}
-            onChange={handleTimeSlotChange}
-            className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
-          />
-          <label htmlFor="timeSlot2" className="ml-2 text-sm font-medium text-gray-700">
-            1:00 PM to 3:00 PM
-          </label>
-        </div> */}
-
-
   {data && (data.jobById.slots.map((slot, index) => (
   <div className="flex items-center mb-2" key={slot.slot_id}>
     <input
@@ -102,14 +68,12 @@ const Apply = ({jobIdAndPref}) => {
   </div>
 )))}
 
-
-
-
       </div>
 
 
       <div className="mb-4">
         <p>Select Your Preference :</p>
+
         <div className="flex items-center mb-2">
           <input
             id="preference1"
@@ -123,6 +87,8 @@ const Apply = ({jobIdAndPref}) => {
             Instructional Designer
           </label>
         </div>
+
+
         <div className="flex items-center mb-2">
           <input
             id="preference2"
@@ -136,6 +102,8 @@ const Apply = ({jobIdAndPref}) => {
             Software Engineer
           </label>
         </div>
+
+
         <div className="flex items-center mb-4">
           <input
             id="preference3"
@@ -149,6 +117,7 @@ const Apply = ({jobIdAndPref}) => {
             Software Quality Engineer
           </label>
         </div>
+
       </div>
 
       <div className="flex items-center justify-start">
@@ -162,6 +131,7 @@ const Apply = ({jobIdAndPref}) => {
         </label>
       </div>
     </div>
+
   );
 };
 
