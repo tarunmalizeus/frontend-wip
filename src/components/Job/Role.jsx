@@ -12,8 +12,9 @@ query Query($job_id: Int!, $role_id: Int!) {
   }
 `;
 
-function Role({ role }) {
-    const { role_name, job_id, role_id } = role;
+function Role({RoleAndJobId}) {
+    const { job_id, role } = RoleAndJobId;
+    const { role_name ,role_id } = role;
     const { loading, error, data } = useQuery(QUERY_ROLE, {
         variables: { job_id, role_id }
     });

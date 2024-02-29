@@ -21,7 +21,6 @@ query JobById($jobId: Int!) {
     roles {
       role_name
       role_id
-      job_id
     }
   }
 }
@@ -71,9 +70,9 @@ function JobDetails() {
             {/* {console.log(data.jobById.roles)} */}
             <Processandapply jobIdAndPref={{job_id:data.jobById.job_id, roles:data.jobById.roles}}/>
           </AccordionItem>
-        {(data.jobById.roles).map((role, idx) => (
+        {(data.jobById.roles).map((role) => (
           <AccordionItem key={role.role_id} title={role.role_name}>
-            <Role role={role} />
+            <Role RoleAndJobId={{role:role, job_id:data.jobById.job_id}} />
           </AccordionItem>
         ))}
             </div>

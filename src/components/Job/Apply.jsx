@@ -20,7 +20,7 @@ query JobById($job_id: Int!) {
 const Apply = ({jobIdAndPref}) => {
   const { formData, updateFormData, togglePreference, updateResume  } = useJobApplyData();
     const {job_id,roles}=jobIdAndPref;
-    console.log(roles)
+    // console.log(roles)
     const { loading, error, data } = useQuery(QUERY_SLOT_PREF, {
         variables: { job_id: job_id },
       });
