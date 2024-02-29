@@ -114,7 +114,7 @@ const handleCheckboxChange = (e) => {
         <p>Select Your Preference :</p>
         {roles.map((role, index) => (
           <div className="flex items-center mb-2" key={role.role_id}>
-                <label>
+
         <input
           id={`preference${index}`}
           type="checkbox"
@@ -124,6 +124,7 @@ const handleCheckboxChange = (e) => {
           onChange={handleCheckboxChange}
           className="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 rounded"
         />
+        <label htmlFor={`preference${index}`} className="ml-2 text-sm font-medium text-gray-700">
         {role.role_name}
         </label>
         </div>
