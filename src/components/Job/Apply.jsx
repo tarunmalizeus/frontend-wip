@@ -112,8 +112,6 @@ const handleCheckboxChange = (e) => {
 
       <div className="mb-4">
         <p>Select Your Preference :</p>
-         {console.log(jobApplyData.preferences)}
-
         {roles.map((role, index) => (
           <div className="flex items-center mb-2" key={role.role_id}>
                 <label>
@@ -133,10 +131,6 @@ const handleCheckboxChange = (e) => {
 
 
         ))} 
-
-
-
-
       </div>
 
 
@@ -146,7 +140,7 @@ const handleCheckboxChange = (e) => {
         <img src={upload_resume} width={24} alt="" />
         <div className="text-[#1F7A54] font-semibold text-lg">
           <button onClick={handleFileButtonClick}>
-            {jobApplyData.resumeFile ? `${jobApplyData.resumeFile.name}` : "UPLOAD RESUME"}
+            {jobApplyData.resumeFile ? `${jobApplyData.resumeFile.name}` : "UPLOAD UPDATED RESUME"}
           </button>
 
           <input
@@ -163,28 +157,6 @@ const handleCheckboxChange = (e) => {
       </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-      {/* <div className="flex items-center justify-start">
-        <label className="px-4 py-2 bg-lightgreen text-white text-sm font-medium rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 cursor-pointer">
-          <span className="mr-2">⬆</span> UPLOAD UPDATED RESUME
-          <input
-            type="file"
-            className="hidden"
-            onChange={handleResumeUpload}
-          />
-        </label>
-      </div> */}
     </div>
 
   );

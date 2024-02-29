@@ -8,11 +8,11 @@ function Confirmation() {
       <div>
         <p>Time Slot: {jobApplyData.timeSlot}</p>
         <p>Preferences:</p>
-        {/* <ul>
+        <ul>
           {jobApplyData.preferences.map((preference, index) => (
             <li key={index}>{preference}</li>
           ))}
-        </ul> */}
+        </ul>
         <p>Resume: {jobApplyData.resumeFile ? jobApplyData.resumeFile.name : 'None'}</p>
       </div>
     </div>
