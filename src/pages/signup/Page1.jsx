@@ -1,9 +1,9 @@
+import { useSignupData } from '../../utils/SignupContext';
 import { useRef } from 'react';
 import default_pfp from '../../assets/default_pfp.png';
 import upload_resume from '../../assets/Upload_black_24dp.svg';
 import { useState } from 'react';
 
-import { useSignupData } from '../../utils/SignupContext';
 import { usePage1ErrorContext } from '../../utils/Page1ErrorContext';
 
 function PersonalDetails() {

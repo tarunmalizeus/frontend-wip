@@ -5,22 +5,18 @@ const JobApplyContext = createContext();
 export const useJobApplyData = () => useContext(JobApplyContext);
 
 export const JobApplyProvider = ({ children }) => {
-  const [formData, setFormData] = useState({
+  const [jobApplyData, setJobApplyData] = useState({
     timeSlot: null,
-    preferences: {
-      instructionalDesigner: false,
-      softwareEngineer: false,
-      softwareQualityEngineer: false,
-    },
-    resume: null,
+    preferences: [],
+    resumeFile: null,
   });
 
-  const updateFormData = (field, value) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+  const updateJobApplyData = (newData) => {
+    setJobApplyData((prevData) => ({ ...prevData, ...newData }));
   };
 
   const togglePreference = (preference) => {
-    setFormData((prev) => ({
+    setJobApplyData((prev) => ({
       ...prev,
       preferences: {
         ...prev.preferences,
@@ -29,12 +25,12 @@ export const JobApplyProvider = ({ children }) => {
     }));
   };
 
-  const updateResume = (file) => {
-    setFormData((prev) => ({ ...prev, resume: file }));
-  };
+  // const updateResume = (file) => {
+  //   setJobApplyData((prev) => ({ ...prev, resumeFile: file }));
+  // };
 
   return (
-    <JobApplyContext.Provider value={{ formData, updateFormData, togglePreference, updateResume }}>
+    <JobApplyContext.Provider value={{ jobApplyData, updateJobApplyData, togglePreference}}>
       {children}
     </JobApplyContext.Provider>
   );
