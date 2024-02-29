@@ -20,7 +20,6 @@ query JobById($job_id: Int!) {
 const Apply = ({jobIdAndPref}) => {
   const { formData, updateFormData, togglePreference, updateResume  } = useJobApplyData();
     const {job_id,roles}=jobIdAndPref;
-    // console.log(roles)
     const { loading, error, data } = useQuery(QUERY_SLOT_PREF, {
         variables: { job_id: job_id },
       });
@@ -28,7 +27,6 @@ const Apply = ({jobIdAndPref}) => {
     // if (loading) return <p>Loading...</p>;
     // if (error) return <p>Error: {error.message}</p>;
     // console.log(roles)
-
 
 
   const handleTimeSlotChange = useCallback((event) => {
@@ -74,6 +72,26 @@ const Apply = ({jobIdAndPref}) => {
       <div className="mb-4">
         <p>Select Your Preference :</p>
 
+        {roles.map((role, index) => (
+        <div className="flex items-center mb-2" key={role.role_id}>
+          <input
+            id={`preference${index}`}
+            type="checkbox"
+            name={role.role_name}
+            checked={formData.preferences[role.role_name]}
+            onChange={handlePreferenceChange}
+            className="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 rounded"
+          />
+          <label htmlFor={`preference${index}`} className="ml-2 text-sm font-medium text-gray-700">
+            {role.role_name}
+          </label>
+        </div>
+      ))}
+
+
+
+
+{/* 
         <div className="flex items-center mb-2">
           <input
             id="preference1"
@@ -116,7 +134,7 @@ const Apply = ({jobIdAndPref}) => {
           <label htmlFor="preference3" className="ml-2 text-sm font-medium text-gray-700">
             Software Quality Engineer
           </label>
-        </div>
+        </div> */}
 
       </div>
 

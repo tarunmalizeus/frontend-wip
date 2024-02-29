@@ -5,7 +5,7 @@ import { useState } from "react";
 import Processandapply from "../../components/job/Processandapply.jsx";
 import { useQuery, gql } from "@apollo/client";
 import Loading from '../Loading';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 
 const QUERY_JOBS_BY_ID = gql`
 query JobById($jobId: Int!) {
@@ -67,7 +67,6 @@ function JobDetails() {
       <div className="space-y-2 m-4">
           <Jobcardstatic job={data} />
           <AccordionItem title="Pre-requisites & Application Process">
-            {/* {console.log(data.jobById.roles)} */}
             <Processandapply jobIdAndPref={{job_id:data.jobById.job_id, roles:data.jobById.roles}}/>
           </AccordionItem>
         {(data.jobById.roles).map((role) => (
