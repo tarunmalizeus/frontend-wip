@@ -30,15 +30,13 @@ const Apply = ({ jobIdAndPref }) => {
 
 
   
-  const { jobApplyData, updateJobApplyData} = useJobApplyData();
+  const { jobApplyData, updateJobApplyData, togglePreference} = useJobApplyData();
   
   
   const handleFileChange = (e) => {
     let name, value;
     name = e.target.name;
     value = e.target.value;
-    
-    
     // if(name === "resumeFile"){
     //   if(value.size > 5*1024*1024){
     //     setResumeError("File size should be less than 5mb.");
@@ -48,6 +46,12 @@ const Apply = ({ jobIdAndPref }) => {
     // }
     updateJobApplyData({ [e.target.name]: e.target.files[0] });
   };
+
+
+const handleChange = (e) => {
+  updateJobApplyData({ [e.target.name]: e.target.value });
+};
+
   
   const { job_id, roles } = jobIdAndPref;
   const { loading, error, data } = useQuery(QUERY_SLOT_PREF, {
@@ -59,9 +63,9 @@ const Apply = ({ jobIdAndPref }) => {
   // console.log(roles)
 
 
-  // const handleTimeSlotChange = useCallback((event) => {
-  //   updateFormData('timeSlot', event.target.value);
-  // }, [updateFormData]);
+  const handleTimeSlotChange = useCallback((event) => {
+    togglePreference('timeSlot', event.target.value);
+  }, [togglePreference]);
 
   // const handlePreferenceChange = useCallback((event) => {
   //   togglePreference(event.target.name);
@@ -76,9 +80,7 @@ const Apply = ({ jobIdAndPref }) => {
       <h2 className="text-lg font-semibold mb-4">Time Slots & Preferences</h2>
 
       <div className="mb-4">
-        {/* <p>Select a Time Slot :</p>
-
-
+         <p>Select a Time Slot :</p>
         {data && (data.jobById.slots.map((slot, index) => (
           <div className="flex items-center mb-2" key={slot.slot_id}>
             <input
@@ -86,17 +88,17 @@ const Apply = ({ jobIdAndPref }) => {
               type="radio"
               name="timeSlot"
               value={`${slot.from_time}-${slot.to_time}`}
-              checked={formData.timeSlot === `${slot.from_time}-${slot.to_time}`}
-              onChange={handleTimeSlotChange}
+              checked={jobApplyData.timeSlot === `${slot.from_time}-${slot.to_time}`}
+              onChange={handleChange}
               className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
             />
             <label htmlFor={`timeSlot${index}`} className="ml-2 text-sm font-medium text-gray-700">
               {`${slot.from_time} to ${slot.to_time}`}
             </label>
           </div>
-        )))}
+        )))} 
 
-      </div> */}
+      </div> 
 
 
       {/* <div className="mb-4">
@@ -108,7 +110,7 @@ const Apply = ({ jobIdAndPref }) => {
               id={`preference${index}`}
               type="checkbox"
               name={role.role_name}
-              checked={formData.preferences[role.role_name]}
+              checked={jobApplyData.preferences[role.role_name]}
               onChange={handlePreferenceChange}
               className="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 rounded"
             />
@@ -127,7 +129,7 @@ const Apply = ({ jobIdAndPref }) => {
             id="preference1"
             type="checkbox"
             name="instructionalDesigner"
-            checked={formData.preferences.instructionalDesigner}
+            checked={jobApplyData.preferences.instructionalDesigner}
             onChange={handlePreferenceChange}
             className="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 rounded"
           />
@@ -142,7 +144,7 @@ const Apply = ({ jobIdAndPref }) => {
             id="preference2"
             type="checkbox"
             name="softwareEngineer"
-            checked={formData.preferences.softwareEngineer}
+            checked={jobApplyData.preferences.softwareEngineer}
             onChange={handlePreferenceChange}
             className="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 rounded"
           />
@@ -157,7 +159,7 @@ const Apply = ({ jobIdAndPref }) => {
             id="preference3"
             type="checkbox"
             name="softwareQualityEngineer"
-            checked={formData.preferences.softwareQualityEngineer}
+            checked={jobApplyData.preferences.softwareQualityEngineer}
             onChange={handlePreferenceChange}
             className="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 rounded"
           />
@@ -166,8 +168,11 @@ const Apply = ({ jobIdAndPref }) => {
           </label>
         </div> */}
 
-      </div>
-        {console.log(jobApplyData.resumeFile)}
+      {/* </div> */}
+
+
+
+
       <div className="flex gap-1 -my-3  cursor-pointer items-center">
         <img src={upload_resume} width={24} alt="" />
         <div className="text-[#1F7A54] font-semibold text-lg">
