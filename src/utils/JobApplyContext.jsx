@@ -15,22 +15,22 @@ export const JobApplyProvider = ({ children }) => {
     setJobApplyData((prevData) => ({ ...prevData, ...newData }));
   };
 
-  const togglePreference = (preference) => {
-    setJobApplyData((prev) => ({
-      ...prev,
-      preferences: {
-        ...prev.preferences,
-        [preference]: !prev.preferences[preference],
-      },
-    }));
-  };
+  // const togglePreference = (preference) => {
+  //   setJobApplyData((prev) => ({
+  //     ...prev,
+  //     preferences: {
+  //       ...prev.preferences,
+  //       [preference]: !prev.preferences[preference],
+  //     },
+  //   }));
+  // };
 
   // const updateResume = (file) => {
   //   setJobApplyData((prev) => ({ ...prev, resumeFile: file }));
   // };
 
   return (
-    <JobApplyContext.Provider value={{ jobApplyData, updateJobApplyData, togglePreference}}>
+    <JobApplyContext.Provider value={{ jobApplyData, updateJobApplyData}}>
       {children}
     </JobApplyContext.Provider>
   );

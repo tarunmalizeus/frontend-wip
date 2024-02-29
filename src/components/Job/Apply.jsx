@@ -4,8 +4,6 @@ import { useQuery, gql } from "@apollo/client";
 import upload_resume from '../../assets/Upload_black_24dp.svg';
 import { useRef } from 'react';
 
-
-
 const QUERY_SLOT_PREF = gql`
 query JobById($job_id: Int!) {
   jobById(job_id: $job_id) {
@@ -19,7 +17,6 @@ query JobById($job_id: Int!) {
 `;
 
 
-
 const Apply = ({ jobIdAndPref }) => {
 
   const fileInputRef = useRef(null);
@@ -28,9 +25,8 @@ const Apply = ({ jobIdAndPref }) => {
     fileInputRef.current.click();
   };
 
-
   
-  const { jobApplyData, updateJobApplyData, togglePreference} = useJobApplyData();
+  const { jobApplyData, updateJobApplyData} = useJobApplyData();
   
   
   const handleFileChange = (e) => {
@@ -52,7 +48,20 @@ const handleChange = (e) => {
   updateJobApplyData({ [e.target.name]: e.target.value });
 };
 
-  
+
+
+
+const handleCheckboxChange = (e) => {
+  let updatedArray = jobApplyData[e.target.name];
+  if (e.target.checked) {
+    updatedArray = [...updatedArray, e.target.value];
+  } else {
+    updatedArray = updatedArray.filter((item) => item !== e.target.value);
+  }
+  updateJobApplyData({ [e.target.name]: updatedArray });
+};
+
+
   const { job_id, roles } = jobIdAndPref;
   const { loading, error, data } = useQuery(QUERY_SLOT_PREF, {
     variables: { job_id: job_id },
@@ -101,74 +110,34 @@ const handleChange = (e) => {
       </div> 
 
 
-      {/* <div className="mb-4">
+      <div className="mb-4">
         <p>Select Your Preference :</p>
+         {console.log(jobApplyData.preferences)}
 
         {roles.map((role, index) => (
           <div className="flex items-center mb-2" key={role.role_id}>
-            <input
-              id={`preference${index}`}
-              type="checkbox"
-              name={role.role_name}
-              checked={jobApplyData.preferences[role.role_name]}
-              onChange={handlePreferenceChange}
-              className="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 rounded"
-            />
-            <label htmlFor={`preference${index}`} className="ml-2 text-sm font-medium text-gray-700">
-              {role.role_name}
-            </label>
-          </div>
-        ))} */}
-
-
-
-
-        {/* 
-        <div className="flex items-center mb-2">
-          <input
-            id="preference1"
-            type="checkbox"
-            name="instructionalDesigner"
-            checked={jobApplyData.preferences.instructionalDesigner}
-            onChange={handlePreferenceChange}
-            className="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 rounded"
-          />
-          <label htmlFor="preference1" className="ml-2 text-sm font-medium text-gray-700">
-            Instructional Designer
-          </label>
+                <label>
+        <input
+          id={`preference${index}`}
+          type="checkbox"
+          name="preferences"
+          value={role.role_name}
+          checked={jobApplyData.preferences.includes(role.role_name)}
+          onChange={handleCheckboxChange}
+          className="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 rounded"
+        />
+        {role.role_name}
+        </label>
         </div>
 
 
-        <div className="flex items-center mb-2">
-          <input
-            id="preference2"
-            type="checkbox"
-            name="softwareEngineer"
-            checked={jobApplyData.preferences.softwareEngineer}
-            onChange={handlePreferenceChange}
-            className="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 rounded"
-          />
-          <label htmlFor="preference2" className="ml-2 text-sm font-medium text-gray-700">
-            Software Engineer
-          </label>
-        </div>
+
+        ))} 
 
 
-        <div className="flex items-center mb-4">
-          <input
-            id="preference3"
-            type="checkbox"
-            name="softwareQualityEngineer"
-            checked={jobApplyData.preferences.softwareQualityEngineer}
-            onChange={handlePreferenceChange}
-            className="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 rounded"
-          />
-          <label htmlFor="preference3" className="ml-2 text-sm font-medium text-gray-700">
-            Software Quality Engineer
-          </label>
-        </div> */}
 
-      {/* </div> */}
+
+      </div>
 
 
 
