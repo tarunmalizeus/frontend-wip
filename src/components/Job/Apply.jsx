@@ -63,9 +63,9 @@ const handleChange = (e) => {
   // console.log(roles)
 
 
-  const handleTimeSlotChange = useCallback((event) => {
-    togglePreference('timeSlot', event.target.value);
-  }, [togglePreference]);
+  // const handleTimeSlotChange = useCallback((event) => {
+  //   togglePreference('timeSlot', event.target.value);
+  // }, [togglePreference]);
 
   // const handlePreferenceChange = useCallback((event) => {
   //   togglePreference(event.target.name);
