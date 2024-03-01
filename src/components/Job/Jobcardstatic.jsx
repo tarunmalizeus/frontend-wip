@@ -3,35 +3,49 @@ import { useNavigate } from 'react-router-dom';
 import { useJobApplyData } from '../../utils/JobApplyContext';
 import { useMutation, gql } from '@apollo/client';
 
-const APPLY_JOB = gql`
-  mutation ApplyJob($input: ApplyJobInput!) {
-    applyJob(input: $input) {
-      job_id
-    }
+const APPLY_APPLICATION = gql`
+mutation Mutation($input: CreateApplicationInput!) {
+  createApplication(input: $input) {
+    application_id
   }
+}
 `;
-
 
 function Jobcardstatic({job}) {
   const navigate = useNavigate();
   const {jobApplyData} = useJobApplyData();
-
-
+  const [createApplicationMutation, { data, loading, error }] = useMutation(APPLY_APPLICATION);
+  
   const apply = async () => {
-    
 
-    // try {
-    //   const result= await applyJobMutation({
-    //     variables: {
-    //       input: {
-    //         job_id: job.jobById.job_id,
-    //       },
-    //     },
-    //   });
-    // }
-    // catch (error) {
-    //   console.log(error);
-    // }
+    // console.log(jobApplyData.resumeFile);
+
+    //do the authentication
+      const user_id=101;
+
+      // console.log(user_id);
+      // console.log(job.jobById.job_id);
+      // console.log(jobApplyData.preferences);
+      // console.log(jobApplyData.timeSlot);
+
+
+
+    try {
+      const result= await createApplicationMutation({
+        variables: {
+          input: {
+            resumeFile: jobApplyData.resumeFile,
+            user_id: user_id,
+            job_id: job.jobById.job_id,
+            preference: jobApplyData.preferences,
+            slot: jobApplyData.timeSlot,
+          },
+        },
+      });
+    }
+    catch (error) {
+
+    }
 
 
 
