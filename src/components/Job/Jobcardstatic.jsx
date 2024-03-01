@@ -17,39 +17,27 @@ function Jobcardstatic({job}) {
   const [createApplicationMutation, { data, loading, error }] = useMutation(APPLY_APPLICATION);
   
   const apply = async () => {
-
-    // console.log(jobApplyData.resumeFile);
-
     //do the authentication
-      const user_id=101;
+      const user_id=103;
 
-      // console.log(user_id);
-      // console.log(job.jobById.job_id);
-      // console.log(jobApplyData.preferences);
-      // console.log(jobApplyData.timeSlot);
-
-
-
-    try {
-      const result= await createApplicationMutation({
-        variables: {
-          input: {
-            resumeFile: jobApplyData.resumeFile,
-            user_id: user_id,
-            job_id: job.jobById.job_id,
-            preference: jobApplyData.preferences,
-            slot: jobApplyData.timeSlot,
+      try{
+        const result= await createApplicationMutation({
+          variables: {
+            input: {
+              resumeFile: jobApplyData.resumeFile,
+              user_id: user_id,
+              job_id: job.jobById.job_id,
+              preference: jobApplyData.preferences,
+              slot: jobApplyData.timeSlot,
+            },
           },
-        },
-      });
-    }
-    catch (error) {
-
-    }
-
-
-
-    // navigate('/jobs/confirmation');
+        });
+        window.alert("Applied Successfully");
+        navigate('/jobs/confirmation');
+      }
+      catch(e){
+        window.alert(e.message);
+      }
   }
 
 
