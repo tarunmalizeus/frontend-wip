@@ -17,12 +17,12 @@ mutation Mutation($input: CreateApplicationInput!) {
 
 function Jobcardstatic({job}) {
   const navigate = useNavigate();
-  const {jobApplyData} = useJobApplyData();
+  const {jobApplyData, updateJobApplyData} = useJobApplyData();
   const [createApplicationMutation, { data, loading, error }] = useMutation(APPLY_APPLICATION);
   
   const apply = async () => {
     //do the authentication
-      const user_id=112;
+      const user_id=114;
 
       try{
         const result= await createApplicationMutation({
@@ -37,18 +37,16 @@ function Jobcardstatic({job}) {
           },
         });
 
+        updateJobApplyData({ 
+          venu_id: result.data.createApplication.venu_id,
+          exact_date: result.data.createApplication.exact_date ,
+          job_id: job.jobById.job_id,
+        });
 
 
 
-        console.log(result.data.createApplication.application_id);
-        console.log(result.data.createApplication.venu_id);
-        console.log(result.data.createApplication.exact_date);
         window.alert("Applied Successfully");
-        
-        // <Navigate to='/jobs/confirmation'/>
-
-
-        // navigate('/jobs/confirmation');
+        navigate('/jobs/confirmation');
       }
       catch(e){
         window.alert(e.message);

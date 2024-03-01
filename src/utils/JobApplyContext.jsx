@@ -6,10 +6,12 @@ export const useJobApplyData = () => useContext(JobApplyContext);
 
 export const JobApplyProvider = ({ children }) => {
   const [jobApplyData, setJobApplyData] = useState({
+    venu_id: null,
+    job_id: null,
     timeSlot: null,
     preferences: [],
     resumeFile: null,
-    
+    exact_data: null,
   });
 
   const updateJobApplyData = (newData) => {
