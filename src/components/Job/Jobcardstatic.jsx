@@ -22,7 +22,7 @@ function Jobcardstatic({job}) {
   
   const apply = async () => {
     //do the authentication
-      const user_id=115;
+      const user_id=1000;
 
       try{
         const result= await createApplicationMutation({
@@ -31,6 +31,8 @@ function Jobcardstatic({job}) {
               resumeFile: jobApplyData.resumeFile,
               user_id: user_id,
               job_id: job.jobById.job_id,
+              //testing
+              // job_id: 1,
               preference: jobApplyData.preferences,
               slot: jobApplyData.timeSlot,
             },
