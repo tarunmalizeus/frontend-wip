@@ -2,6 +2,10 @@ import { useJobApplyData } from '../../utils/JobApplyContext';
 
 
 function Confirmation() {
+  //retrieve from coupon code
+  const job_id=1;
+
+
   const {jobApplyData} = useJobApplyData();
   return (
     <div className='p-4 m-16 bg-white'>

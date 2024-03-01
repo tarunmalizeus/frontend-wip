@@ -1,12 +1,16 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Navigate } from 'react-router-dom';
 import { useJobApplyData } from '../../utils/JobApplyContext';
 import { useMutation, gql } from '@apollo/client';
 
 const APPLY_APPLICATION = gql`
 mutation Mutation($input: CreateApplicationInput!) {
   createApplication(input: $input) {
+    slot_id
+    venu_id
+    job_id
     application_id
+    exact_date
   }
 }
 `;
@@ -18,7 +22,7 @@ function Jobcardstatic({job}) {
   
   const apply = async () => {
     //do the authentication
-      const user_id=103;
+      const user_id=112;
 
       try{
         const result= await createApplicationMutation({
@@ -32,8 +36,19 @@ function Jobcardstatic({job}) {
             },
           },
         });
+
+
+
+
+        console.log(result.data.createApplication.application_id);
+        console.log(result.data.createApplication.venu_id);
+        console.log(result.data.createApplication.exact_date);
         window.alert("Applied Successfully");
-        navigate('/jobs/confirmation');
+        
+        // <Navigate to='/jobs/confirmation'/>
+
+
+        // navigate('/jobs/confirmation');
       }
       catch(e){
         window.alert(e.message);

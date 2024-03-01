@@ -1,5 +1,4 @@
 import { useJobApplyData } from '../../utils/JobApplyContext';
-import React, { useCallback } from 'react';
 import { useQuery, gql } from "@apollo/client";
 import upload_resume from '../../assets/Upload_black_24dp.svg';
 import { useRef } from 'react';
@@ -69,20 +68,6 @@ const handleCheckboxChange = (e) => {
 
   // if (loading) return <p>Loading...</p>;
   // if (error) return <p>Error: {error.message}</p>;
-  // console.log(roles)
-
-
-  // const handleTimeSlotChange = useCallback((event) => {
-  //   togglePreference('timeSlot', event.target.value);
-  // }, [togglePreference]);
-
-  // const handlePreferenceChange = useCallback((event) => {
-  //   togglePreference(event.target.name);
-  // }, [togglePreference]);
-
-  // const handleResumeUpload = useCallback((event) => {
-  //   updateResume(event.target.files[0]);
-  // }, [updateResume]);
 
   return (
     <div className="bg-white p-4  mx-auto my-4 shadow-md rounded">
