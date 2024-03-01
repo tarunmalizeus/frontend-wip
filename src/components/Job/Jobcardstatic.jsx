@@ -22,7 +22,7 @@ function Jobcardstatic({job}) {
   
   const apply = async () => {
     //do the authentication
-      const user_id=114;
+      const user_id=115;
 
       try{
         const result= await createApplicationMutation({
