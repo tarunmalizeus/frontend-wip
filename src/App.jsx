@@ -1,5 +1,4 @@
 //separate file for routing to keep App.js clean
-import './App.css'
 import { createBrowserRouter, Outlet } from 'react-router-dom';
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -18,6 +17,8 @@ import Jobview from './pages/job/JobView';
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import MainHeader from './components/MainHeader';
 import { BrowserRouter as Router } from 'react-router-dom';
+import Authentication from './pages/Authentication';
+import {AuthProvider} from "react-auth-kit";
 
 function App() {
 
@@ -50,6 +51,11 @@ const appRouter=createBrowserRouter([
               path: "/",
               element: <Landingpage/>
           },
+          {
+            path:"/auth",
+            element : <Authentication/>
+          },
+
           {
             path: "/signup",
             element: <Signup/>,
