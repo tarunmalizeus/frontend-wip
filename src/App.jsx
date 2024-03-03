@@ -6,13 +6,13 @@ import Error from './pages/Error'
 import Landingpage from './pages/Landingpage'
 import Signup from './pages/signup/Signup';
 import Page1 from './pages/signup/Page1';
-import Page2 from './pages/signup/Page2';
+// import Page2 from './pages/signup/Page2';
 import Login from './pages/Login';
 import Review from './pages/signup/Review';
 // import Jobdetails from './pages/job/JobDetails';
 // import Confirmation from './pages/job/Confirmation';
 // import Jobview from './pages/job/JobView';
-// import 'dotenv/config';
+import 'dotenv/config';
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import MainHeader from './components/MainHeader';
 import { BrowserRouter as Router } from 'react-router-dom';
