@@ -26,15 +26,16 @@ function MainHeader() {
           </div>
 
           <div className="">
-          <button
+          {localStorage.getItem("site")   &&  <button
             onClick={(e) => {
               signOut();
             }}
-            className="rounded-full  flex aspect-square border-2 border-solid border-[#3FD28B] bg-[#3C4E62] p-1 text-white text-lg items-center text-center align-middle"
+            className="rounded-full  flex aspect-square border-2 border-solid border-[#3FD28B] bg-[#3C4E62] p-4 text-white text-lg items-center text-center align-middle"
           >
-          Logout
+          {localStorage.getItem("userName") && localStorage.getItem("userName")[0] }
 
-          </button>
+          </button>}
+
         </div>
 
         </div>

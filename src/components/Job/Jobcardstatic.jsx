@@ -22,8 +22,7 @@ function Jobcardstatic({job}) {
   
   const apply = async () => {
     //do the authentication
-      const user_id=1000;
-
+      const user_id=parseInt(localStorage.getItem("userId"));
       try{
         const result= await createApplicationMutation({
           variables: {
