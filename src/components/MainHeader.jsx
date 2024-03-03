@@ -1,14 +1,19 @@
 import Quantum from '../assets/Zeus-LMS-logo.svg'
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from "../utils/AuthContext";
 
 
 function MainHeader() {
-
+    const { userId,setUserId,userName,setUserName,token, setToken } = useAuth();
     const navigate = useNavigate();
   
     const signOut = () => {
-      // console.log('signout')
-      localStorage.removeItem('user');
+      setUserName("");
+      setUserId("");
+      setToken("");
+      localStorage.removeItem("site");
+      localStorage.removeItem("userId");
+      localStorage.removeItem("userName");
       navigate('/login');
     };
 

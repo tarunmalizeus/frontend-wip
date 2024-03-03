@@ -1,20 +1,26 @@
 import { useMutation, gql } from "@apollo/client";
 import { useState } from 'react';
 import {useNavigate, NavLink } from 'react-router-dom';
+import { useAuth } from "../utils/AuthContext";
+
 
 function Login() {
+  const { userId,setUserId,token, setToken, setUserName, userName } = useAuth();
   const navigate = useNavigate();
   const LOGIN_USER = gql`
   mutation Mutation($email: String!, $password: String!) {
     login(email: $email, password: $password) {
       user_id
+      name
+      token
+      tokenExpiration
     }
   }
   `;
 
   const [loginUser] = useMutation(LOGIN_USER);
 
-  const [user, setUser] = useState({
+  const [userInput, setUserInput] = useState({
     email: "",
     password: "",
   });
@@ -23,7 +29,7 @@ function Login() {
   const handleInputs = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    setUser({ ...user, [name]: value });
+    setUserInput({ ...userInput, [name]: value });
   };
   
 
@@ -31,9 +37,20 @@ function Login() {
 
     try {
       const { data } = await loginUser({
-        variables: { email: user.email, password: user.password },
+        variables: { email: userInput.email, password: userInput.password },
       }); 
-      
+      if(data){
+        console.log(data);
+
+          setUserName(data.login.name);
+          localStorage.setItem("userName", data.login.name);
+          setUserId(data.login.user_id);
+          localStorage.setItem("userId", JSON.stringify(data.login.user_id));
+          setToken(data.login.token);
+          localStorage.setItem("site", (data.login.token));
+          window.alert('Login Successful');
+          navigate('/jobs');
+      }
 
 
     } catch (error) {
@@ -55,7 +72,7 @@ function Login() {
                       name="email"
                       id="email"
                       placeholder="Email Id"
-                      value={user.email}
+                      value={userInput.email}
                       onChange={handleInputs}
                     />
                   <button className="w-full text-right text-sm text-darkgreen"> FORGOT EMAIL ID?</button>
@@ -69,7 +86,7 @@ function Login() {
                       name="password"
                       id="password"
                       placeholder="Password"
-                      value={user.password}
+                      value={userInput.password}
                       onChange={handleInputs}
                       autoComplete="off"
                     />

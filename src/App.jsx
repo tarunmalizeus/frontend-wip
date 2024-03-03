@@ -18,7 +18,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import MainHeader from './components/MainHeader';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Authentication from './pages/Authentication';
-import {AuthProvider} from "react-auth-kit";
+import {AuthProvider} from './utils/AuthContext';
 
 function App() {
 
@@ -37,6 +37,7 @@ function App() {
 
   return (
     <div className="flex flex-col h-screen">
+      <AuthProvider>
       <Header/>
       <MainHeader/>
       <div className="flex-grow bg-background h-full overflow-auto">
@@ -44,6 +45,7 @@ function App() {
         <Outlet/>
         </ApolloProvider>
       </div>
+      </AuthProvider>
       <Footer/>
     </div>
   )
