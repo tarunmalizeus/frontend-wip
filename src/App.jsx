@@ -19,6 +19,7 @@ import MainHeader from './components/MainHeader';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Authentication from './pages/Authentication';
 import {AuthProvider} from './utils/AuthContext';
+import ProtectedRoute from './pages/ProtectedRoute';
 
 function App() {
 
@@ -26,13 +27,6 @@ function App() {
     cache: new InMemoryCache(),
     uri: "http://localhost:4000",
   });
-
-//   const cookies = document.cookie.split(';');
-// cookies.forEach(cookie => {
-//     console.log(cookie.trim());
-// });
-
-
 
 
   return (
@@ -92,7 +86,9 @@ const appRouter=createBrowserRouter([
 
          {
           path: "/jobs", 
-          element: <Jobs/>,
+          element:<ProtectedRoute> 
+          <Jobs/>
+          </ProtectedRoute>,
           children:[
             {
               index:true,
