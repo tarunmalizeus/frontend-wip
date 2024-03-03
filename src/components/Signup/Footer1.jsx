@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useSignupNavigation } from "../../utils/SignupNavigationContext.jsx";
-import { useSignupData } from '../../utils/SignupContext';
-import { usePage1ErrorContext } from '../../utils/Page1ErrorContext';
+import { useSignupData } from '../../utils/SignupContext.jsx';
+import { usePage1ErrorContext } from '../../utils/Page1ErrorContext.jsx';
 
 
 function Footer1() {

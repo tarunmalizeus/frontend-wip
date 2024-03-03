@@ -1,5 +1,5 @@
 import React from 'react';
-import Jobcard from '../../components/job/Jobcard';
+import Jobcard from '../../components/Job/Jobcard';
 import Loading from '../Loading';
 import { useQuery, gql } from "@apollo/client";
 

@@ -1,9 +1,9 @@
 
 import React from 'react';
-import Personal from '../../components/signup/Review/Personal';
+import Personal from '../../components/Signup/Review/Personal';
 import { Link } from 'react-router-dom';
-import Education from '../../components/signup/Review/Education';
-import Professional from '../../components/signup/Review/Professional';
+import Education from '../../components/Signup/Review/Education';
+import Professional from '../../components/Signup/Review/Professional';
 
 function Review() {
 
