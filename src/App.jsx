@@ -9,9 +9,9 @@ import Page1 from './pages/signup/Page1';
 import Page2 from './pages/signup/Page2';
 import Login from './pages/Login';
 import Review from './pages/signup/Review';
-import Jobdetails from './pages/job/JobDetails';
-import Confirmation from './pages/job/Confirmation';
-import Jobview from './pages/job/JobView';
+// import Jobdetails from './pages/job/JobDetails';
+// import Confirmation from './pages/job/Confirmation';
+// import Jobview from './pages/job/JobView';
 // import 'dotenv/config';
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import MainHeader from './components/MainHeader';
@@ -79,34 +79,34 @@ const appRouter=createBrowserRouter([
             element: <Login/>
          },
 
-         {
-          path: "/jobs", 
-          element:
+        //  {
+        //   path: "/jobs", 
+        //   element:
 
-          <JobApplyProvider>
-          <ProtectedRoute>
-              <Outlet />
-          </ProtectedRoute>
-          </JobApplyProvider>
+        //   <JobApplyProvider>
+        //   <ProtectedRoute>
+        //       <Outlet />
+        //   </ProtectedRoute>
+        //   </JobApplyProvider>
 
-          ,
-          children:[
-            {
-              index:true,
-             element: 
-             <Jobview/>
-            },
-            {
-             path: ":job_id", 
-             element: <Jobdetails/>
-            },
-            {
-              path: "confirmation", 
-              element: <Confirmation/>
-             },         
+        //   ,
+        //   children:[
+        //     {
+        //       index:true,
+        //      element: 
+        //      <Jobview/>
+        //     },
+        //     {
+        //      path: ":job_id", 
+        //      element: <Jobdetails/>
+        //     },
+        //     {
+        //       path: "confirmation", 
+        //       element: <Confirmation/>
+        //      },         
              
-          ]
-         },
+        //   ]
+        //  },
 
 
       ]
