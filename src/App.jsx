@@ -17,7 +17,6 @@ import Jobview from './pages/job/JobView';
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import MainHeader from './components/MainHeader';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Authentication from './pages/Authentication';
 import {AuthProvider} from './utils/AuthContext';
 import ProtectedRoute from './pages/ProtectedRoute';
 import { JobApplyProvider } from './utils/JobApplyContext';
@@ -50,15 +49,11 @@ const appRouter=createBrowserRouter([
   {
       path: "/",
       element: <App/>,
-      // errorElement: <Error/>,
+      errorElement: <Error/>,
       children: [
           {
               path: "/",
               element: <Landingpage/>
-          },
-          {
-            path:"/auth",
-            element : <Authentication/>
           },
 
           {
