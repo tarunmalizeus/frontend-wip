@@ -55,24 +55,24 @@ const appRouter=createBrowserRouter([
               element: <Landingpage/>
           },
 
-          {
-            path: "/signup",
-            element: <Signup/>,
-            children:[
-             {
-              index:true,
-              element: <Page1/>
-             },
-             {
-              path: "mainsignup2", 
-              element: <Page2 />
-             }, 
-             {
-              path: "review", 
-              element: <Review/>
-             },
-            ]
-         },
+        //   {
+        //     path: "/signup",
+        //     element: <Signup/>,
+        //     children:[
+        //      {
+        //       index:true,
+        //       element: <Page1/>
+        //      },
+        //      {
+        //       path: "mainsignup2", 
+        //       element: <Page2 />
+        //      }, 
+        //      {
+        //       path: "review", 
+        //       element: <Review/>
+        //      },
+        //     ]
+        //  },
 
          {
             path: "/login",
