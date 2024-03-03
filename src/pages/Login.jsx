@@ -40,7 +40,7 @@ function Login() {
         variables: { email: userInput.email, password: userInput.password },
       }); 
       if(data){
-        console.log(data);
+        // console.log(data);
 
           setUserName(data.login.name);
           localStorage.setItem("userName", data.login.name);

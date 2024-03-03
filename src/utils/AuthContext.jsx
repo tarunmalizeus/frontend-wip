@@ -3,8 +3,7 @@ import { useContext, createContext, useState } from "react";
 
 const AuthContext = createContext();
 
-export const useAuth = () => useContext(AuthContext);
-;
+export const useAuth = () => useContext(AuthContext);;
 
 export const AuthProvider = ({ children }) => {
     // const navigate = useNavigate();
