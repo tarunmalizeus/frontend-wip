@@ -4,7 +4,6 @@ import {useNavigate, NavLink } from 'react-router-dom';
 
 function Login() {
   const navigate = useNavigate();
-
   const LOGIN_USER = gql`
   mutation Mutation($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -34,12 +33,9 @@ function Login() {
       const { data } = await loginUser({
         variables: { email: user.email, password: user.password },
       }); 
-      if(data){
-        console.log(data.login.user_id); 
-        localStorage.setItem('user', data.login.user_id);
-        window.alert('Login Successful');
-        navigate('/jobs');
-      }
+      
+
+
     } catch (error) {
       console.error('Error:', error.message);
     }

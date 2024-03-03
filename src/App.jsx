@@ -27,6 +27,14 @@ function App() {
     uri: "http://localhost:4000",
   });
 
+//   const cookies = document.cookie.split(';');
+// cookies.forEach(cookie => {
+//     console.log(cookie.trim());
+// });
+
+
+
+
   return (
     <div className="flex flex-col h-screen">
       <Header/>
