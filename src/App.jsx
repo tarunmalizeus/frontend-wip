@@ -20,6 +20,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Authentication from './pages/Authentication';
 import {AuthProvider} from './utils/AuthContext';
 import ProtectedRoute from './pages/ProtectedRoute';
+import { JobApplyProvider } from './utils/JobApplyContext';
 
 function App() {
 
@@ -86,13 +87,20 @@ const appRouter=createBrowserRouter([
 
          {
           path: "/jobs", 
-          element:<ProtectedRoute> 
-          <Jobs/>
-          </ProtectedRoute>,
+          element:
+
+          <JobApplyProvider>
+          <ProtectedRoute>
+              <Outlet />
+          </ProtectedRoute>
+          </JobApplyProvider>
+
+          ,
           children:[
             {
               index:true,
-             element: <Jobview/>
+             element: 
+             <Jobview/>
             },
             {
              path: ":job_id", 
