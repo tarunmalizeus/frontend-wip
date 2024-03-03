@@ -10,9 +10,9 @@ import Page1 from './pages/signup/Page1';
 import Page2 from './pages/signup/Page2';
 import Login from './pages/Login';
 import Review from './pages/signup/Review';
-import Jobdetails from './pages/job/JobDetails';
-import Confirmation from './pages/job/Confirmation';
-import Jobview from './pages/job/JobView';
+import Jobdetails from './pages/Job/JobDetails';
+import Confirmation from './pages/Job/Confirmation';
+import Jobview from './pages/Job/JobView';
 
 
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";

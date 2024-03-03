@@ -4,7 +4,7 @@ import Role from "../../components/job/Role.jsx";
 import { useState } from "react";
 import Processandapply from "../../components/job/Processandapply.jsx";
 import { useQuery, gql } from "@apollo/client";
-import Loading from '../Loading';
+import Loading from '../Loading.jsx';
 // import { useLocation } from 'react-router-dom';
 
 const QUERY_JOBS_BY_ID = gql`
