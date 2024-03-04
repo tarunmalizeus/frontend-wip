@@ -3,6 +3,9 @@ import Jobcard from '../../components/Job/Jobcard';
 import Loading from '../Loading';
 import { useQuery, gql } from "@apollo/client";
 
+
+
+
 const QUERY_ALL_JOBS = gql`
 
 query Query {
@@ -23,7 +26,17 @@ query Query {
 `;
 
 function Jobview() {
-  const { loading, error, data } = useQuery(QUERY_ALL_JOBS);
+  const storedToken = localStorage.getItem('site'); 
+  console.log(storedToken)
+  const { loading, error, data } = useQuery(QUERY_ALL_JOBS,{
+    context: {
+      headers: {
+        Authorization: `Bearer ${storedToken}` // Assuming 'Bearer' scheme
+      }
+    }
+    }
+    
+    );
 
   if (loading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
