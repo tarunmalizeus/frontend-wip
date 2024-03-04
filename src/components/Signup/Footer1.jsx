@@ -41,7 +41,7 @@ function Footer1() {
           setPhoneError(signupData.phone === "" ? "Please enter a valid phone number." : "");
           setResumeError(signupData.resumeFile === null ? "Please upload a resume." : "");
           setPfpError(signupData.imageFile === null ? "Please upload a profile picture." : "");
-          setRoleError(signupData.experiencedTech.length === 0 ? "Please select at least one role." : "");
+          setRoleError(!(signupData.softwareEngineer || signupData.softwareQualityEngineer || signupData.instructionalDesigner) ? "Please select at least one role." : "");
           return;
         }
 

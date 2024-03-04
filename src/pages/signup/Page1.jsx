@@ -22,9 +22,6 @@ function PersonalDetails() {
   
   
   const { signupData, updateSignupData } = useSignupData();
-  // console.log(signupData.instructionalDesigner, signupData.softwareEngineer, signupData.softwareQualityEngineer);
-  // console.log(signupData.instructionalDesigner || signupData.softwareEngineer || signupData.softwareQualityEngineer);
-
   const {
     firstNameError, setFirstNameError,
     lastNameError, setLastNameError,
@@ -37,10 +34,43 @@ function PersonalDetails() {
     roleError, setRoleError
   } = usePage1ErrorContext();
 
+  let instructionalDesigner, softwareEngineer, softwareQualityEngineer
+
   const handleChange = (e) => {
     let name, value;
     name = e.target.name;
     value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
+    updateSignupData({ [name]: value });
+    
+    
+    if(name==="instructionalDesigner" || name==="softwareEngineer" || name==="softwareQualityEngineer")
+    {
+      instructionalDesigner=signupData.instructionalDesigner;
+      softwareEngineer= signupData.softwareEngineer
+      softwareQualityEngineer=signupData.softwareQualityEngineer;
+      if(name==="instructionalDesigner"){
+        instructionalDesigner = value;
+      }
+      if(name==="softwareEngineer"){
+        softwareEngineer = value;
+      }
+      if(name==="softwareQualityEngineer"){
+        softwareQualityEngineer = value;
+      }
+      if (instructionalDesigner || softwareEngineer || softwareQualityEngineer) {
+        console.log("No error");
+        setRoleError("");
+      }
+      else {
+        console.log("Error");
+        setRoleError("Please select at least one role.");
+      }
+    }
+
+
+
+
+
     if(name === "firstName"){
       const nameRegex = /^[a-zA-Z]+$/;
       if (!nameRegex.test(value)) {
@@ -95,21 +125,9 @@ function PersonalDetails() {
       }
     }
 
-    if(name==)
-    {
-      if (signupData.instructionalDesigner || signupData.softwareEngineer || signupData.softwareQualityEngineer) {
-        console.log("No error");
-        setRoleError("");
-      }
-      else {
-        setRoleError("Please select at least one role.");
-      }
-    }
+
     
-
-
-
-    updateSignupData({ [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value });
+    
   };
 
   const handleFileChange = (e) => {
