@@ -17,8 +17,7 @@ query ThingsToRemember($jobId: Int!) {
 function Confirmation() {
   //retrieve from coupon code
   const {jobApplyData} = useJobApplyData();
-  const {timeSlot, exact_date, venu_id, job_id} = jobApplyData;
-  console.log(job_id);
+  const {timeSlot, exact_date, venue_id, job_id} = jobApplyData;
 
   const { loading, error, data } = useQuery(THINGS_2_REMEMBER, {
     variables: { jobId: job_id },

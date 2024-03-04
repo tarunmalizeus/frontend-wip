@@ -1,5 +1,4 @@
-import React from 'react';
-import { useNavigate , Navigate } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
 import { useJobApplyData } from '../../utils/JobApplyContext';
 import { useMutation, gql } from '@apollo/client';
 
@@ -7,7 +6,7 @@ const APPLY_APPLICATION = gql`
 mutation Mutation($input: CreateApplicationInput!) {
   createApplication(input: $input) {
     slot_id
-    venu_id
+    venue_id
     job_id
     application_id
     exact_date
@@ -39,7 +38,7 @@ function Jobcardstatic({job}) {
         });
 
         updateJobApplyData({ 
-          venu_id: result.data.createApplication.venu_id,
+          venue_id: result.data.createApplication.venue_id,
           exact_date: result.data.createApplication.exact_date ,
           job_id: job.jobById.job_id,
         });
