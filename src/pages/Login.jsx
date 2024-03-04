@@ -13,7 +13,6 @@ function Login() {
       user_id
       name
       token
-      tokenExpiration
     }
   }
   `;
@@ -45,6 +44,7 @@ function Login() {
           setUserId(data.login.user_id);
           localStorage.setItem("userId", JSON.stringify(data.login.user_id));
           setToken(data.login.token);
+          console.log(data.login.token)
           localStorage.setItem("site", (data.login.token));
           window.alert('Login Successful');
           navigate('/jobs');
