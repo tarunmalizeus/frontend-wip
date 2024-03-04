@@ -82,8 +82,6 @@ function Banner1() {
 
         }
       });
-
-      
       if (result.data.createUser) {
         // console.log(result.data.createUser.user_id)
         window.alert('User created successfully');
@@ -91,7 +89,9 @@ function Banner1() {
       }
 
     } 
-      catch (error) {
+      catch (e) {
+      window.alert(e.message);
+
     }
   };
 

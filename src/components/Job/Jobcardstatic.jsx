@@ -44,13 +44,12 @@ function Jobcardstatic({job}) {
           job_id: job.jobById.job_id,
         });
 
-
-
         window.alert("Applied Successfully");
         navigate('/jobs/confirmation');
       }
       catch(e){
-        window.alert(e.message);
+        // console.log(e);
+        window.alert(e.message)
       }
   }
 

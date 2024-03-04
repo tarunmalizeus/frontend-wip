@@ -40,8 +40,6 @@ function Login() {
         variables: { email: userInput.email, password: userInput.password },
       }); 
       if(data){
-        // console.log(data);
-
           setUserName(data.login.name);
           localStorage.setItem("userName", data.login.name);
           setUserId(data.login.user_id);
@@ -53,8 +51,8 @@ function Login() {
       }
 
 
-    } catch (error) {
-      console.error('Error:', error.message);
+    } catch (e) {
+      window.alert(e.message);
     }
 
   };

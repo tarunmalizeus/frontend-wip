@@ -7,5 +7,8 @@ import { appRouter } from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    //react strict mode
+    <React.StrictMode>
     <RouterProvider router={appRouter} />
+    </React.StrictMode>
 );
