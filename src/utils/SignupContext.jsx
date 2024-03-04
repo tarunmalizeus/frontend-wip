@@ -11,7 +11,6 @@ export const SignupProvider = ({ children }) => {
     email: '',
     password: '',
     phone: '',
-    password: '',
     portfolioUrl: '',
     imageFile: null,  // Store the image file
     resumeFile: null,  // Store the resume file
