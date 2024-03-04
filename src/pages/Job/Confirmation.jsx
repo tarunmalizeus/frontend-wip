@@ -14,6 +14,7 @@ query ThingsToRemember($jobId: Int!) {
 }
 `
 
+
 function Confirmation() {
   //retrieve from coupon code
   const {jobApplyData} = useJobApplyData();

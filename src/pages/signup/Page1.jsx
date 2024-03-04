@@ -2,7 +2,6 @@ import { useSignupData } from '../../utils/SignupContext';
 import { useRef } from 'react';
 import default_pfp from '../../assets/default_pfp.png';
 import upload_resume from '../../assets/Upload_black_24dp.svg';
-import { useState } from 'react';
 
 import { usePage1ErrorContext } from '../../utils/Page1ErrorContext';
 
@@ -96,15 +95,15 @@ function PersonalDetails() {
       }
     }
 
-
-
-    if(name === "instructionalDesigner" || name === "softwareEngineer" || name === "softwareQualityEngineer"){
-      setRoleError("");
-      // if(signupData.instructionalDesigner || signupData.softwareEngineer || signupData.softwareQualityEngineer){
-      //   setRoleError("");
-      // } else {
-      //   setRoleError("Please select at least one role.");
-      // }
+    if(name==)
+    {
+      if (signupData.instructionalDesigner || signupData.softwareEngineer || signupData.softwareQualityEngineer) {
+        console.log("No error");
+        setRoleError("");
+      }
+      else {
+        setRoleError("Please select at least one role.");
+      }
     }
     
 
