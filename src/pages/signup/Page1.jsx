@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import default_pfp from '../../assets/default_pfp.png';
 import upload_resume from '../../assets/Upload_black_24dp.svg';
 
-import { usePage1ErrorContext } from '../../utils/Page1ErrorContext';
+import { useSignupErrorContext } from '../../utils/SignupErrorContext';
 
 function PersonalDetails() {
   
@@ -32,7 +32,7 @@ function PersonalDetails() {
     resumeError, setResumeError,
     pfpError, setPfpError,
     roleError, setRoleError
-  } = usePage1ErrorContext();
+  } = useSignupErrorContext();
 
   let instructionalDesigner, softwareEngineer, softwareQualityEngineer
 

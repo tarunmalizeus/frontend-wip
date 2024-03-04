@@ -3,10 +3,10 @@
 import React, { createContext, useContext, useState } from 'react';
 
 // Create a context to hold the error messages and their setter functions
-const Page1ErrorContext = createContext();
+const SignupErrorContext = createContext();
 
 // Custom hook to access the context
-export const usePage1ErrorContext = () => useContext(Page1ErrorContext);
+export const useSignupErrorContext = () => useContext(SignupErrorContext);
 
 // Error context provider component
 export const Page1ErrorProvider = ({ children }) => {
@@ -19,9 +19,10 @@ export const Page1ErrorProvider = ({ children }) => {
   const [resumeError, setResumeError] = useState("");
   const [pfpError, setPfpError] = useState("");
   const [roleError, setRoleError] = useState("");
+  const [collegeLocationError, setCollegeLocationError] = useState("");
 
   return (
-    <Page1ErrorContext.Provider
+    <SignupErrorContext.Provider
       value={{
         firstNameError, setFirstNameError,
         lastNameError, setLastNameError,
@@ -31,10 +32,11 @@ export const Page1ErrorProvider = ({ children }) => {
         phoneError, setPhoneError,
         resumeError, setResumeError,
         pfpError, setPfpError,
-        roleError, setRoleError
+        roleError, setRoleError,
+        collegeLocationError, setCollegeLocationError,
       }}
     >
       {children}
-    </Page1ErrorContext.Provider>
+    </SignupErrorContext.Provider>
   );
 };

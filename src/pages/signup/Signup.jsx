@@ -4,7 +4,7 @@ import Footer1 from "../../components/Signup/Footer1.jsx"
 import {Outlet } from 'react-router-dom';
 import { SignupNavigationProvider } from "../../utils/SignupNavigationContext.jsx";
 import { SignupProvider } from '../../utils/SignupContext.jsx';
-import { Page1ErrorProvider } from "../../utils/Page1ErrorContext.jsx";
+import { Page1ErrorProvider } from "../../utils/SignupErrorContext.jsx";
 
 
 function Signup() {

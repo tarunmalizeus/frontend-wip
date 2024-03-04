@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSignupData } from '../../../utils/SignupContext';
+import { useSignupErrorContext } from '../../../utils/SignupErrorContext';
 
 import Qualification from './Qualification';
 import College from './College';
@@ -8,9 +9,23 @@ import Stream from './Stream';
 
 function EducationComponent() {
   const { signupData, updateSignupData } = useSignupData();
+  const { collegeLocationError, setCollegeLocationError } = useSignupErrorContext();
 
+  console.log(signupData.collegeLocation);
 
   const handleChange = (e) => {
+    let name, value;
+    name = e.target.name;
+    value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
+    if(name === "collegeLocation"){
+      const nameRegex = /^[a-zA-Z]+$/;
+      if(!nameRegex.test(value)){
+        setCollegeLocationError("Please enter a valid location.");
+      } else {
+        setCollegeLocationError("");
+      }
+    }  
+
     updateSignupData({ [e.target.name]: e.target.value });
   };
 
@@ -87,6 +102,7 @@ function EducationComponent() {
             value={signupData.collegeLocation}
             onChange={handleChange}/>
         </label>
+        {collegeLocationError && <p className="text-red-500">{collegeLocationError}</p>}
       </div>
 
 

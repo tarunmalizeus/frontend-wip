@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useSignupNavigation } from "../../utils/SignupNavigationContext.jsx";
 import { useSignupData } from '../../utils/SignupContext.jsx';
-import { usePage1ErrorContext } from '../../utils/Page1ErrorContext.jsx';
+import { useSignupErrorContext } from '../../utils/SignupErrorContext.jsx';
 
 
 function Footer1() {
@@ -17,15 +17,15 @@ function Footer1() {
       phoneError, setPhoneError,
       resumeError, setResumeError,
       pfpError, setPfpError,
-      roleError, setRoleError
-    } = usePage1ErrorContext();
+      roleError, setRoleError,
+      collegeLocationError, setCollegeLocationError,
+    } = useSignupErrorContext();
 
   
     const { signupData, updateSignupData } = useSignupData();
 
     const nextPage = () => {
       if (isMainSignup1){
-        
         if(firstNameError !== "" || lastNameError !== "" || emailError !== "" || passwordError !== "" || cpasswordError !== "" || phoneError !== "" || resumeError !== "" || pfpError !== "" || roleError !== ""){
           alert("Please Correct the errors in the form.");
           return;
@@ -47,7 +47,18 @@ function Footer1() {
 
         navigate('mainsignup2');
       } 
-      else if (isMainSignup2) navigate('review');
+      else if (isMainSignup2){
+        if(collegeLocationError !== ""){
+          alert("Please Correct the errors in the form.");
+          return;
+        }
+          if(signupData.percentage === "" || signupData.yearOfPassing === "" || signupData.qualification === "" || signupData.college === "" || signupData.stream === "" || signupData.collegeLocation === ""){
+            alert("Please fill all the fields");
+            setCollegeLocationError(signupData.collegeLocation === "" ? "Please enter a valid location." : "");
+            return;
+          }
+        navigate('review');
+      } 
     };
   
 
