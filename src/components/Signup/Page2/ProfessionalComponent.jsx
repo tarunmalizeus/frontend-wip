@@ -1,18 +1,55 @@
 import React from 'react';
 import { useSignupData } from '../../../utils/SignupContext';
+import { useSignupErrorContext } from '../../../utils/SignupErrorContext';
 
 function ProfessionalComponent() {
   const { signupData, updateSignupData } = useSignupData();
+  const { 
+    expTechError, setExpTechError,
+    famTechError, setFamTechError,
+  } = useSignupErrorContext();
+
+
+
+    let expTechErrorFlag = false;
+    let famTechErrorFlag = false;
 
   const handleCheckboxChange = (e) => {
-    // For handling checkbox groups, store values in an array
-    let updatedArray = signupData[e.target.name];
-    if (e.target.checked) {
+    let name, value;
+    name = e.target.name;
+    value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
+    let updatedArray = signupData[name];
+    if (value) {
       updatedArray = [...updatedArray, e.target.value];
     } else {
       updatedArray = updatedArray.filter((item) => item !== e.target.value);
     }
     updateSignupData({ [e.target.name]: updatedArray });
+
+    console.log(expTechErrorFlag);
+
+    if(name === "experiencedTech"){
+      expTechErrorFlag=!(signupData.experiencedTech.length === 0)
+      console.log({expTechErrorFlag});
+      console.log({value});
+      expTechErrorFlag |=value;
+      console.log({expTechErrorFlag});
+      if(expTechErrorFlag){
+        setExpTechError("");
+      } else {
+        setExpTechError("Please select at least one technology.");
+      }
+    } else if(name === "familiarTech"){
+      if(signupData.familiarTech.length === 0){
+        setFamTechError("Please select at least one technology.");
+        famTechErrorFlag = true;
+      } else {
+        setFamTechError("");
+        famTechErrorFlag = false;
+      }
+    }
+
+
   };
 
   const handleChange = (e) => {
@@ -163,9 +200,10 @@ function ProfessionalComponent() {
           />
           Others
         </label>
-
-
+        {expTechError && <p className="text-red-500">{expTechError}</p>}
         <label>
+
+
                           <div>
 
               If Others, Please Mention

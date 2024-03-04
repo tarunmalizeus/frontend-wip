@@ -20,6 +20,8 @@ export const Page1ErrorProvider = ({ children }) => {
   const [pfpError, setPfpError] = useState("");
   const [roleError, setRoleError] = useState("");
   const [collegeLocationError, setCollegeLocationError] = useState("");
+  const [expTechError, setExpTechError] = useState("");
+  const [famTechError, setFamTechError] = useState("");
 
   return (
     <SignupErrorContext.Provider
@@ -34,6 +36,8 @@ export const Page1ErrorProvider = ({ children }) => {
         pfpError, setPfpError,
         roleError, setRoleError,
         collegeLocationError, setCollegeLocationError,
+        expTechError, setExpTechError,
+        famTechError, setFamTechError,
       }}
     >
       {children}

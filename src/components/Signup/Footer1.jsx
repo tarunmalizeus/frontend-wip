@@ -19,6 +19,8 @@ function Footer1() {
       pfpError, setPfpError,
       roleError, setRoleError,
       collegeLocationError, setCollegeLocationError,
+      expTechError, setExpTechError,
+      famTechError, setFamTechError,
     } = useSignupErrorContext();
 
   
@@ -45,6 +47,9 @@ function Footer1() {
           return;
         }
 
+
+
+
         navigate('mainsignup2');
       } 
       else if (isMainSignup2){
@@ -57,6 +62,20 @@ function Footer1() {
             setCollegeLocationError(signupData.collegeLocation === "" ? "Please enter a valid location." : "");
             return;
           }
+
+        if(expTechError !== "" || famTechError !== ""){
+          alert("Please Correct the errors in the form.");
+          return;
+        }
+
+        if(signupData.experiencedTech.length === 0 || signupData.famTech.length === 0){
+          alert("Please fill all the fields");
+          setExpTechError(signupData.experiencedTech.length === 0 ? "Please select at least one option." : "");
+          setFamTechError(signupData.famTech.length === 0 ? "Please select at least one option." : "");
+          return;
+        }
+
+
         navigate('review');
       } 
     };
