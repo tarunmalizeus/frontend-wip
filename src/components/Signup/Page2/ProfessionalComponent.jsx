@@ -26,26 +26,22 @@ function ProfessionalComponent() {
     }
     updateSignupData({ [e.target.name]: updatedArray });
 
-    console.log(expTechErrorFlag);
 
     if(name === "experiencedTech"){
       expTechErrorFlag=!(signupData.experiencedTech.length === 0)
-      console.log({expTechErrorFlag});
-      console.log({value});
       expTechErrorFlag |=value;
-      console.log({expTechErrorFlag});
       if(expTechErrorFlag){
         setExpTechError("");
       } else {
         setExpTechError("Please select at least one technology.");
       }
     } else if(name === "familiarTech"){
-      if(signupData.familiarTech.length === 0){
-        setFamTechError("Please select at least one technology.");
-        famTechErrorFlag = true;
-      } else {
+      famTechErrorFlag=!(signupData.experiencedTech.length === 0)
+      famTechErrorFlag |=value;
+      if(famTechErrorFlag){
         setFamTechError("");
-        famTechErrorFlag = false;
+      } else {
+        setFamTechError("Please select at least one technology.");
       }
     }
 
@@ -289,7 +285,7 @@ function ProfessionalComponent() {
           Others
         </label>
 
-
+        {famTechError && <p className="text-red-500">{famTechError}</p>}
         <label>
                           <div>
 

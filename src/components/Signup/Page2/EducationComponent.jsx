@@ -11,8 +11,6 @@ function EducationComponent() {
   const { signupData, updateSignupData } = useSignupData();
   const { collegeLocationError, setCollegeLocationError } = useSignupErrorContext();
 
-  console.log(signupData.collegeLocation);
-
   const handleChange = (e) => {
     let name, value;
     name = e.target.name;

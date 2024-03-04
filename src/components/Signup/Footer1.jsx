@@ -53,27 +53,19 @@ function Footer1() {
         navigate('mainsignup2');
       } 
       else if (isMainSignup2){
-        if(collegeLocationError !== ""){
+        if(collegeLocationError !== "" || expTechError !== "" || famTechError !== ""){
           alert("Please Correct the errors in the form.");
           return;
         }
-          if(signupData.percentage === "" || signupData.yearOfPassing === "" || signupData.qualification === "" || signupData.college === "" || signupData.stream === "" || signupData.collegeLocation === ""){
+          if(signupData.percentage === "" || signupData.yearOfPassing === "" || signupData.qualification === "" || signupData.college === "" || signupData.stream === "" || signupData.collegeLocation === ""
+          || signupData.experiencedTech.length === 0 || signupData.familiarTech.length === 0
+          ){
             alert("Please fill all the fields");
             setCollegeLocationError(signupData.collegeLocation === "" ? "Please enter a valid location." : "");
+            setExpTechError(signupData.experiencedTech.length === 0 ? "Please select at least one option." : "");
+            setFamTechError(signupData.familiarTech.length === 0 ? "Please select at least one option." : "");
             return;
           }
-
-        if(expTechError !== "" || famTechError !== ""){
-          alert("Please Correct the errors in the form.");
-          return;
-        }
-
-        if(signupData.experiencedTech.length === 0 || signupData.famTech.length === 0){
-          alert("Please fill all the fields");
-          setExpTechError(signupData.experiencedTech.length === 0 ? "Please select at least one option." : "");
-          setFamTechError(signupData.famTech.length === 0 ? "Please select at least one option." : "");
-          return;
-        }
 
 
         navigate('review');
