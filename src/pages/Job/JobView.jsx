@@ -27,7 +27,7 @@ query Query {
 
 function Jobview() {
   const storedToken = localStorage.getItem('site'); 
-  console.log(storedToken)
+  // console.log(storedToken)
   const { loading, error, data } = useQuery(QUERY_ALL_JOBS,{
     context: {
       headers: {

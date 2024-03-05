@@ -60,7 +60,17 @@ function JobDetails() {
   const {job_id}=useParams();
   const { loading, error, data } = useQuery(QUERY_JOBS_BY_ID, {
     variables: { jobId: parseInt(job_id) },
+    context: {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('site')}`
+      }
+    }
   });
+
+
+
+
+
   if (loading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
     return (
