@@ -64,6 +64,11 @@ const handleCheckboxChange = (e) => {
   const { job_id, roles } = jobIdAndPref;
   const { loading, error, data } = useQuery(QUERY_SLOT_PREF, {
     variables: { job_id: job_id },
+    context: {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('site')}`
+      }
+    }
   });
 
   // if (loading) return <p>Loading...</p>;
