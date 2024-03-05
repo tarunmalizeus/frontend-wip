@@ -17,7 +17,14 @@ mutation Mutation($input: CreateApplicationInput!) {
 function Jobcardstatic({job}) {
   const navigate = useNavigate();
   const {jobApplyData, updateJobApplyData} = useJobApplyData();
-  const [createApplicationMutation, { data, loading, error }] = useMutation(APPLY_APPLICATION);
+  const [createApplicationMutation, { data, loading, error }] = useMutation(APPLY_APPLICATION,{
+        context: {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('site')}`
+          }
+        }        
+      }
+    );
   
   const apply = async () => {
     //do the authentication

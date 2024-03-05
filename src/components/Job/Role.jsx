@@ -16,7 +16,12 @@ function Role({RoleAndJobId}) {
     const { job_id, role } = RoleAndJobId;
     const { role_name ,role_id } = role;
     const { loading, error, data } = useQuery(QUERY_ROLE, {
-        variables: { job_id, role_id }
+        variables: { job_id, role_id },
+        context: {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('site')}`
+          }
+        }
     });
     if (loading) return <Loading />;
     if (error) return <p>Error: {error.message}</p>;

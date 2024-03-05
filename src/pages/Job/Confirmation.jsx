@@ -22,6 +22,11 @@ function Confirmation() {
 
   const { loading, error, data } = useQuery(THINGS_2_REMEMBER, {
     variables: { jobId: job_id },
+    context: {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('site')}`
+      }
+    }
   });
 
   if (loading) return <p>Loading...</p>;
