@@ -5,7 +5,10 @@ import { useAuth } from "../utils/AuthContext";
 
 
 function Login() {
-  const { userId,setUserId,token, setToken, setUserName, userName } = useAuth();
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+
+  const {setUserId, setToken, setUserName } = useAuth();
   const navigate = useNavigate();
   const LOGIN_USER = gql`
   mutation Mutation($email: String!, $password: String!) {
@@ -29,10 +32,46 @@ function Login() {
     const name = e.target.name;
     const value = e.target.value;
     setUserInput({ ...userInput, [name]: value });
+
+    if (name === "email") {    
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+          setEmailError("Please enter a valid email address.");
+        } else {
+          setEmailError("");
+        }       
+    }
+
+    if(name === "password"){
+      if(value.length < 8){
+        setPasswordError("Password should be atleast 8 characters long.");
+      } else {
+        setPasswordError("");
+      }
+    }
+
   };
   
 
   const PostData = async (e) => {
+    console.log(email);
+    console.log(password)
+    if(userInput.email==="" || userInput.password===""){
+      if(userInput.email===""){
+        setEmailError("Email is required.");
+      }
+      if(userInput.password===""){
+        setPasswordError("Password is required.");
+      }
+      window.alert("Please fill all the fields.");
+      return;
+    }
+
+    if(emailError || passwordError){
+      window.alert("Please enter valid email and password.");
+      return;
+    }
+
 
     try {
       const { data } = await loginUser({
@@ -44,7 +83,6 @@ function Login() {
           setUserId(data.login.user_id);
           localStorage.setItem("userId", JSON.stringify(data.login.user_id));
           setToken(data.login.token);
-          console.log(data.login.token)
           localStorage.setItem("site", (data.login.token));
           window.alert('Login Successful');
           navigate('/jobs');
@@ -73,6 +111,7 @@ function Login() {
                       value={userInput.email}
                       onChange={handleInputs}
                     />
+                    {emailError && <p className="text-red-500">{emailError}</p>}
                   <button className="w-full text-right text-sm text-darkgreen"> FORGOT EMAIL ID?</button>
                   </div>
 
@@ -88,6 +127,7 @@ function Login() {
                       onChange={handleInputs}
                       autoComplete="off"
                     />
+                    {passwordError && <p className="text-red-500">{passwordError}</p>}
                   <button className="w-full text-right text-sm text-darkgreen"> FORGOT PASSWORD?</button>
                   </div>
 
